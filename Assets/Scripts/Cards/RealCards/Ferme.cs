@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Ferme : BlueCards
 {
-    int activationCost;
+    List<int> activationCost;
     int costCards;
 
     string cardName;
 
     public Ferme()
     {
-        this.activationCost = 1;
-        this.costCards = 2;
+        this.activationCost = new List<int>() { 2 };
+        this.costCards = 1;
         this.cardName = "Ferme";
     }
 
