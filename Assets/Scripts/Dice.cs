@@ -13,9 +13,9 @@ public class Dice : MonoBehaviour
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
     }
 
-    private void OnMouseDown()
+    public void RollDices()
     {
-        StartCoroutine("RollTheDice");
+            StartCoroutine("RollTheDice");
     }
 
     private IEnumerator RollTheDice()
