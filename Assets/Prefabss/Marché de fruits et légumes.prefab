@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4498268991881890781}
   - component: {fileID: 6698624126237975159}
-  - component: {fileID: 5438531300531888226}
   m_Layer: 0
   m_Name: "March\xE9 de fruits et l\xE9gumes"
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5438531300531888226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658181739757289145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18ce9ba1567d24a43bc407845449d4f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

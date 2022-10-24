@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 205559121620900585}
   - component: {fileID: 6309206905857207946}
-  - component: {fileID: -2261657503542513169}
   m_Layer: 0
   m_Name: Stade
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2261657503542513169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984548875843936913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837d0edf0f2a203479bcc054a60f9521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
