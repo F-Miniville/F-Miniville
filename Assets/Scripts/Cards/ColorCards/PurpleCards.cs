@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedCards : Cards
+public class PurpleCards : Cards
 {
-    public RedCards()
+    public PurpleCards()
     {
 
     }

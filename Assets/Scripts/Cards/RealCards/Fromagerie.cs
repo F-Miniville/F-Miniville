@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boulangerie : GreenCards
+public class Fromagerie : GreenCards
 {
     List<int> activationCost;
     int costCards;
 
     string cardName;
 
-    public Boulangerie()
+    public Fromagerie()
     {
-        this.activationCost = new List<int>() { 2, 3};
-        this.costCards = 1;
-        this.cardName = "Boulangerie";
+        this.activationCost = new List<int>() { 7 };
+        this.costCards = 5;
+        this.cardName = "Fromagerie";
     }
 
     public override void effectCards()

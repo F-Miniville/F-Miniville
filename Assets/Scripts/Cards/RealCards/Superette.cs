@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Superette : GreenCards
 {
-    int activationCost;
+    List<int> activationCost;
     int costCards;
 
     string cardName;
 
     public Superette()
     {
-        this.activationCost = 4;
+        this.activationCost = new List<int>() { 4 };
         this.costCards = 2;
         this.cardName = "Superette";
     }
