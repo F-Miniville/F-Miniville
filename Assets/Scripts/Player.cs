@@ -8,11 +8,14 @@ public class Player : MonoBehaviour
     protected int Gold;
     protected string Name;
 
+    private Champsdeble champsdeble = new Champsdeble();
+
     public Player(string name)
     {
         Gold = 0;
         Name = name;
-        Cards = new Dictionary<Cards, int> { { new Champsdeble(), 1 }, { new Champsdeble(), 1 } };
+        Cards = new Dictionary<Cards, int> { {champsdeble, 1 }, { new Champsdeble(), 1 } };
+        Cards[champsdeble] += 1;
     }
 
     public void spendGold(int i)
