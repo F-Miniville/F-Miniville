@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7184175905133618519}
   - component: {fileID: 1622095606751112293}
-  - component: {fileID: 4531525178163293618}
   m_Layer: 0
   m_Name: Ferme
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4531525178163293618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793101663019342507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3117660af34a5f41b1df520835cb88b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
