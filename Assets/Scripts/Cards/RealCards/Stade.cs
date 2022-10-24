@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Stade : BlueCards
 {
-    List<int> activationCost;
-    int costCards;
+    readonly List<int> activationCost;
+    readonly int costCards;
 
-    string cardName;
+    readonly string cardName;
 
     public Stade()
     {
