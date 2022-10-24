@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Cards : MonoBehaviour
 {
 
-    int activationCost;
+    List<int> activationCost;
     int costCards;
 
     string cardName;

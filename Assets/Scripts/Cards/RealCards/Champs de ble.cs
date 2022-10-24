@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Champs_de_ble : BlueCards
+public class Champsdeble : BlueCards
 {
-    int activationCost;
+    List<int> activationCost;
     int costCards;
 
     string cardName;
 
-    public Champs_de_ble()
+    public Champsdeble()
     {
-        this.activationCost = 1;
+        this.activationCost = new List<int>() { 1 };
         this.costCards = 1;
         this.cardName = "Champs de blé";
     }

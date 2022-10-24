@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class GreenCards : Cards
 {
-
-
     public GreenCards()
     {
 
     }
-
-
     public override void effectCards()
     {
 

@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class BlueCards : Cards
 {
-
     public BlueCards()
     {
 
     }
-
-
     public override void effectCards()
     {
         
