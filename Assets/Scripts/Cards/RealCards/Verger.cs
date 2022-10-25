@@ -5,7 +5,7 @@ using UnityEngine;
 public class Verger : BlueCards
 {
     List<int> activationCost;
-    public override List<int> ActivationCost { get; set; }
+    public new List<int> ActivationCost { get; set; }
 
     int costCards;
     public int CostCards { get; set; }
@@ -13,7 +13,7 @@ public class Verger : BlueCards
     string cardName;
     public string CardName { get; set; }
 
-    public Verger()
+    public Verger(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
         this.activationCost = new List<int>() { 10 };
         this.costCards = 3;
