@@ -5,14 +5,16 @@ using UnityEngine;
 public abstract class BlueCards : Cards
 {
     List<int> activationCost;
-    public virtual List<int> ActivationCost { get; set; }
+    public List<int> ActivationCost { get; set; }
 
     int costCards;
 
     string cardName;
-    public BlueCards()
+    public BlueCards(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
-
+        this.activationCost = activationCost;
+        this.costCards = costCards;
+        this.cardName = cardName;
     }
     public abstract void effectCards(Player p, List<Player> enemy);
 }
