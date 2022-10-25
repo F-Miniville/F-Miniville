@@ -6,11 +6,11 @@ public abstract class Cards
 {
 
     List<int> activationCost;
-    public List<int> ActivationCost { get; set; }
+    public abstract List<int> ActivationCost { get; set; }
 
     int costCards;
-    public int CostCards { get; set; }
+    public abstract int CostCards { get; set; }
 
     string cardName;
-    public string CardName { get; set; }
+    public abstract string CardName { get; set; }
 }

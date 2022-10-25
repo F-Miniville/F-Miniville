@@ -82,7 +82,7 @@ public class Game : MonoBehaviour
             }
             foreach(BlueCards blueCards in cards)
             {
-                if (blueCards.ActivationCostList.Contains(result))
+                if (blueCards.ActivationCost.Contains(result))
                 {
                     blueCards.effectCards(p, enemy);
                 }
@@ -102,7 +102,7 @@ public class Game : MonoBehaviour
             }
             foreach (RedCards redCards in cards)
             {
-                if (redCards.ActivationCostList.Contains(result))
+                if (redCards.ActivationCost.Contains(result))
                 {
                     redCards.effectCards(p, enemy);
                 }
@@ -119,14 +119,14 @@ public class Game : MonoBehaviour
         }
         foreach(GreenCards greenCards in cards)
         {
-            if (greenCards.ActivationCostList.Contains(result))
+            if (greenCards.ActivationCost.Contains(result))
             {
                 greenCards.effectCards(p, enemy);
             }
         }
         foreach(PurpleCards purpleCards in cards)
         {
-            if (purpleCards.ActivationCostList.Contains(result))
+            if (purpleCards.ActivationCost.Contains(result))
             {
                 purpleCards.effectCards(p, enemy);
             }

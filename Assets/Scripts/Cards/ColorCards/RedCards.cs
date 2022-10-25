@@ -5,10 +5,13 @@ using UnityEngine;
 public abstract class RedCards : Cards
 {
     List<int> activationCost;
-    public List<int> ActivationCostList { get; }
-    readonly int costCards;
+    public override List<int> ActivationCost { get; set; }
 
-    readonly string cardName;
+    int costCards;
+    public override int CostCards { get; set; }
+
+    string cardName;
+    public override string CardName { get; set; }
     public RedCards()
     {
 

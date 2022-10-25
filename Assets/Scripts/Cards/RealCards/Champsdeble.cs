@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Champsdeble : BlueCards
 {
-    readonly List<int> activationCost;
-    readonly int costCards;
+    List<int> activationCost;
+    public override List<int> ActivationCost { get; set; }
 
-    readonly string cardName;
+    int costCards;
+    public override int CostCards { get; set; }
+
+    string cardName;
+    public override string CardName { get; set; }
 
     public Champsdeble()
     {
