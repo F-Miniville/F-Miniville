@@ -16,7 +16,7 @@ public class Champsdeble : BlueCards
         this.cardName = "Champs de blé";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

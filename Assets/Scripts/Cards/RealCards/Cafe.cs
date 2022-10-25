@@ -16,7 +16,7 @@ public class Cafe : RedCards
         this.cardName = "Cafe";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

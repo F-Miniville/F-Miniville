@@ -16,7 +16,7 @@ public class Stade : BlueCards
         this.cardName = "Stade";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

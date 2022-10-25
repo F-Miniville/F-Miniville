@@ -13,6 +13,5 @@ public abstract class RedCards : Cards
     {
 
     }
-    public virtual void effectCards() { 
-    }
+    public abstract void effectCards(Player p, List<Player> enemy);
 }

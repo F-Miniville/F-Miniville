@@ -13,5 +13,5 @@ public abstract class GreenCards : Cards
     {
 
     }
-    public abstract void effectCards();
+    public abstract void effectCards(Player p, List<Player> enemy);
 }
