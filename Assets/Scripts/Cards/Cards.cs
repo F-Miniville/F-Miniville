@@ -10,7 +10,6 @@ public abstract class Cards : MonoBehaviour
 
     string cardName;
 
-    public abstract void effectCards();
 
 
 
