@@ -17,7 +17,6 @@ public class Mine : BlueCards
     {
         this.activationCost = new List<int>() { 9 };
         this.costCards = 6;
-        this.cardName = "Mine";
     }
 
     public override void effectCards(Player p, List<Player> enemy)

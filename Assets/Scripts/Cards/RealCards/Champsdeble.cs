@@ -17,7 +17,6 @@ public class Champsdeble : BlueCards
     {
         this.activationCost = new List<int>() { 1 };
         this.costCards = 1;
-        this.cardName = "Champs de blé";
     }
 
     public override void effectCards(Player p, List<Player> enemy)

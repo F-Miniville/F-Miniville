@@ -9,7 +9,6 @@ public abstract class RedCards : Cards
 
     int costCards;
 
-    string cardName;
     public RedCards(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
 

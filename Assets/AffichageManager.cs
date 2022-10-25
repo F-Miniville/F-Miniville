@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AffichageManager : MonoBehaviour
 {
+    public Camera camera;
+
     private Pile P;
 
     public Sprite boulangerie;
@@ -42,6 +44,8 @@ public class AffichageManager : MonoBehaviour
     {
         P = new Pile();
         strSprite = new Dictionary<string, Sprite>() { { "Boulangerie", boulangerie }, { "Cafe", cafe }, { "Centre d'affaires", centredaffaires }, { "Chaine de tele", chainedetele }, { "Champs de blé", champsdeble }, { "Fabrique de meuble", fabriquedemeuble }, { "Ferme", ferme }, { "Forêt", forêt }, { "Fromagerie", fromagerie }, { "Marche de fruits et legumes", marchedefuitsetlegumes }, { "Mine", mine }, { "Restaurant", restaurant }, { "Stade", stade }, { "Superette", superette }, { "Verger", verger } };
+        int j = 0;
+        int screenWidth20 = Screen.width / 20;
         foreach (var card in P.cards)
         {
             Debug.Log(card.Key);
@@ -51,9 +55,14 @@ public class AffichageManager : MonoBehaviour
             {
                 GameObject newObj = new GameObject(name);
                 Instantiate(newObj, Vector3.zero, Quaternion.identity);
+
+                Vector3 p = camera.ScreenToWorldPoint(new Vector3(screenWidth20 * j + 5, Screen.height / 5 * 2, 0));
+                newObj.GetComponent<Transform>().position = p;
+
                 SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
                 newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
             }
+            j++;
         }
     }
 

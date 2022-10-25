@@ -13,6 +13,6 @@ public abstract class Cards
 
     public Cards(List<int> activationCost, int costCards, string cardName)
     {
-
+        this.cardName = cardName;
     }
 }
