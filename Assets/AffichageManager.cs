@@ -45,7 +45,7 @@ public class AffichageManager : MonoBehaviour
         foreach (var card in P.cards)
         {
             Debug.Log(card.Key);
-            string name = card.Key.cardName;
+            string name = card.Key.CardName;
             Debug.Log(name);
             for (int i = 0; i < card.Value; i++)
             {

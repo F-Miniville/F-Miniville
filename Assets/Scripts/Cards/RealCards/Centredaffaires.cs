@@ -11,7 +11,7 @@ public class Centredaffaires : PurpleCards
     public int CostCards { get; set; }
 
     string cardName;
-    public string CardName { get; set; }
+    public override string CardName { get; set; }
     public Centredaffaires(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
         this.activationCost = new List<int>() { 6 };

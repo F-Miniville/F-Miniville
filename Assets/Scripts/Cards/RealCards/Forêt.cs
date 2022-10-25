@@ -11,7 +11,7 @@ public class Forêt : BlueCards
     public int CostCards { get; set; }
 
     string cardName;
-    public string CardName { get; set; }
+    public override string CardName { get; set; }
     public Forêt(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
         this.activationCost = new List<int>() { 5 };

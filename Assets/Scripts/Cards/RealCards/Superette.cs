@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Superette : GreenCards
@@ -11,7 +12,7 @@ public class Superette : GreenCards
     public int CostCards { get; set; }
 
     string cardName;
-    public string CardName { get; set; }
+    public override string CardName { get; set; }
 
     public Superette(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {

@@ -11,7 +11,7 @@ public class Boulangerie : GreenCards
     public int CostCards { get; set; }
 
     string cardName;
-    public string CardName { get; set; }
+    public override string CardName { get; set; }
 
     public Boulangerie(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
