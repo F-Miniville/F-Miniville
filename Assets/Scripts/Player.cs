@@ -10,6 +10,19 @@ public class Player : MonoBehaviour
 
 <<<<<<< Updated upstream
     private Champsdeble champsdeble = new Champsdeble();
+<<<<<<< Updated upstream
+=======
+    private Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble();
+    private Ferme ferme = new Ferme(); 
+    private Forêt forêt = new Forêt();
+    private Fromagerie fromagerie = new Fromagerie();
+    private Marchedefruitsetlegumes marchedefruitsetlegumes = new Marchedefruitsetlegumes();
+    private Mine mine = new Mine();
+    private Restaurant restaurant = new Restaurant();
+    private Stade stade = new Stade();
+    private Superette superette = new Superette();
+    private Verger verger = new Verger();
+>>>>>>> Stashed changes
 
     public Player(string name)
 =======
