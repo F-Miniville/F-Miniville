@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Centredaffaires : PurpleCards
 {
-    readonly List<int> activationCost;
-    readonly int costCards;
+    List<int> activationCost;
+    public override List<int> ActivationCost { get; set; }
 
-    readonly string cardName;
+    int costCards;
+    public override int CostCards { get; set; }
 
+    string cardName;
+    public override string CardName { get; set; }
     public Centredaffaires()
     {
         this.activationCost = new List<int>() { 6 };
