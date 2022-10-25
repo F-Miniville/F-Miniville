@@ -17,10 +17,10 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
-            foreach (Player p in players)
+            foreach (Player p in Players)
             {
                 List<Player> enemy = new List<Player>();
-                foreach (Player e in players)
+                foreach (Player e in Players)
                 {
                     if (e != p)
                     {
@@ -39,6 +39,7 @@ public class Game : MonoBehaviour
     public void Turn(Player p, List<Player> enemy)
     {
         List<Cards> cards = new List<Cards>();
+        List<Player> newEnemy = new List<Player>();
         int result;
         oneMoreDice = false;
         if (p.Dices.Count > 1)
@@ -51,6 +52,14 @@ public class Game : MonoBehaviour
 
         foreach(Player player in players)
         {
+            newEnemy.Clear();
+            foreach (Player e in Players)
+            {
+                if (e != player)
+                {
+                    newEnemy.Add(e);
+                }
+            }
             cards.Clear();
             foreach(KeyValuePair<Cards, int> keyValuePair in player.Cards)
             {
@@ -63,12 +72,20 @@ public class Game : MonoBehaviour
             {
                 if (blueCards.ActivationCostList.Contains(result))
                 {
-                    blueCards.effectCards(p, enemy);
+                    blueCards.effectCards(player, newEnemy);
                 }
             }
         }
         foreach(Player player in enemy)
         {
+            newEnemy.Clear();
+            foreach (Player e in Players)
+            {
+                if (e != player)
+                {
+                    newEnemy.Add(e);
+                }
+            }
             cards.Clear();
             foreach (KeyValuePair<Cards, int> keyValuePair in player.Cards)
             {
@@ -81,11 +98,19 @@ public class Game : MonoBehaviour
             {
                 if (redCards.ActivationCostList.Contains(result))
                 {
-                    redCards.effectCards(p, enemy);
+                    redCards.effectCards(player, newEnemy);
                 }
             }
         }
-        
+
+        newEnemy.Clear();
+        foreach (Player e in Players)
+        {
+            if (e != p)
+            {
+                newEnemy.Add(e);
+            }
+        }
         cards.Clear();
         foreach (KeyValuePair<Cards, int> keyValuePair in p.Cards)
         {
@@ -98,14 +123,14 @@ public class Game : MonoBehaviour
         {
             if (greenCards.ActivationCostList.Contains(result))
             {
-                greenCards.effectCards(p, enemy);
+                greenCards.effectCards(p, newEnemy);
             }
         }
         foreach(PurpleCards purpleCards in cards)
         {
             if (purpleCards.ActivationCostList.Contains(result))
             {
-                purpleCards.effectCards(p, enemy);
+                purpleCards.effectCards(p, newEnemy);
             }
         }
 
