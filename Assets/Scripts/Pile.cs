@@ -8,21 +8,21 @@ public class Pile
 
     private static List<int> number = new List<int>();
 
-    public Boulangerie boulangerie = new Boulangerie(number, 2, "");
-    public Cafe cafe = new Cafe(number, 2, "");
-    public Centredaffaires centredaffaires = new Centredaffaires(number, 2, "");
-    public Chainedetele chainedetele = new Chainedetele(number, 2, "");
-    public Champsdeble champsdeble = new Champsdeble(number, 2, "");
-    public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble(number, 2, "");
-    public Ferme ferme = new Ferme(number, 2, "");
-    public Forêt forêt = new Forêt(number, 2, "");
-    public Fromagerie fromagerie = new Fromagerie(number, 2, "");
-    public Marchedefruitsetlegumes marchedefruitsetlegumes = new Marchedefruitsetlegumes(number, 2, "");
-    public Mine mine = new Mine(number, 2, "");
-    public Restaurant restaurant = new Restaurant(number, 2, "");
-    public Stade stade = new Stade(number, 2, "");
-    public Superette superette = new Superette(number, 2, "");
-    public Verger verger = new Verger(number, 2, "");
+    public Boulangerie boulangerie = new Boulangerie(number, 2, "Boulangerie");
+    public Cafe cafe = new Cafe(number, 2, "Cafe");
+    public Centredaffaires centredaffaires = new Centredaffaires(number, 2, "Centre d'affaires");
+    public Chainedetele chainedetele = new Chainedetele(number, 2, "Chaine de tele");
+    public Champsdeble champsdeble = new Champsdeble(number, 2, "Champs de blé");
+    public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble(number, 2, "Fabrique de meuble");
+    public Ferme ferme = new Ferme(number, 2, "Ferme");
+    public Forêt forêt = new Forêt(number, 2, "Forêt");
+    public Fromagerie fromagerie = new Fromagerie(number, 2, "Fromagerie");
+    public Marchedefruitsetlegumes marchedefruitsetlegumes = new Marchedefruitsetlegumes(number, 2, "Marche de fruits et legumes");
+    public Mine mine = new Mine(number, 2, "Mine");
+    public Restaurant restaurant = new Restaurant(number, 2, "Restaurant");
+    public Stade stade = new Stade(number, 2, "Stade");
+    public Superette superette = new Superette(number, 2, "Superette");
+    public Verger verger = new Verger(number, 2, "Verger");
 
     public Pile()
     {

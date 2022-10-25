@@ -17,7 +17,6 @@ public class Marchedefruitsetlegumes : GreenCards
     {
         this.activationCost = new List<int>() { 10, 11 };
         this.costCards = 2;
-        this.cardName = "Marche de fruits et legumes";
     }
 
     public override void effectCards(Player p, List<Player> enemy)

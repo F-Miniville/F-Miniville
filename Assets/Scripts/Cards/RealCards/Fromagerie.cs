@@ -16,7 +16,6 @@ public class Fromagerie : GreenCards
     {
         this.activationCost = new List<int>() { 7 };
         this.costCards = 5;
-        this.cardName = "Fromagerie";
     }
 
     public override void effectCards(Player p, List<Player> enemy)
