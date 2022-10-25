@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenCards : Cards
+public abstract class GreenCards : Cards
 {
+    List<int> activationCost;
+    public List<int> ActivationCostList { get; }
+    readonly int costCards;
+
+    readonly string cardName;
     public GreenCards()
     {
 
     }
-    public override void effectCards()
-    {
-
-    }
+    public abstract void effectCards();
 }
