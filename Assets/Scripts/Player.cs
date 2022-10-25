@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-    protected Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
-    protected Dictionary<Etablissement, bool> etablissement = new Dictionary<Etablissement, bool>();
+    private Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
+    public Dictionary<Cards, int> Cards { get; set; }
+
+    private Dictionary<Etablissement, bool> etablissement = new Dictionary<Etablissement, bool>();
+    public Dictionary <Etablissement, bool> Etablissement { get; set; }
+
     protected int Gold;
     protected string Name;
 
@@ -30,12 +36,22 @@ public class Player : MonoBehaviour
     public Parcdattraction parcdattraction = new Parcdattraction();
     public Tourradio tourradio = new Tourradio();
 
+
+    public Dice firstDice = new Dice();
+    public Dice secondDice = new Dice();
+    private List<Dice> dices = new List<Dice>();
+
     public Player(string name)
     {
         Gold = 0;
         Name = name;
         cards = new Dictionary<Cards, int>(){ {boulangerie, 1}, {cafe, 0 }, {centredaffaires, 0 }, { chainedetele, 0 }, {champsdeble, 1 }, {fabriquedemeuble, 0 }, {ferme , 0 }, {forêt, 0 }, { fromagerie, 0 }, {marchedefruitsetlegumes, 0 }, {mine, 0 }, {restaurant, 0 }, {stade, 0 }, {superette, 0 }, {verger, 0 } };
         etablissement = new Dictionary<Etablissement, bool>(){ { centrecommercial, false }, { gare, false }, { parcdattraction, false }, { tourradio, false } };
+    }
+
+    private void Awake()
+    {
+        dices.Add(firstDice);
     }
 
     public void spendGold(int i)
@@ -59,5 +75,11 @@ public class Player : MonoBehaviour
     public void AddEtablissement(Etablissement E)
     {
         etablissement[E] = true;
+    }
+
+    public List<Dice> Dices
+    {
+        get { return dices; }
+        set { dices = value; }
     }
 }
