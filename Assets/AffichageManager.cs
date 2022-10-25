@@ -44,25 +44,33 @@ public class AffichageManager : MonoBehaviour
     {
         P = new Pile();
         strSprite = new Dictionary<string, Sprite>() { { "Boulangerie", boulangerie }, { "Cafe", cafe }, { "Centre d'affaires", centredaffaires }, { "Chaine de tele", chainedetele }, { "Champs de blé", champsdeble }, { "Fabrique de meuble", fabriquedemeuble }, { "Ferme", ferme }, { "Forêt", forêt }, { "Fromagerie", fromagerie }, { "Marche de fruits et legumes", marchedefuitsetlegumes }, { "Mine", mine }, { "Restaurant", restaurant }, { "Stade", stade }, { "Superette", superette }, { "Verger", verger } };
-        int j = 0;
-        int screenWidth20 = Screen.width / 20;
+        int j = 1;
+        int ligne = 1;
         foreach (var card in P.cards)
         {
-            Debug.Log(card.Key);
-            string name = card.Key.cardName;
-            Debug.Log(name);
-            for (int i = 0; i < card.Value; i++)
+            if (card.Value != 0)
             {
-                GameObject newObj = new GameObject(name);
-                Instantiate(newObj, Vector3.zero, Quaternion.identity);
+                string name = card.Key.cardName;
 
-                Vector3 p = camera.ScreenToWorldPoint(new Vector3(screenWidth20 * j + 5, Screen.height / 5 * 2, 0));
-                newObj.GetComponent<Transform>().position = p;
-
-                SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
-                newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
+                for (int i = 0; i < card.Value; i++)
+                {
+                    GameObject newObj = new GameObject(name);
+                    Instantiate(newObj, Vector3.zero, Quaternion.identity);
+                    SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
+                    newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
+                    Debug.Log(newObj.GetComponent<SpriteRenderer>().bounds.size.x);
+                    Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - ((newObj.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * 2.5f) * 0.3f * (4f - j)) / 2, Screen.height / 5 * (4 - ligne), 1));
+                    newObj.GetComponent<Transform>().position = p;
+                    newObj.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                }
+                if (j % 7 == 0)
+                {
+                    ligne += 1;
+                    j = 0;
+                }
+                j++;
             }
-            j++;
+            
         }
     }
 
