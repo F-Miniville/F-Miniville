@@ -5,14 +5,14 @@ using UnityEngine;
 public class Centredaffaires : PurpleCards
 {
     List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
+    public override List<int> ActivationCost { get; set; }
 
     int costCards;
     public int CostCards { get; set; }
 
     string cardName;
     public string CardName { get; set; }
-    public Centredaffaires(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Centredaffaires()
     {
         this.activationCost = new List<int>() { 6 };
         this.costCards = 8;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fabriquedemeuble : GreenCards
 {
     List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
+    public override List<int> ActivationCost { get; set; }
 
     int costCards;
     public int CostCards { get; set; }
@@ -13,7 +13,7 @@ public class Fabriquedemeuble : GreenCards
     string cardName;
     public string CardName { get; set; }
 
-    public Fabriquedemeuble(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Fabriquedemeuble()
     {
         this.activationCost = new List<int>() { 8 };
         this.costCards = 3;

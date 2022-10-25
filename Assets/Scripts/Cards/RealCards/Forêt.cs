@@ -5,14 +5,14 @@ using UnityEngine;
 public class Forêt : BlueCards
 {
     List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
+    public override List<int> ActivationCost { get; set; }
 
     int costCards;
     public int CostCards { get; set; }
 
     string cardName;
     public string CardName { get; set; }
-    public Forêt(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Forêt()
     {
         this.activationCost = new List<int>() { 5 };
         this.costCards = 3;

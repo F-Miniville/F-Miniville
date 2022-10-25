@@ -15,24 +15,21 @@ public class Player : MonoBehaviour
     protected int Gold;
     protected string Name;
 
-    private static List<int> number = new List<int>();
-   
-
-    public Boulangerie boulangerie = new Boulangerie(number, 2, "");
-    public Cafe cafe = new Cafe(number, 2, "");
-    public Centredaffaires centredaffaires = new Centredaffaires(number, 2, "");
-    public Chainedetele chainedetele = new Chainedetele(number, 2, "");
-    public Champsdeble champsdeble = new Champsdeble(number, 2, "");
-    public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble(number, 2, "");
-    public Ferme ferme = new Ferme(number, 2, "");
-    public Forêt forêt = new Forêt(number, 2, "");
-    public Fromagerie fromagerie = new Fromagerie(number, 2, "");
-    public Marchedefruitsetlegumes marchedefruitsetlegumes = new Marchedefruitsetlegumes(number, 2, "");
-    public Mine mine = new Mine(number, 2, "");
-    public Restaurant restaurant = new Restaurant(number, 2, "");
-    public Stade stade = new Stade(number, 2, "");
-    public Superette superette = new Superette(number, 2, "");
-    public Verger verger = new Verger(number, 2, "");
+    public Boulangerie boulangerie = new Boulangerie();
+    public Cafe cafe = new Cafe();
+    public Centredaffaires centredaffaires = new Centredaffaires();
+    public Chainedetele chainedetele = new Chainedetele();
+    public Champsdeble champsdeble = new Champsdeble();
+    public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble();
+    public Ferme ferme = new Ferme();
+    public Forêt forêt = new Forêt();
+    public Fromagerie fromagerie = new Fromagerie();
+    public Marchedefruitsetlegumes marchedefruitsetlegumes = new Marchedefruitsetlegumes();
+    public Mine mine = new Mine();
+    public Restaurant restaurant = new Restaurant();
+    public Stade stade = new Stade();
+    public Superette superette = new Superette();
+    public Verger verger = new Verger();
 
     public Centrecommercial centrecommercial = new Centrecommercial();
     public Gare gare = new Gare();
