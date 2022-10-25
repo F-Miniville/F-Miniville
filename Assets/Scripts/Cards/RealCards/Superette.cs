@@ -5,7 +5,7 @@ using UnityEngine;
 public class Superette : GreenCards
 {
     List<int> activationCost;
-    public List<int> ActivationCost { get; set; }
+    public override List<int> ActivationCost { get; set; }
 
     int costCards;
     public int CostCards { get; set; }
