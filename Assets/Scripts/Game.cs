@@ -29,6 +29,8 @@ public class Game : MonoBehaviour
                     }
                 }
                 Turn(p, enemy);
+
+
                 int compteurVictoire = 0;
                 foreach(KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
                 {
@@ -37,6 +39,7 @@ public class Game : MonoBehaviour
                         compteurVictoire++;
                     }
                 }
+
                 if(compteurVictoire >= 4)
                 {
                     fin = false;
@@ -51,6 +54,12 @@ public class Game : MonoBehaviour
     public void Turn(Player p, List<Player> enemy)
     {
         List<Cards> cards = new List<Cards>();
+<<<<<<< Updated upstream
+=======
+        List<Player> newEnemy = new List<Player>();
+
+
+>>>>>>> Stashed changes
         int result;
         oneMoreDice = false;
         if (p.Dices.Count > 1)
@@ -79,6 +88,8 @@ public class Game : MonoBehaviour
                 }
             }
         }
+
+
         foreach(Player player in enemy)
         {
             cards.Clear();
