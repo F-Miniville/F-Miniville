@@ -346,8 +346,6 @@ GameObject:
   - component: {fileID: 1713996614}
   - component: {fileID: 1713996617}
   - component: {fileID: 1713996615}
-  - component: {fileID: 1713996619}
-  - component: {fileID: 1713996620}
   m_Layer: 0
   m_Name: Dice2
   m_TagString: Untagged
@@ -434,30 +432,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1713996619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713996613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ec140993783e84cb5ca919295cb17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1713996620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713996613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded2cd9ddc3df3443978d001cffe9b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1778420459
 GameObject:
   m_ObjectHideFlags: 0
