@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pile : MonoBehaviour
+public class Pile
 {
-    protected Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
+    public Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
 
     private static List<int> number = new List<int>();
 

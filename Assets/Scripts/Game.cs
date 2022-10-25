@@ -54,12 +54,7 @@ public class Game : MonoBehaviour
     public void Turn(Player p, List<Player> enemy)
     {
         List<Cards> cards = new List<Cards>();
-<<<<<<< Updated upstream
-=======
         List<Player> newEnemy = new List<Player>();
-
-
->>>>>>> Stashed changes
         int result;
         oneMoreDice = false;
         if (p.Dices.Count > 1)
