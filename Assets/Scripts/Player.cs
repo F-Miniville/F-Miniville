@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 >>>>>>> Stashed changes
     }
 
-    public void spendGold(int i)
+    public void spendGold(int i) 
     {
         Gold -= i;
         if (Gold < 0)
