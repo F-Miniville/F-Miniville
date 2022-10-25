@@ -15,7 +15,8 @@ public class Game : MonoBehaviour
 
     public void Start()
     {
-        while (true)
+        bool fin = true;
+        while (fin)
         {
             foreach (Player p in Players)
             {
@@ -28,8 +29,19 @@ public class Game : MonoBehaviour
                     }
                 }
                 Turn(p, enemy);
+                int compteurVictoire = 0;
+                foreach(KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
+                {
+                    if(keyValuePair.Value == true)
+                    {
+                        compteurVictoire++;
+                    }
+                }
+                if(compteurVictoire >= 4)
+                {
+                    fin = false;
+                }
             }
-
         }
 
     }
