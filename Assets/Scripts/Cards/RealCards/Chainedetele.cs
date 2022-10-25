@@ -16,7 +16,7 @@ public class Chainedetele : PurpleCards
         this.cardName = "Chaine de tele";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

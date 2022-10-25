@@ -63,7 +63,7 @@ public class Game : MonoBehaviour
             {
                 if (blueCards.ActivationCostList.Contains(result))
                 {
-                    blueCards.effectCards();
+                    blueCards.effectCards(p, enemy);
                 }
             }
         }
@@ -81,7 +81,7 @@ public class Game : MonoBehaviour
             {
                 if (redCards.ActivationCostList.Contains(result))
                 {
-                    redCards.effectCards();
+                    redCards.effectCards(p, enemy);
                 }
             }
         }
@@ -98,9 +98,23 @@ public class Game : MonoBehaviour
         {
             if (greenCards.ActivationCostList.Contains(result))
             {
-                greenCards.effectCards();
+                greenCards.effectCards(p, enemy);
             }
         }
+        foreach(PurpleCards purpleCards in cards)
+        {
+            if (purpleCards.ActivationCostList.Contains(result))
+            {
+                purpleCards.effectCards(p, enemy);
+            }
+        }
+
+        Boutique(p);
+
+    }
+
+    public void Boutique(Player p)
+    {
 
     }
 

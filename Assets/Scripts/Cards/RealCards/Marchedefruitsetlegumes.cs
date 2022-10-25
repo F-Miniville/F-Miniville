@@ -16,7 +16,7 @@ public class Marchedefruitsetlegumes : GreenCards
         this.cardName = "Marche de fruits et legumes";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

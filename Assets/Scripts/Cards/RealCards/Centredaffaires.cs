@@ -16,7 +16,7 @@ public class Centredaffaires : PurpleCards
         this.cardName = "Centre d'affaires";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

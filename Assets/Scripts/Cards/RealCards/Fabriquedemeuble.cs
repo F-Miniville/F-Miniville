@@ -16,7 +16,7 @@ public class Fabriquedemeuble : GreenCards
         this.cardName = "Fabrique de meuble";
     }
 
-    public override void effectCards()
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }
