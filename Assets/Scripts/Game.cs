@@ -15,7 +15,8 @@ public class Game : MonoBehaviour
 
     public void Start()
     {
-        while (true)
+        bool fin = true;
+        while (fin)
         {
             foreach (Player p in players)
             {
@@ -28,8 +29,19 @@ public class Game : MonoBehaviour
                     }
                 }
                 Turn(p, enemy);
+                int compteurVictoire = 0;
+                foreach(KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
+                {
+                    if(keyValuePair.Value == true)
+                    {
+                        compteurVictoire++;
+                    }
+                }
+                if(compteurVictoire >= 4)
+                {
+                    fin = false;
+                }
             }
-
         }
 
     }
@@ -63,7 +75,7 @@ public class Game : MonoBehaviour
             {
                 if (blueCards.ActivationCostList.Contains(result))
                 {
-                    blueCards.effectCards();
+                    blueCards.effectCards(p, enemy);
                 }
             }
         }
@@ -81,7 +93,7 @@ public class Game : MonoBehaviour
             {
                 if (redCards.ActivationCostList.Contains(result))
                 {
-                    redCards.effectCards();
+                    redCards.effectCards(p, enemy);
                 }
             }
         }
@@ -98,9 +110,23 @@ public class Game : MonoBehaviour
         {
             if (greenCards.ActivationCostList.Contains(result))
             {
-                greenCards.effectCards();
+                greenCards.effectCards(p, enemy);
             }
         }
+        foreach(PurpleCards purpleCards in cards)
+        {
+            if (purpleCards.ActivationCostList.Contains(result))
+            {
+                purpleCards.effectCards(p, enemy);
+            }
+        }
+
+        Boutique(p);
+
+    }
+
+    public void Boutique(Player p)
+    {
 
     }
 

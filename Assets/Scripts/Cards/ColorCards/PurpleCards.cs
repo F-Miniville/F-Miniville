@@ -14,5 +14,5 @@ public abstract class PurpleCards : Cards
     {
 
     }
-    public abstract void effectCards();
+    public abstract void effectCards(Player p, List<Player> enemy);
 }
