@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4606511750392770787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4606511750392770785}
+  - component: {fileID: 4606511750392770784}
+  m_Layer: 0
+  m_Name: AffichageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4606511750392770785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606511750392770787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.019005194, y: -0.090992466, z: 0.5515287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4606511750392770784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606511750392770787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa36c1963d572a498c76a58ce58deee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boulangerie: {fileID: 21300000, guid: dffb18e17a0e05d4f998dd245e636352, type: 3}
+  cafe: {fileID: 21300000, guid: 54096b75dc4a42d4cbf9ea334f80f85b, type: 3}
+  centredaffaires: {fileID: 21300000, guid: 22e03f334a97143408a4e049f1170821, type: 3}
+  chainedetele: {fileID: 21300000, guid: 148f6144ad44ae444834b2b26f1b6c98, type: 3}
+  champsdeble: {fileID: 21300000, guid: 8c69224e6b9400d4fb4c0445b1205fbb, type: 3}
+  fabriquedemeuble: {fileID: 21300000, guid: 5f457122ff9f1ba4aae8487031891034, type: 3}
+  ferme: {fileID: 21300000, guid: 45ee5a3b0199bc34b9555a97304e2ed7, type: 3}
+  "for\xEAt": {fileID: 21300000, guid: 101c9445699c7d3478271eae8db17a99, type: 3}
+  fromagerie: {fileID: 21300000, guid: c7cf720a47f5719429f31002c2da4c18, type: 3}
+  marchedefuitsetlegumes: {fileID: 21300000, guid: 2646d2267c186f4429149c243ce4d9f0, type: 3}
+  mine: {fileID: 21300000, guid: c24ec1fcfe86a8d43972b00aa63ee508, type: 3}
+  restaurant: {fileID: 21300000, guid: c622976eaaae9e94d9a0efd86a069dde, type: 3}
+  stade: {fileID: 21300000, guid: 4d5d1ac9c6e547a429faacacd14b3492, type: 3}
+  superette: {fileID: 21300000, guid: 04e5faf31410bbb43a38f2194a29eaaf, type: 3}
+  verger: {fileID: 21300000, guid: bf35eb688994f0449ac246f1c97ef3c4, type: 3}
+  centrecommercialRE: {fileID: 21300000, guid: 8e52bc5ae1965fa448e43d14347e81bc, type: 3}
+  centrecommercial: {fileID: 21300000, guid: 7e9546e778706a74eb923688438941c1, type: 3}
+  gareRE: {fileID: 21300000, guid: 1dc8f800d03e3054aa5d956b68a311b0, type: 3}
+  gare: {fileID: 21300000, guid: ac346fe2198c2e0429e8c88cb0b85d61, type: 3}
+  parcdattractionRE: {fileID: 21300000, guid: fbd16d7c75aada741ac6d39b6ff1fd9f, type: 3}
+  parcdattraction: {fileID: 21300000, guid: 06f7915a9ca7f954f960e16e68b16878, type: 3}
+  tourradioRE: {fileID: 21300000, guid: 5561a61147e42654b9b8fbffce2b2323, type: 3}
+  tourradio: {fileID: 21300000, guid: e6ac7e4ebb8268843ab054446cc57e33, type: 3}
+  piece1: {fileID: 0}
+  piece5: {fileID: 0}
+  piece10: {fileID: 0}
+  nothing: {fileID: 0}
