@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class BlueCards : Cards
 {
     List<int> activationCost;
+    public virtual List<int> ActivationCost { get; set; }
 
     int costCards;
 
