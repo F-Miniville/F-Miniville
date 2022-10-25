@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         Gold = 0;
         Name = name;
-        cards = new Dictionary<Cards, int>(){ {boulangerie, 1}, {cafe, 0 }, {centredaffaires, 0 }, {chainedetele, 0 }, {champsdeble, 1 }, {fabriquedemeuble, 0 }, {ferme, 0 }, {forêt, 0 }, {fromagerie, 0 }, {marchedefruitsetlegumes, 0 }, {mine, 0 }, {restaurant, 0 }, {stade, 0 }, {superette, 0 }, {verger, 0 } };
+        cards = new Dictionary<Cards, int>(){ {boulangerie, 1}, {cafe, 0 }, {centredaffaires, 0 }, { chainedetele, 0 }, {champsdeble, 1 }, {fabriquedemeuble, 0 }, {ferme, 0 }, {forêt, 0 }, { fromagerie, 0 }, {marchedefruitsetlegumes, 0 }, {mine, 0 }, {restaurant, 0 }, {stade, 0 }, {superette, 0 }, {verger, 0 } };
         etablissement = new Dictionary<Etablissement, bool>(){ { centrecommercial, false }, { gare, false }, { parcdattraction, false }, { tourradio, false } };
     }
 
