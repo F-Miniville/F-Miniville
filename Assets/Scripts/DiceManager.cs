@@ -29,7 +29,7 @@ public class DiceManager : MonoBehaviour
 
     void Start()
     {
-        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width-40, Screen.height -22, 1));
+        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width-(50* Screen.width/640), Screen.height - (22 * Screen.height / 320), 1));
         this.gameObject.GetComponent<Transform>().position = p;
     }
 }
