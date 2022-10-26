@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Centrecommercial : Etablissement
 {
-    readonly string name;
     readonly int costEtablissement;
 
-    public Centrecommercial()
+    public Centrecommercial(int costEtablissement) : base(costEtablissement)
     {
-        this.name = "Centre commercial";
-        this.costEtablissement = 10;
+        this.costEtablissement = costEtablissement;
     }
 }

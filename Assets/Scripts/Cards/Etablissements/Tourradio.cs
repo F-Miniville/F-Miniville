@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Tourradio : Etablissement
 {
-    readonly string name;
     readonly int costEtablissement;
 
-    public Tourradio()
+    public Tourradio(int costEtablissement) : base(costEtablissement)
     {
-        this.name = "Tour radio";
-        this.costEtablissement = 22;
+        this.costEtablissement = costEtablissement;
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Etablissement : MonoBehaviour
 {
-    string name;
     int costEtablissement;
+
+    public Etablissement(int costEtablissement)
+    {
+        this.costEtablissement = costEtablissement;
+    }
 }

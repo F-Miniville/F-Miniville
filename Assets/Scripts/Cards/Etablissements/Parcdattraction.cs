@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Parcdattraction : Etablissement
 {
-    readonly string name;
     readonly int costEtablissement;
 
-    public Parcdattraction()
+    public Parcdattraction(int costEtablissement) : base(costEtablissement)
     {
-        this.name = "Parc d'attraction";
-        this.costEtablissement = 16;
+        this.costEtablissement = costEtablissement;
     }
 }

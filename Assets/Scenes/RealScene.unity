@@ -420,7 +420,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
 --- !u!1 &1617926688
+=======
+--- !u!1 &934839292
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,30 +432,71 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/Scene1.unity
   - component: {fileID: 1617926689}
   m_Layer: 0
   m_Name: Empty
+=======
+  - component: {fileID: 934839294}
+  - component: {fileID: 934839293}
+  m_Layer: 0
+  m_Name: Joueur
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:Assets/Scene1.unity
 --- !u!4 &1617926689
+=======
+--- !u!114 &934839293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934839292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3dc1c2a17ab2b41ae0d244e734d3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gold: 0
+  cards: []
+  boulangeriePrefab: {fileID: 7408496141683154555, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+  boulangerieObject: {fileID: 0}
+  boulangerieScript: {fileID: 0}
+  fermePrefab: {fileID: 0}
+  fermeObject: {fileID: 0}
+  fermeScript: {fileID: 0}
+--- !u!4 &934839294
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
   m_GameObject: {fileID: 1617926688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 934839292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.953745, y: 0.5942196, z: -0.0017903633}
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
 --- !u!1 &1713996613
+=======
+--- !u!1 &1519176465
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,25 +504,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/Scene1.unity
   - component: {fileID: 1713996614}
   - component: {fileID: 1713996617}
   - component: {fileID: 1713996615}
   m_Layer: 0
   m_Name: Dice2
+=======
+  - component: {fileID: 1519176466}
+  - component: {fileID: 1519176467}
+  m_Layer: 0
+  m_Name: Game Manager
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:Assets/Scene1.unity
 --- !u!4 &1713996614
+=======
+--- !u!4 &1519176466
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
   m_GameObject: {fileID: 1713996613}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 1519176465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.953745, y: 0.5942196, z: -0.0017903633}
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -583,12 +645,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
 --- !u!114 &1778420461
+=======
+--- !u!114 &1519176467
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scene1.unity
   m_GameObject: {fileID: 1778420459}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -623,3 +690,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.15612, y: 3.927446}
   m_EdgeRadius: 0
+=======
+  m_GameObject: {fileID: 1519176465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 7981646417621608940, guid: e4c401df0c5eeec4aa4be22ab77eba9e, type: 3}
+  IAPrefabs: {fileID: 2635748665296002491, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
+  DiceManagerPrefabs: {fileID: 7821621717866183731, guid: b7de1d89df68a7148a9ea47c1250fbf8, type: 3}
+>>>>>>> Stashed changes:Assets/Scenes/RealScene.unity

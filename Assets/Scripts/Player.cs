@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+<<<<<<< Updated upstream
     private Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
     public Dictionary<Cards, int> Cards { get; set; }
 
@@ -54,6 +56,49 @@ public class Player : MonoBehaviour
         etablissement = new Dictionary<Etablissement, bool>(){ { centrecommercial, false }, { gare, false }, { parcdattraction, false }, { tourradio, false } };
     }
 
+=======
+
+
+    [SerializeField] int gold;
+    public int Gold { get; set; }
+
+
+    public List<Etablissement> etablissements;
+
+    public List<Cards> cards;
+
+
+    [SerializeField] GameObject boulangerie;
+    [SerializeField] GameObject champsdeble;
+
+    Boulangerie boulangerieScript;
+    Champsdeble champsdebleScript;
+
+
+
+
+
+    public void Awake()
+    {
+        boulangerieScript = boulangerie.GetComponent<Boulangerie>();
+        champsdebleScript = champsdeble.GetComponent<Champsdeble>();
+
+        cards = new List<Cards>() { champsdebleScript, boulangerieScript };
+        etablissements = new List<Etablissement>();
+
+        foreach(BlueCards blueCards in cards)
+        {
+            ReadCards(blueCards);
+            Debug.Log("Fin BlueCards");
+
+        }
+    }
+
+    public void ReadCards(Cards card)
+    {
+        Debug.Log(card.cardName);
+    }
+>>>>>>> Stashed changes
 
     public void spendGold(int i)
     {
@@ -66,21 +111,5 @@ public class Player : MonoBehaviour
     public void earnGold(int i)
     {
         Gold += i;
-    }
-
-    public void AddCard(Cards C)
-    {
-        cards[C] += 1;
-    }
-
-    public void AddEtablissement(Etablissement E)
-    {
-        etablissement[E] = true;
-    }
-
-    public List<Dice> Dices
-    {
-        get { return dices; }
-        set { dices = value; }
     }
 }

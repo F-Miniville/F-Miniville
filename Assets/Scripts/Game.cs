@@ -6,17 +6,36 @@ using UnityEditor;
 
 public class Game : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public List<Player> players = new List<Player>();
+=======
+>>>>>>> Stashed changes
 
-    public DiceManager diceManager;
-    private bool oneMoreDice;
-    public bool OneMoreDice { get; }
+    //Gestion des joueurs
+    List<GameObject> _PlayersList;
+    GameObject _Player;
+    Player _PlayerScript;
+    [SerializeField] GameObject PlayerPrefab;
+    GameObject _IA;
+    Player _IAScript;
+    [SerializeField] GameObject IAPrefabs;
+
+    //Gestion des dé
+    GameObject _DiceManager;
+    DiceManager _DiceManagerScript;
+    [SerializeField] GameObject DiceManagerPrefabs;
+
+
 
     public void Start()
     {
-        bool fin = true;
-        while (fin)
+        _PlayersList = new List<GameObject>() { PlayerPrefab, IAPrefabs };
+
+        _Player = _PlayersList[0];
+        _IA = _PlayersList[1];
+        foreach(GameObject player in _PlayersList)
         {
+<<<<<<< Updated upstream
             foreach (Player p in players)
             {
                 Debug.Log("Creation liste enemy");
@@ -44,14 +63,18 @@ public class Game : MonoBehaviour
                     fin = false;
                 }
             }
+=======
+            Instantiate(player);
+>>>>>>> Stashed changes
         }
 
+        _PlayerScript = _Player.GetComponent<Player>();
+        _IAScript = _IA.GetComponent<Player>();
     }
 
-
-
-    public void Turn(Player p, List<Player> enemy)
+    public void Update()
     {
+<<<<<<< Updated upstream
         List<Cards> cards = new List<Cards>();
         List<Player> newEnemy = new List<Player>();
 
@@ -87,15 +110,29 @@ public class Game : MonoBehaviour
                 }
             }
             foreach (BlueCards blueCards in cards)
+=======
+        do
+        {
+            TourPlayer();
+            if(CheckWin(_PlayerScript) < 4)
             {
-                if (blueCards.ActivationCost.Contains(result))
-                {
-                    blueCards.effectCards(p, enemy);
-                }
+                break;    
             }
+
+            TourIA();
+            if (CheckWin(_IAScript) < 4)
+>>>>>>> Stashed changes
+            {
+                break;
+            }
+
         }
+        while (true);
 
+        Debug.Log("Fin boucle tour");
+        //Condition de fin
 
+<<<<<<< Updated upstream
         foreach(Player player in enemy)
         {
             newEnemy.Clear();
@@ -147,18 +184,34 @@ public class Game : MonoBehaviour
             }
         }
         foreach (PurpleCards purpleCards in cards)
-        {
-            if (purpleCards.ActivationCost.Contains(result))
-            {
-                purpleCards.effectCards(p, enemy);
-            }
-        }
-
-        Boutique(p);
+=======
+        
 
     }
 
-    public void Boutique(Player p)
+    //Vérifie la condition de victoire du joueur donné
+    public int CheckWin(Player p)
+    {
+        int win = 0;
+
+        foreach(Etablissement etablissement in p.etablissements)
+>>>>>>> Stashed changes
+        {
+            win++;
+        }
+
+        return win;
+    }
+
+    public void TourPlayer()
+    {
+        foreach(BlueCards blueCards in _PlayerScript.cards)
+        {
+            Debug.Log("BlueCards");
+        }
+    }
+
+    public void TourIA()
     {
 
     }

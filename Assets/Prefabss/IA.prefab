@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< Updated upstream
---- !u!1 &4661220280210455570
-=======
---- !u!1 &7981646417621608940
->>>>>>> Stashed changes
+--- !u!1 &2635748665296002491
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,65 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
-  - component: {fileID: 6277585708248668913}
-  - component: {fileID: 3779266086307259915}
-=======
-  - component: {fileID: 7981646417621608930}
-  - component: {fileID: 3955245359954601881}
->>>>>>> Stashed changes
+  - component: {fileID: 6651389139108288873}
+  - component: {fileID: 8618666936902298855}
   m_Layer: 0
-  m_Name: Player
+  m_Name: IA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!4 &6277585708248668913
-=======
---- !u!4 &7981646417621608930
->>>>>>> Stashed changes
+--- !u!4 &6651389139108288873
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 4661220280210455570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06998651, y: -0.39138022, z: 0.031396165}
-=======
-  m_GameObject: {fileID: 7981646417621608940}
+  m_GameObject: {fileID: 2635748665296002491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.953745, y: 0.5942196, z: -0.0017903633}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!114 &3779266086307259915
-=======
---- !u!114 &3955245359954601881
->>>>>>> Stashed changes
+--- !u!114 &8618666936902298855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 4661220280210455570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5fb04a49f0012b43b37a109e5585974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards: {fileID: 0}
-=======
-  m_GameObject: {fileID: 7981646417621608940}
+  m_GameObject: {fileID: 2635748665296002491}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f34d5db8962158c4d8eb9c6342e274f8, type: 3}
@@ -81,4 +49,3 @@ MonoBehaviour:
   cards: []
   boulangerie: {fileID: 7408496141683154555, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
   champsdeble: {fileID: 7609703465408415698, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
->>>>>>> Stashed changes

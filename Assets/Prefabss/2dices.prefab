@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 7821621717866183731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.98, y: 5.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7821621715842129558}
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975d823ae429dce4da55788ffe2580bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 0}
+  cameraScript: {fileID: 0}
   Dice1: {fileID: 7821621715842129545}
   Dice2: {fileID: 7821621717663348127}
 --- !u!1001 &9200830817617508258

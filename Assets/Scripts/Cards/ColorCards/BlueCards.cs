@@ -8,7 +8,7 @@ public abstract class BlueCards : Cards
     public List<int> ActivationCost { get; set; }
 
     int costCards;
-    public BlueCards(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public BlueCards(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
     {
 
     }

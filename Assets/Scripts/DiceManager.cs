@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DiceManager : MonoBehaviour
 {
-    public Camera camera;
+    public GameObject cameraObject;
+    public Camera cameraScript;
     public Dice Dice1;
     public Dice Dice2;
     private Game game;
@@ -20,16 +21,23 @@ public class DiceManager : MonoBehaviour
         {
             alreadyClick = true;
             result += Dice1.RollDices();
-            if (game.OneMoreDice)
+            if (true)
             {
                 result += Dice2.RollDices();
             }
         }
     }
 
-    void Start()
+    void Awake()
     {
+<<<<<<< Updated upstream
         Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width-40, Screen.height -22, 1));
+=======
+        cameraObject = GameObject.FindWithTag("MainCamera");
+        cameraScript = cameraObject.GetComponent<Camera>();
+
+        Vector3 p = cameraScript.ScreenToWorldPoint(new Vector3(Screen.width-(50* Screen.width/640), Screen.height - (22 * Screen.height / 320), 1));
+>>>>>>> Stashed changes
         this.gameObject.GetComponent<Transform>().position = p;
     }
 }
