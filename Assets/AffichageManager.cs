@@ -59,7 +59,7 @@ public class AffichageManager : MonoBehaviour
                     SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
                     newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
                     Debug.Log(newObj.GetComponent<SpriteRenderer>().bounds.size.x);
-                    Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - ((newObj.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * 2.5f) * 0.3f * (4f - j)) / 2, Screen.height / 5 * (4 - ligne), 1));
+                    Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - newObj.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j*(0.5f*Screen.width/640)) + (Screen.width / 5)*1.57f, Screen.height / 5 * (4 - ligne), 1));
                     newObj.GetComponent<Transform>().position = p;
                     newObj.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 }
