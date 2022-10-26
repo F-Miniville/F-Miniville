@@ -31,15 +31,19 @@ public class Game : MonoBehaviour
                 Debug.Log("Appelle de la fonction Turn()");
                 Turn(p, enemy);
                 int compteurVictoire = 0;
-                foreach(KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
+                foreach (KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
                 {
-                    if(keyValuePair.Value == true)
+                    if (keyValuePair.Value == true)
                     {
                         compteurVictoire++;
                     }
                 }
 
+<<<<<<< Updated upstream
                 if(compteurVictoire >= 4)
+=======
+                if (compteurVictoire >= 4)
+>>>>>>> Stashed changes
                 {
                     fin = false;
                 }
@@ -79,14 +83,14 @@ public class Game : MonoBehaviour
                 }
             }
             cards.Clear();
-            foreach(KeyValuePair<Cards, int> keyValuePair in player.Cards)
+            foreach (KeyValuePair<Cards, int> keyValuePair in player.Cards)
             {
-                for(int i = 0; i < keyValuePair.Value; i++)
+                for (int i = 0; i < keyValuePair.Value; i++)
                 {
                     cards.Add(keyValuePair.Key);
                 }
             }
-            foreach(BlueCards blueCards in cards)
+            foreach (BlueCards blueCards in cards)
             {
                 if (blueCards.ActivationCost.Contains(result))
                 {
@@ -96,7 +100,11 @@ public class Game : MonoBehaviour
         }
 
 
+<<<<<<< Updated upstream
         foreach(Player player in enemy)
+=======
+        foreach (Player player in enemy)
+>>>>>>> Stashed changes
         {
             newEnemy.Clear();
             foreach (Player e in players)
@@ -139,14 +147,14 @@ public class Game : MonoBehaviour
                 cards.Add(keyValuePair.Key);
             }
         }
-        foreach(GreenCards greenCards in cards)
+        foreach (GreenCards greenCards in cards)
         {
             if (greenCards.ActivationCost.Contains(result))
             {
                 greenCards.effectCards(p, enemy);
             }
         }
-        foreach(PurpleCards purpleCards in cards)
+        foreach (PurpleCards purpleCards in cards)
         {
             if (purpleCards.ActivationCost.Contains(result))
             {

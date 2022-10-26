@@ -21,6 +21,6 @@ public class Boulangerie : GreenCards
 
     public override void effectCards(Player p, List<Player> enemy)
     {
-
+        Debug.Log("Boulangerie");
     }
 }
