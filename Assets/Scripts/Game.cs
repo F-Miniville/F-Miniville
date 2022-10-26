@@ -6,10 +6,6 @@ using UnityEditor;
 
 public class Game : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    public List<Player> players = new List<Player>();
-=======
->>>>>>> Stashed changes
 
     //Gestion des joueurs
     List<GameObject> _PlayersList;
@@ -35,37 +31,7 @@ public class Game : MonoBehaviour
         _IA = _PlayersList[1];
         foreach(GameObject player in _PlayersList)
         {
-<<<<<<< Updated upstream
-            foreach (Player p in players)
-            {
-                Debug.Log("Creation liste enemy");
-                List<Player> enemy = new List<Player>();
-                foreach (Player e in players)
-                {
-                    if (e != p)
-                    {
-                        enemy.Add(e);
-                    }
-                }
-                Debug.Log("Appelle de la fonction Turn()");
-                Turn(p, enemy);
-                int compteurVictoire = 0;
-                foreach (KeyValuePair<Etablissement, bool> keyValuePair in p.Etablissement)
-                {
-                    if (keyValuePair.Value == true)
-                    {
-                        compteurVictoire++;
-                    }
-                }
-
-                if (compteurVictoire >= 4)
-                {
-                    fin = false;
-                }
-            }
-=======
             Instantiate(player);
->>>>>>> Stashed changes
         }
 
         _PlayerScript = _Player.GetComponent<Player>();
@@ -74,118 +40,6 @@ public class Game : MonoBehaviour
 
     public void Update()
     {
-<<<<<<< Updated upstream
-        List<Cards> cards = new List<Cards>();
-        List<Player> newEnemy = new List<Player>();
-
-        Debug.Log("Calcule result Dices");
-        int result;
-        oneMoreDice = false;
-        List<Dice> dice = p.Dices;
-        if (dice.Count > 1)
-        {
-            oneMoreDice = true;
-        }
-        diceManager.AlreadyClick = false;
-        while (diceManager.Result == 0) { Debug.Log("Wait Result"); }
-        result = diceManager.Result;
-        Debug.Log("Fin Calcule result Dices");
-
-        foreach (Player player in players)
-        {
-            newEnemy.Clear();
-            foreach (Player e in players)
-            {
-                if (e != player)
-                {
-                    newEnemy.Add(e);
-                }
-            }
-            cards.Clear();
-            foreach (KeyValuePair<Cards, int> keyValuePair in player.Cards)
-            {
-                for (int i = 0; i < keyValuePair.Value; i++)
-                {
-                    cards.Add(keyValuePair.Key);
-                }
-            }
-            foreach (BlueCards blueCards in cards)
-=======
-        do
-        {
-            TourPlayer();
-            if(CheckWin(_PlayerScript) < 4)
-            {
-                break;    
-            }
-
-            TourIA();
-            if (CheckWin(_IAScript) < 4)
->>>>>>> Stashed changes
-            {
-                break;
-            }
-
-        }
-        while (true);
-
-        Debug.Log("Fin boucle tour");
-        //Condition de fin
-
-<<<<<<< Updated upstream
-        foreach(Player player in enemy)
-        {
-            newEnemy.Clear();
-            foreach (Player e in players)
-            {
-                if (e != player)
-                {
-                    newEnemy.Add(e);
-                }
-            }
-            cards.Clear();
-            foreach (KeyValuePair<Cards, int> keyValuePair in player.Cards)
-            {
-                for (int i = 0; i < keyValuePair.Value; i++)
-                {
-                    cards.Add(keyValuePair.Key);
-                }
-            }
-            foreach (RedCards redCards in cards)
-            {
-                if (redCards.ActivationCost.Contains(result))
-                {
-                    redCards.effectCards(p, enemy);
-                }
-            }
-        }
-
-        newEnemy.Clear();
-        foreach (Player e in players)
-        {
-            if (e != p)
-            {
-                newEnemy.Add(e);
-            }
-        }
-        cards.Clear();
-        foreach (KeyValuePair<Cards, int> keyValuePair in p.Cards)
-        {
-            for (int i = 0; i < keyValuePair.Value; i++)
-            {
-                cards.Add(keyValuePair.Key);
-            }
-        }
-        foreach (GreenCards greenCards in cards)
-        {
-            if (greenCards.ActivationCost.Contains(result))
-            {
-                greenCards.effectCards(p, enemy);
-            }
-        }
-        foreach (PurpleCards purpleCards in cards)
-=======
-        
 
     }
 
@@ -195,7 +49,6 @@ public class Game : MonoBehaviour
         int win = 0;
 
         foreach(Etablissement etablissement in p.etablissements)
->>>>>>> Stashed changes
         {
             win++;
         }

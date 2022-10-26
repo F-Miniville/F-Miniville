@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Verger : BlueCards
 {
-    List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
 
-    int costCards;
-    public int CostCards { get; set; }
 
-    string cardName;
-    public string CardName { get; set; }
-
-    public Verger(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Verger(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
     {
-        this.activationCost = new List<int>() { 10 };
-        this.costCards = 3;
+
     }
 
     public override void effectCards(Player p, List<Player> enemy)
