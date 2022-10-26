@@ -9,11 +9,9 @@ public abstract class RedCards : Cards
 
     int costCards;
 
-    string cardName;
-    public override string CardName { get; set; }
     public RedCards(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
-        this.cardName = cardName;
+
     }
     public abstract void effectCards(Player p, List<Player> enemy);
 }

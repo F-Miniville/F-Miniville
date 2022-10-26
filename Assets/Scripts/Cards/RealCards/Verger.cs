@@ -17,7 +17,6 @@ public class Verger : BlueCards
     {
         this.activationCost = new List<int>() { 10 };
         this.costCards = 3;
-        this.cardName = "Verger";
     }
 
     public override void effectCards(Player p, List<Player> enemy)
