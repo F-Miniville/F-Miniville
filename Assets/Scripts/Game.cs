@@ -39,11 +39,7 @@ public class Game : MonoBehaviour
                     }
                 }
 
-<<<<<<< Updated upstream
-                if(compteurVictoire >= 4)
-=======
                 if (compteurVictoire >= 4)
->>>>>>> Stashed changes
                 {
                     fin = false;
                 }
@@ -100,11 +96,7 @@ public class Game : MonoBehaviour
         }
 
 
-<<<<<<< Updated upstream
         foreach(Player player in enemy)
-=======
-        foreach (Player player in enemy)
->>>>>>> Stashed changes
         {
             newEnemy.Clear();
             foreach (Player e in players)

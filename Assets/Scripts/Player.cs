@@ -19,19 +19,11 @@ public class Player : MonoBehaviour
    
 
     public Boulangerie boulangerie = new Boulangerie(number, 2, "Boulangerie");
-<<<<<<< Updated upstream
-    public Cafe cafe = new Cafe(number, 2, "");
-    public Centredaffaires centredaffaires = new Centredaffaires(number, 2, "");
-    public Chainedetele chainedetele = new Chainedetele(number, 2, "");
-    public Champsdeble champsdeble = new Champsdeble(number, 2, "Champs de blé");
-    public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble(number, 2, "");
-=======
     public Cafe cafe = new Cafe(number, 2, "Cafe");
     public Centredaffaires centredaffaires = new Centredaffaires(number, 2, "centre d'affaires");
     public Chainedetele chainedetele = new Chainedetele(number, 2, "Chaine de tele");
     public Champsdeble champsdeble = new Champsdeble(number, 2, "Champs de blé");
     public Fabriquedemeuble fabriquedemeuble = new Fabriquedemeuble(number, 2, "Fabrique de meuble");
->>>>>>> Stashed changes
     public Ferme ferme = new Ferme(number, 2, "");
     public Forêt forêt = new Forêt(number, 2, "");
     public Fromagerie fromagerie = new Fromagerie(number, 2, "");
