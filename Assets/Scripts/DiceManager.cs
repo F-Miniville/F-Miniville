@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DiceManager : MonoBehaviour
 {
+    public Camera camera;
     public Dice Dice1;
     public Dice Dice2;
     private Game game;
@@ -24,5 +25,11 @@ public class DiceManager : MonoBehaviour
                 result += Dice2.RollDices();
             }
         }
+    }
+
+    void Start()
+    {
+        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width-40, Screen.height -22, 1));
+        this.gameObject.GetComponent<Transform>().position = p;
     }
 }
