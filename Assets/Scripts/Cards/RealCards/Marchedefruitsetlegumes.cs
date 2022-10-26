@@ -11,7 +11,7 @@ public class Marchedefruitsetlegumes : GreenCards
     public int CostCards { get; set; }
 
     string cardName;
-    public override string CardName { get; set; }
+    public string CardName { get; set; }
 
     public Marchedefruitsetlegumes(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {

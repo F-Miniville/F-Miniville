@@ -50,7 +50,7 @@ public class AffichageManager : MonoBehaviour
         {
             if (card.Value != 0)
             {
-                string name = card.Key.CardName;
+                string name = card.Key.cardName;
 
                 for (int i = 0; i < card.Value; i++)
                 {

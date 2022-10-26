@@ -11,7 +11,7 @@ public class Champsdeble : BlueCards
     public int CostCards { get; set; }
 
     string cardName;
-    public override string CardName { get; set; }
+    public string CardName { get; set; }
 
     public Champsdeble(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
     {
@@ -21,6 +21,6 @@ public class Champsdeble : BlueCards
 
     public override void effectCards(Player p, List<Player> enemy)
     {
-
+        Debug.Log("effect Champs de ble");
     }
 }

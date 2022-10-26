@@ -9,8 +9,7 @@ public abstract class Cards
 
     int costCards;
 
-    string cardName;
-    public virtual string CardName { get; set; }
+    public string cardName;
 
     public Cards(List<int> activationCost, int costCards, string cardName)
     {
