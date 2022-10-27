@@ -9,7 +9,7 @@ public class Cafe : RedCards
 
     }
 
-    public override void effectCards(Player p, List<Player> enemy)
+    public override void effectCards(Player p, List<Player> enemy, int result)
     {
         Debug.Log("Cafe effectCards");
     }
