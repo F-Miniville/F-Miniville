@@ -80,7 +80,11 @@ public class Game : MonoBehaviour
         int win = 0;
         Player p = player.GetComponent<Player>();
         
-        ///////////// A COMPLETER ///////////////////////////////////////////////
+        foreach(Etablissement etablissement in p.etablissements)
+        {
+            win++;
+        }
+
         if(win >= 4)
             _win = true;
 
