@@ -7,6 +7,18 @@ using System.Text;
 
 public class Game : MonoBehaviour
 {
+    static public Game instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Debug.Log("Il y a plus d'une Instance de Game dans la scene");
+            return;
+        }
+        instance = this;
+    }
+
     //Gestion des joueurs
     List<GameObject> _PlayersList;
     [SerializeField] GameObject PlayerPrefab;
@@ -68,7 +80,11 @@ public class Game : MonoBehaviour
         int win = 0;
         Player p = player.GetComponent<Player>();
         
-        ///////////// A COMPLETER ///////////////////////////////////////////////
+        foreach(Etablissement etablissement in p.etablissements)
+        {
+            win++;
+        }
+
         if(win >= 4)
             _win = true;
 
