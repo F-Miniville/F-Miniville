@@ -11,6 +11,7 @@ public class Centredaffaires : PurpleCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Centredaffaires effectCards");
+        if (activationCost.Contains(result))
+            Debug.Log("Vous pouvez échanger avec  le joueur de votre choix un établissement qui ne soit pas de type violet");
     }
 }
