@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DiceManager : MonoBehaviour
 {
-    public Camera camera;
     public Dice Dice1;
     public Dice Dice2;
+
+    [SerializeField] GameObject cameraObject;
+    [SerializeField] Camera cameraScript;
 
     public int result;
     public bool alreadyClick = true;
@@ -32,7 +34,7 @@ public class DiceManager : MonoBehaviour
         {
             alreadyClick = true;
             result += Dice1.RollDices();
-            if (game.OneMoreDice)
+            if (true)
             {
                 result += Dice2.RollDices();
             }
@@ -40,13 +42,4 @@ public class DiceManager : MonoBehaviour
         Debug.Log("Get result Roll : " + result);
         return result;
     }
-
-<<<<<<< Updated upstream
-    void Start()
-    {
-        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width-(50* Screen.width/640), Screen.height - (22 * Screen.height / 320), 1));
-        this.gameObject.GetComponent<Transform>().position = p;
-    }
-=======
->>>>>>> Stashed changes
 }

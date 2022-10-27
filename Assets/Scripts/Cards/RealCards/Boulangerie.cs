@@ -4,27 +4,13 @@ using UnityEngine;
 
 public class Boulangerie : GreenCards
 {
-    List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
-
-    int costCards;
-    public int CostCards { get; set; }
-
-    string cardName;
-    public string CardName { get; set; }
-
-    public Boulangerie(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Boulangerie(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
     {
-        this.activationCost = new List<int>() { 2, 3};
-        this.costCards = 1;
+
     }
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-<<<<<<< Updated upstream
-
-=======
         Debug.Log("Boulangerie effectCards");
->>>>>>> Stashed changes
     }
 }

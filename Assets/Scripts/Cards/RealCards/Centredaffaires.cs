@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class Centredaffaires : PurpleCards
 {
-    List<int> activationCost;
-    public new List<int> ActivationCost { get; set; }
-
-    int costCards;
-    public int CostCards { get; set; }
-
-    string cardName;
-    public string CardName { get; set; }
-    public Centredaffaires(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+    public Centredaffaires(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
     {
-        this.activationCost = new List<int>() { 6 };
-        this.costCards = 8;
+
     }
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-
+        Debug.Log("Centredaffaires effectCards");
     }
 }
