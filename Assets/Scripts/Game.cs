@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     List<GameObject> _PlayersList;
     [SerializeField] GameObject PlayerPrefab;
     [SerializeField] GameObject IAPrefabs;
-    [SerializeField] GameObject playerTurn;
+    public GameObject playerTurn;
     [SerializeField] List<GameObject> _PlayerListReel;
 
     //Gestion des dé
