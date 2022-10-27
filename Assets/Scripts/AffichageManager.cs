@@ -51,80 +51,92 @@ public class AffichageManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    /*    public void RefreshHand()
+    public void RefreshHand(List<GameObject> LP)
+    {
+        List<string> alreadydo = new List<string>();
+        Dictionary<string, int> nbr = CreateDictionnary(LP);
+        int j = 1;
+        int ligne = 1;
+        foreach (GameObject P in LP)
         {
-            P = new Pile();
-            strSprite = new Dictionary<string, Sprite>() { { "Boulangerie", boulangerie }, { "Cafe", cafe }, { "Centre d'affaires", centredaffaires }, { "Chaine de tele", chainedetele }, { "Champs de blé", champsdeble }, { "Fabrique de meuble", fabriquedemeuble }, { "Ferme", ferme }, { "Forêt", forêt }, { "Fromagerie", fromagerie }, { "Marche de fruits et legumes", marchedefuitsetlegumes }, { "Mine", mine }, { "Restaurant", restaurant }, { "Stade", stade }, { "Superette", superette }, { "Verger", verger } };
-            int j = 1;
-            int ligne = 1;
-            foreach (var card in P.cards)
+            if (!alreadydo.Contains(P.name))
             {
-                if (card.Value != 0)
+                for (int i = 0; i < nbr[P.name]; i++)
                 {
-                    string name = card.Key.cardName;
-
-                    for (int i = 0; i < card.Value; i++)
-                    {
-                        GameObject newObj = new GameObject(name, typeof(infoCard));
-                        newObj.GetComponent<infoCard>().name = name;
-                        newObj.GetComponent<infoCard>().Square = Square;
-                        SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
-                        BoxCollider2D bc = newObj.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
-                        bc.size = new Vector2(5, 8);
-                        bc.isTrigger = true;
-                        newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
-                        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - newObj.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10));
-                        newObj.GetComponent<Transform>().position = p;
-                        newObj.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
-
-                    }
+                    Instantiate(P, camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10)), Quaternion.identity);
+                    infoCard inf = P.AddComponent<infoCard>();
+                    inf.name = P.name;
+                    inf.Square = Square;
+                    BoxCollider2D bc = P.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+                    bc.size = new Vector2(5, 8);
+                    bc.isTrigger = true;
+                    P.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                     j++;
+
+                    alreadydo.Add(P.name);
                 }
 
             }
+
+
+
         }
+    }
 
-        public void RefreshPile()
+
+
+    public void RefreshPile(List<Pile> LP)
+    {
+        int j = 1;
+        int ligne = 1;
+        foreach (Pile P in LP)
         {
-            P = new Pile();
-            strSprite = new Dictionary<string, Sprite>() { { "Boulangerie", boulangerie }, { "Cafe", cafe }, { "Centre d'affaires", centredaffaires }, { "Chaine de tele", chainedetele }, { "Champs de blé", champsdeble }, { "Fabrique de meuble", fabriquedemeuble }, { "Ferme", ferme }, { "Forêt", forêt }, { "Fromagerie", fromagerie }, { "Marche de fruits et legumes", marchedefuitsetlegumes }, { "Mine", mine }, { "Restaurant", restaurant }, { "Stade", stade }, { "Superette", superette }, { "Verger", verger } };
-            int j = 1;
-            int ligne = 1;
-            foreach (var card in P.cards)
+            for (int i = 0; i < P.cardsInPile.Count; i++)
             {
-                if (card.Value != 0)
-                {
-                    string name = card.Key.cardName;
+                GameObject card = P.cardsInPile[i];
+                Instantiate(card, camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - card.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne) - i * 6f, 1)), Quaternion.identity);
+                infoCard inf = card.AddComponent<infoCard>();
+                inf.name = card.name;
+                inf.Square = Square;
+                BoxCollider2D bc = card.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+                bc.size = new Vector2(5, 8);
+                bc.isTrigger = true;
+                card.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
-                    for (int i = 0; i < card.Value; i++)
-                    {
-                        GameObject newObj = new GameObject(name, typeof(infoCard));
-                        newObj.GetComponent<infoCard>().name = name;
-                        newObj.GetComponent<infoCard>().Square = Square;
-                        SpriteRenderer sc = newObj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
-                        BoxCollider2D bc = newObj.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
-                        bc.size = new Vector2(5, 8);
-                        bc.isTrigger = true;
-                        newObj.GetComponent<SpriteRenderer>().sprite = strSprite[name];
-                        Vector3 p = camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - newObj.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne) - i * 6f, 1));
-                        newObj.GetComponent<Transform>().position = p;
-                        newObj.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            }
+            if (j % 7 == 0)
+            {
+                ligne += 1;
+                j = 0;
+            }
+            j++;
 
-                    }
-                    if (j % 7 == 0)
-                    {
-                        ligne += 1;
-                        j = 0;
-                    }
-                    j++;
-                }
 
+        }
+    }
+
+    private Dictionary<string, int> CreateDictionnary(List<GameObject> list)
+    {
+        Dictionary<string, int> dict = new Dictionary<string, int>();
+
+        foreach (GameObject c in list)
+        {
+            if (dict.ContainsKey(c.name))
+            {
+                dict[c.name] += 1;
+            }
+            else
+            {
+                dict[c.name] = 1;
             }
         }
 
-    */
+        return dict;
+    }
+
+
 
 }
