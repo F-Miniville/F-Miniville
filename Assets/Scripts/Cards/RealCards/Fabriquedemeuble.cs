@@ -11,6 +11,15 @@ public class Fabriquedemeuble : GreenCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Fabriquedemeuble effectCards");
+        if (activationCost.Contains(result))
+        {
+            int i = 0;
+            foreach (Mine mine in p.cards)
+                i++;
+            foreach (Forêt forêt in p.cards)
+                i++;
+
+            p.earnGold(i);
+        }
     }
 }

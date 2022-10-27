@@ -11,6 +11,9 @@ public class Mine : BlueCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Mine effectCards");
+        if (activationCost.Contains(result))
+        {
+            p.earnGold(5);
+        }
     }
 }

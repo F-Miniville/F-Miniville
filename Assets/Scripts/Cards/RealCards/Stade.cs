@@ -11,6 +11,25 @@ public class Stade : BlueCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Stade effectCards");
+        if (activationCost.Contains(result))
+        {
+            int totalGold = 0;
+            foreach (Player pe in enemy)
+            {
+                int peGold = pe.Gold;
+                if (peGold >= 2)
+                {
+                    totalGold += 2;
+                    pe.spendGold(2);
+                }
+                else if (peGold == 1)
+                {
+                    totalGold += 1;
+                    pe.spendGold(1);
+                }
+            }
+
+            p.earnGold(totalGold);
+        }
     }
 }

@@ -11,6 +11,26 @@ public class Restaurant : RedCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Restaurant effectCards");
+        if (activationCost.Contains(result))
+        {
+            
+            int totalGold = 0;
+            GameObject currentPlayer = Game.instance.playerTurn;
+            Player currentPlayerScript = currentPlayer.GetComponent<Player>();
+
+            int peGold = currentPlayerScript.Gold;
+            if (peGold >= 2)
+            {
+                totalGold += 2;
+                currentPlayerScript.spendGold(2);
+            }
+            else if (peGold == 1)
+            {
+                totalGold += 1;
+                currentPlayerScript.spendGold(1);
+            }
+
+            p.earnGold(totalGold);
+        }
     }
 }
