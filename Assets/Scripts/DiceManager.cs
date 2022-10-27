@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class DiceManager : MonoBehaviour
 {
+    static public DiceManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("Il y a plus d'une Instance de DiceManager dans la scene");
+            return;
+        }
+        instance = this;
+    }
+
     public Dice Dice1;
     public Dice Dice2;
 
     [SerializeField] GameObject cameraObject;
     [SerializeField] Camera cameraScript;
+
+    public Animator animatorDice1;
+    public Animator animatorDice2;
 
     public int result;
     public bool alreadyClick = true;
@@ -33,12 +48,17 @@ public class DiceManager : MonoBehaviour
         if (!alreadyClick)
         {
             alreadyClick = true;
-            result += Dice1.RollDices();
+            int resultDice1 = Dice1.RollDices();
+            animatorDice1.SetInteger("FaceDice1", resultDice1);
+            result += resultDice1;
             if (true)
             {
-                result += Dice2.RollDices();
+                int resultDice2 = Dice2.RollDices();
+                animatorDice2.SetInteger("FaceDice2", resultDice2);
+                result += resultDice2;
             }
         }
+        
         Debug.Log("Get result Roll : " + result);
         return result;
     }
