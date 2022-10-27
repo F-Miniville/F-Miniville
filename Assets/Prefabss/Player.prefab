@@ -47,5 +47,9 @@ MonoBehaviour:
   gold: 0
   etablissements: []
   cards: []
-  boulangerie: {fileID: 7408496141683154555, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
-  champsdeble: {fileID: 7609703465408415698, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
+  boulangerie: {fileID: 2891134883580391916, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+  champsdeble: {fileID: 805396943213594631, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
+  blueCards: []
+  greenCards: []
+  redCards: []
+  purpleCards: []
