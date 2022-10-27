@@ -11,6 +11,13 @@ public class Fromagerie : GreenCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Fromagerie effectCards");
+        if (activationCost.Contains(result))
+        {
+            int i = 0;
+            foreach (Ferme ferme in p.cards)
+                i++;
+
+            p.earnGold(i);
+        }
     }
 }

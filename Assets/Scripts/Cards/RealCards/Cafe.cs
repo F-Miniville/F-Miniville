@@ -11,6 +11,18 @@ public class Cafe : RedCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Cafe effectCards");
+        if (activationCost.Contains(result))
+        {
+            GameObject currentPlayer = Game.instance.playerTurn;
+            Player currentPlayerScript = currentPlayer.GetComponent<Player>();
+
+            int peGold = currentPlayerScript.Gold;
+
+            if (peGold >= 1)
+            {
+                p.earnGold(1);
+                currentPlayerScript.spendGold(1);
+            }
+        }
     }
 }

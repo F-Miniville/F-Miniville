@@ -11,6 +11,9 @@ public class Boulangerie : GreenCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Boulangerie effectCards");
+        if (activationCost.Contains(result))
+        {
+            p.earnGold(1);
+        }
     }
 }

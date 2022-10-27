@@ -11,6 +11,9 @@ public class Forêt : BlueCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Forêt effectCards");
+        if (activationCost.Contains(result))
+        {
+            p.earnGold(1);
+        }
     }
 }

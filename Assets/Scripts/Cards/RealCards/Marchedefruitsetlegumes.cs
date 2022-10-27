@@ -11,6 +11,15 @@ public class Marchedefruitsetlegumes : GreenCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
-        Debug.Log("Marchedefruitsetlegumes effectCards");
+        if (activationCost.Contains(result))
+        {
+            int i = 0;
+            foreach (Champsdeble champsdeble in p.cards)
+                i++;
+            foreach (Verger verger in p.cards)
+                i++;
+
+            p.earnGold(i);
+        }
     }
 }
