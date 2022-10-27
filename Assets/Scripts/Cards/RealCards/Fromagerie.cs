@@ -18,7 +18,7 @@ public class Fromagerie : GreenCards
         this.costCards = 5;
     }
 
-    public override void effectCards(Player p, List<Player> enemy, int result)
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

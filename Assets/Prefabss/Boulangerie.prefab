@@ -84,22 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< Updated upstream
-=======
---- !u!114 &-1631351037718875664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7408496141683154555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747505972f801b649bd6bff040c9395e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationCost: 
-  costCards: 0
-  cardName: Boulangerie
-  color: Green
->>>>>>> Stashed changes

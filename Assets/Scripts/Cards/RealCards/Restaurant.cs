@@ -20,7 +20,7 @@ public class Restaurant : RedCards
         this.cardName = "Restaurant";
     }
 
-    public override void effectCards(Player p, List<Player> enemy, int result)
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

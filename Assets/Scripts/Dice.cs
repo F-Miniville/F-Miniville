@@ -18,31 +18,24 @@ public class Dice : MonoBehaviour
     public int RollDices()
     {
         finalSide = 0;
-
-        int randomDiceSide = 0;
-
-        randomDiceSide = Random.Range(0, 5);
-
-        finalSide = randomDiceSide + 1;
-
-        Debug.Log(finalSide);
+        StartCoroutine("RollTheDice");
         return finalSide;
     }
 
-    //private IEnumerable RollTheDice()
-    //{
-    //    int randomDiceSide = 0;
+    private IEnumerator RollTheDice()
+    {
+        int randomDiceSide = 0;
 
-    //    for (int i = 0; i <= 20; i++)
-    //    {
-    //        randomDiceSide = Random.Range(0, 5);
-    //        rend.sprite = diceSides[randomDiceSide];
-    //        yield return new WaitForSeconds(0f);
-    //    }
+        for (int i = 0; i <= 20; i++)
+        {
+            randomDiceSide = Random.Range(0, 5);
+            rend.sprite = diceSides[randomDiceSide];
+            yield return new WaitForSeconds(0.05f);
+        }
 
-    //    finalSide = randomDiceSide + 1;
-    //    Debug.Log(finalSide); // Show final dice value in Console
-    //}
+        finalSide = randomDiceSide + 1;
+        Debug.Log(finalSide); // Show final dice value in Console
+    }
 
     public SpriteRenderer Rend
     {

@@ -19,7 +19,7 @@ public class Ferme : BlueCards
         this.costCards = 1;
     }
 
-    public override void effectCards(Player p, List<Player> enemy, int result)
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }

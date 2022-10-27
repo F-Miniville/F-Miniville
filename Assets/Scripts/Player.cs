@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-<<<<<<< Updated upstream
     private Dictionary<Cards, int> cards = new Dictionary<Cards, int>();
     public Dictionary<Cards, int> Cards { get; set; }
 
@@ -56,78 +55,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         dices.Add(firstDice);
-=======
-
-    [SerializeField] int gold;
-    public int Gold { get; set; }
-
-
-    public List<Etablissement> etablissements;
-
-    public List<Cards> cards;
-
-
-    [SerializeField] GameObject boulangerie;
-    [SerializeField] GameObject champsdeble;
-
-    Boulangerie boulangerieScript;
-    Champsdeble champsdebleScript;
-
-    public List<Cards> blueCards;
-    public List<Cards> greenCards;
-    public List<Cards> redCards;
-    public List<Cards> purpleCards;
-
-
-
-    public void Awake()
-    {
-        Gold = 0;
-
-        boulangerieScript = boulangerie.GetComponent<Boulangerie>();
-        champsdebleScript = champsdeble.GetComponent<Champsdeble>();
-
-        cards = new List<Cards>() { champsdebleScript, boulangerieScript };
-        etablissements = new List<Etablissement>();
-
-        ClasifiedCards();
-
-        Debug.Log("Fin Awake Player");
-    }
-
-
-    public void ClasifiedCards()
-    {
-        blueCards = new List<Cards>();
-        greenCards = new List<Cards>();
-        redCards = new List<Cards>();
-        purpleCards = new List<Cards>();
-
-        foreach (Cards card in cards)
-        {
-            if (card.color == "Blue")
-            {
-                blueCards.Add(card);
-            }
-            else if (card.color == "Green")
-            {
-                greenCards.Add(card);
-            }
-            else if (card.color == "Red")
-            {
-                redCards.Add(card);
-            }
-            else if (card.color == "Purple")
-            {
-                purpleCards.Add(card);
-            }
-        }
-    }
-    public void AddCards(Cards card)
-    {
-        cards.Add(card);
-        Debug.Log("Add : " + card + " to Cards");
->>>>>>> Stashed changes
     }
 
     public void spendGold(int i)
@@ -143,7 +70,6 @@ public class Player : MonoBehaviour
         Gold += i;
     }
 
-<<<<<<< Updated upstream
     public void AddCard(Cards C)
     {
         cards[C] += 1;
@@ -158,10 +84,5 @@ public class Player : MonoBehaviour
     {
         get { return dices; }
         set { dices = value; }
-=======
-    public List<Cards> BlueCards()
-    {
-        return blueCards;
->>>>>>> Stashed changes
     }
 }

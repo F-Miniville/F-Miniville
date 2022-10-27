@@ -19,7 +19,7 @@ public class Marchedefruitsetlegumes : GreenCards
         this.costCards = 2;
     }
 
-    public override void effectCards(Player p, List<Player> enemy, int result)
+    public override void effectCards(Player p, List<Player> enemy)
     {
 
     }
