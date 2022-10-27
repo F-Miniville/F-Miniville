@@ -19,7 +19,7 @@ public class Fabriquedemeuble : GreenCards
         this.costCards = 3;
     }
 
-    public override void effectCards(Player p, List<Player> enemy)
+    public override void effectCards(Player p, List<Player> enemy, int result)
     {
 
     }

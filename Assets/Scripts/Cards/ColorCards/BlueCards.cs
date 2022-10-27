@@ -4,13 +4,14 @@ using UnityEngine;
 
 public abstract class BlueCards : Cards
 {
-    List<int> activationCost;
-    public List<int> ActivationCost { get; set; }
 
+<<<<<<< Updated upstream
     int costCards;
     public BlueCards(List<int> activationCost, int costCards, string cardName) : base(activationCost, costCards, cardName)
+=======
+    public BlueCards(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
+>>>>>>> Stashed changes
     {
 
     }
-    public abstract void effectCards(Player p, List<Player> enemy);
 }
