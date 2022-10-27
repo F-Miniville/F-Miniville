@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-
-
-    
-
-
     [SerializeField] int gold;
     public int Gold { get; set; }
 
@@ -27,29 +21,60 @@ public class Player : MonoBehaviour
     Boulangerie boulangerieScript;
     Champsdeble champsdebleScript;
 
-
+    public List<Cards> blueCards;
+    public List<Cards> greenCards;
+    public List<Cards> redCards;
+    public List<Cards> purpleCards;
 
 
 
     public void Awake()
     {
+        Gold = 0;
+
         boulangerieScript = boulangerie.GetComponent<Boulangerie>();
         champsdebleScript = champsdeble.GetComponent<Champsdeble>();
 
         cards = new List<Cards>() { champsdebleScript, boulangerieScript };
         etablissements = new List<Etablissement>();
 
-        foreach(BlueCards blueCards in cards)
-        {
-            ReadCards(blueCards);
-            Debug.Log("Fin BlueCards");
+        ClasifiedCards();
 
-        }
+        Debug.Log("Fin Awake Player");
     }
 
-    public void ReadCards(Cards card)
+
+    public void ClasifiedCards()
     {
-        Debug.Log(card.cardName);
+        blueCards = new List<Cards>();
+        greenCards = new List<Cards>();
+        redCards = new List<Cards>();
+        purpleCards = new List<Cards>();
+
+        foreach (Cards card in cards)
+        {
+            if (card.color == "Blue")
+            {
+                blueCards.Add(card);
+            }
+            else if (card.color == "Green")
+            {
+                greenCards.Add(card);
+            }
+            else if (card.color == "Red")
+            {
+                redCards.Add(card);
+            }
+            else if (card.color == "Purple")
+            {
+                purpleCards.Add(card);
+            }
+        }
+    }
+    public void AddCards(Cards card)
+    {
+        cards.Add(card);
+        Debug.Log("Add : " + card + " to Cards");
     }
 
     public void spendGold(int i)

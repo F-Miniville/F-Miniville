@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
-public abstract class Cards : MonoBehaviour
+public abstract class Cards
 {
 
-    List<int> activationCost;
+    public List<int> activationCost;
 
-    int costCards;
+    public int costCards;
 
     public string cardName;
 
@@ -17,6 +16,14 @@ public abstract class Cards : MonoBehaviour
     public Cards(List<int> activationCost, int costCards, string cardName, string color)
     {
         this.cardName = cardName;
+
         this.color = color;
+        this.activationCost = activationCost;
+        this.costCards = costCards;
+    }
+
+    public virtual void effectCards(Player p, List<Player> enemy, int result)
+    {
+        Debug.Log("Cards effectCards");
     }
 }

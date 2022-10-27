@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 659109807217698207}
   - component: {fileID: 1639993340680813724}
-  - component: {fileID: -5876487383252908330}
   m_Layer: 0
   m_Name: "Champs de bl\xE9"
   m_TagString: Untagged
@@ -85,6 +84,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
+=======
 --- !u!114 &-5876487383252908330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,4 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de43a817200b9f24fb931bf52b7ec49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activationCost: 
+  costCards: 0
   cardName: "Champs de bl\xE9"
+  color: Blue
+>>>>>>> Stashed changes

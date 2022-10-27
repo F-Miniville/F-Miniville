@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Fromagerie : GreenCards
 {
-
     public Fromagerie(List<int> activationCost, int costCards, string cardName, string color) : base(activationCost, costCards, cardName, color)
     {
 
     }
 
-    public override void effectCards(Player p, List<Player> enemy)
+    public override void effectCards(Player p, List<Player> enemy, int result)
     {
-
+        Debug.Log("Fromagerie effectCards");
     }
 }
