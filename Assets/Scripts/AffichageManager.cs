@@ -74,11 +74,11 @@ public class AffichageManager : MonoBehaviour
                     bc.size = new Vector2(5, 8);
                     bc.isTrigger = true;
                     P.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
-                    j++;
+                    
 
                     alreadydo.Add(P.name);
                 }
-
+                j++;
             }
 
 
