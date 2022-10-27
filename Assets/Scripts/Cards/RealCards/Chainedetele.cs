@@ -19,7 +19,7 @@ public class Chainedetele : PurpleCards
         this.costCards = 7;
     }
 
-    public override void effectCards(Player p, List<Player> enemy)
+    public override void effectCards(Player p, List<Player> enemy, int result)
     {
 
     }

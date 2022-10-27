@@ -18,7 +18,7 @@ public class Centredaffaires : PurpleCards
         this.costCards = 8;
     }
 
-    public override void effectCards(Player p, List<Player> enemy)
+    public override void effectCards(Player p, List<Player> enemy, int result)
     {
 
     }
