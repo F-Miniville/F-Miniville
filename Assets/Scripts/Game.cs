@@ -25,21 +25,17 @@ public class Game : MonoBehaviour
     [SerializeField] GameObject IAPrefabs;
     public GameObject playerTurn;
     [SerializeField] List<GameObject> _PlayerListReel;
+    [SerializeField] int _intPlayerTurn;
+    [SerializeField] bool _finTour;
 
-    //Gestion des dé
-    GameObject _DiceManager;
-    DiceManager _DiceManagerScript;
-    [SerializeField] GameObject DiceManagerPrefabs;
 
 
 
     public void Start()
     {
         //Dice
-        Instantiate(DiceManagerPrefabs);
-        _DiceManager = DiceManagerPrefabs;
-        _DiceManagerScript = _DiceManager.GetComponent<DiceManager>();
-
+        AnimateRollDice();
+        _finTour = true;
 
 
         //Player and IA
@@ -51,7 +47,7 @@ public class Game : MonoBehaviour
             _PlayerListReel.Add(Instantiate(player));
         }
 
-
+        _intPlayerTurn = 0;
     }
 
     public void PlayGame()
@@ -70,6 +66,35 @@ public class Game : MonoBehaviour
             {
                 Debug.Log("Win : " + player);
             }
+        }
+    }
+
+    public void PlayNextTurn()
+    {
+        if (_finTour)
+        {
+            _finTour = false;
+            if (_intPlayerTurn >= _PlayerListReel.Count)
+            {
+                _intPlayerTurn = 0;
+            }
+            PlayOneTurn(_PlayerListReel[_intPlayerTurn]);
+            _intPlayerTurn++;
+        }
+    }
+
+    public void FindeTour()
+    {
+        AnimateRollDice();
+        _finTour = true;
+    }
+
+    public void PlayOneTurn(GameObject player)
+    {
+        TourPlayer(player);
+        if (CheckWin(player))
+        {
+            Debug.Log("Win : " + player);
         }
     }
 
@@ -96,8 +121,8 @@ public class Game : MonoBehaviour
         playerTurn = player;
         Debug.Log("Tour Player : " + playerTurn);
 
-        _DiceManagerScript.alreadyClick = false;
-        ResolutionActionTour(_DiceManagerScript.RollAllDices(), playerTurn);
+        DiceManager.instance.alreadyClick = false;
+        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
     }
 
     public void ResolutionActionTour(int result, GameObject playerTurn)
@@ -185,5 +210,11 @@ public class Game : MonoBehaviour
         return allPlayer;
     }
 
+
+    public void AnimateRollDice()
+    {
+        DiceManager.instance.animatorDice1.SetInteger("FaceDice1", 0);
+        DiceManager.instance.animatorDice2.SetInteger("FaceDice2", 0);
+    }
 
 }

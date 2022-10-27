@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pile
 {
-    List<GameObject> cardsInPile;
+    public List<GameObject> cardsInPile;
 
     public void AddCardToPile(List<GameObject> newCards)
     {
