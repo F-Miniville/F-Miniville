@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
         if(instance != null)
         {
             Debug.Log("Il y a plus d'une Instance de Game dans la scene");
+            return;
         }
         instance = this;
     }
