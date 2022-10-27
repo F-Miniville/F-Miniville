@@ -7,6 +7,17 @@ using System.Text;
 
 public class Game : MonoBehaviour
 {
+    static public Game instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Debug.Log("Il y a plus d'une Instance de Game dans la scene");
+        }
+        instance = this;
+    }
+
     //Gestion des joueurs
     List<GameObject> _PlayersList;
     [SerializeField] GameObject PlayerPrefab;
