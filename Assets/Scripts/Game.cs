@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
     [SerializeField] int _intPlayerTurn;
     [SerializeField] bool _finTour;
 
+    [SerializeField] int nbJoueur;
+
 
 
 
@@ -39,13 +41,20 @@ public class Game : MonoBehaviour
 
 
         //Player and IA
-        _PlayersList = new List<GameObject>() { PlayerPrefab };
+        _PlayersList = new List<GameObject>();
         _PlayerListReel = new List<GameObject>();
 
-        foreach(GameObject player in _PlayersList)
+        for(int i = 0; i < nbJoueur; i++)
         {
-            _PlayerListReel.Add(Instantiate(player));
+            _PlayersList.Add(PlayerPrefab);
         }
+
+        for(int i = 0; i < _PlayersList.Count; i++)
+        {
+            _PlayerListReel.Add(Instantiate(_PlayersList[i]));
+            _PlayerListReel[i].name = "Player " + (i + 1);
+        }
+
         foreach (GameObject player in _PlayerListReel)
         {
             AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject);
@@ -126,7 +135,7 @@ public class Game : MonoBehaviour
         Debug.Log("Tour Player : " + playerTurn);
 
         DiceManager.instance.alreadyClick = false;
-        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+        ResolutionActionTour(DiceManager.instance.RollAllDices(player), playerTurn);
     }
 
     public void ResolutionActionTour(int result, GameObject playerTurn)
