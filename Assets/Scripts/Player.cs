@@ -6,8 +6,7 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int gold;
-    public int Gold { get; set; }
+    public int Gold;
 
 
     public List<Etablissement> etablissements;
@@ -94,6 +93,13 @@ public class Player : MonoBehaviour
     }
     public void earnGold(int i)
     {
-        Gold += i;
+        if(i >= 0)
+        {
+            Gold += i;
+        }
+        else
+        {
+            Debug.Log("int i est négatif");
+        }
     }
 }

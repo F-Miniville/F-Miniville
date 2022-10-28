@@ -22,6 +22,8 @@ public class DiceManager : MonoBehaviour
     [SerializeField] GameObject cameraObject;
     [SerializeField] Camera cameraScript;
 
+    [SerializeField] Gare gare;
+
     public Animator animatorDice1;
     public Animator animatorDice2;
 
@@ -41,8 +43,9 @@ public class DiceManager : MonoBehaviour
         
     }
 
-    public int RollAllDices()
+    public int RollAllDices(GameObject player)
     {
+        bool secondDice = false;
         Debug.Log("RollDice");
         result = 0;
         if (!alreadyClick)
@@ -51,7 +54,18 @@ public class DiceManager : MonoBehaviour
             int resultDice1 = Dice1.RollDices();
             animatorDice1.SetInteger("FaceDice1", resultDice1);
             result += resultDice1;
-            if (true)
+
+            Player _PlayerScript = player.GetComponent<Player>();
+
+            foreach(Etablissement etablissement in _PlayerScript.etablissements)
+            {
+                if(etablissement.GetType() == gare.GetType())
+                {
+                    secondDice = true;
+                }
+            }
+
+            if (secondDice)
             {
                 int resultDice2 = Dice2.RollDices();
                 animatorDice2.SetInteger("FaceDice2", resultDice2);

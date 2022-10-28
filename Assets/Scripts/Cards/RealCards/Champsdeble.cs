@@ -11,6 +11,7 @@ public class Champsdeble : BlueCards
 
     public override void effectCards(Player p, List<Player> enemy, int result)
     {
+        Debug.Log("effectCards Champs de blé");
         if (activationCost.Contains(result))
         {
             p.earnGold(1);
