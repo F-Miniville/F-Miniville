@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59191210a39bf8943a3be33e45797160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: ChoiceNbPlayer
 --- !u!4 &2010380786
 Transform:
   m_ObjectHideFlags: 0

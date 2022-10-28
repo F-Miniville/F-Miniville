@@ -35,6 +35,9 @@ public class Game : MonoBehaviour
 
     public void Start()
     {
+        //Set nb Player
+        nbJoueur = ChoiceNbPlayer.Instance.nbPlayerChoice;
+
         //Dice
         AnimateRollDice();
         _finTour = true;
