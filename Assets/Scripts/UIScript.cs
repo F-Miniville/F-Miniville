@@ -5,7 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
+    public static UIScript instance;
+
+    public void Awake()
+    {
+        if(instance != null)
+        {
+            Debug.Log("Il y a plus d'une instance de UIScript dans la scene");
+            return;
+        }
+        instance = this;
+
+        _AudioManager = GameObject.FindWithTag("AudioManager");
+    }
+
     [SerializeField] string sceneToLoad;
+    public GameObject _AudioManager;
     public void QuitGame()
     {
         //on rajoute ces quelques lignes pour pouvoir tester le bouton Exit sur Unity
@@ -18,21 +33,19 @@ public class UIScript : MonoBehaviour
 
     public void PlayGame()
     {
+        DontDestroyOnLoad(_AudioManager);
         SceneManager.LoadScene(sceneToLoad);
     }
 
     public void Credit()
     {
+        DontDestroyOnLoad(_AudioManager);
         SceneManager.LoadScene("Credit");
-    }
-
-    public void Continue()
-    {
-        Debug.Log("Continue ok !"); //waiting for code..
     }
 
     public void MenuReturn()
     {
+        DontDestroyOnLoad(_AudioManager);
         SceneManager.LoadScene("Menu");
     }
 }
