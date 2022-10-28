@@ -34,7 +34,7 @@ public class infoCard : MonoBehaviour
             SpriteRenderer sc = square.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
             RectTransform rt = square.AddComponent(typeof(RectTransform)) as RectTransform;
             square.GetComponent<SpriteRenderer>().sprite = Square;
-            var m_NewColor = new UnityEngine.Color32(63, 63, 63, 200);
+            var m_NewColor = new UnityEngine.Color32(63, 63, 63, 230);
             square.GetComponent<SpriteRenderer>().color = m_NewColor;
 
             square.GetComponent<RectTransform>().sizeDelta = new Vector2(newObj.GetComponent<RectTransform>().sizeDelta.x, newObj.GetComponent<RectTransform>().sizeDelta.y);

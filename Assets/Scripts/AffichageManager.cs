@@ -24,31 +24,18 @@ public class AffichageManager : MonoBehaviour
 
     private Pile P;
 
-    public GameObject boulangerie;
-    public GameObject cafe;
-    public GameObject centredaffaires;
-    public GameObject chainedetele;
-    public GameObject champsdeble;
-    public GameObject fabriquedemeuble;
-    public GameObject ferme;
-    public GameObject forêt;
-    public GameObject fromagerie;
-    public GameObject marchedefuitsetlegumes;
-    public GameObject mine;
-    public GameObject restaurant;
-    public GameObject stade;
-    public GameObject superette;
-    public GameObject verger;
     private Dictionary<string, Sprite> strSprite;
 
-    public Sprite centrecommercialRE;
-    public Sprite centrecommercial;
-    public Sprite gareRE;
-    public Sprite gare;
-    public Sprite parcdattractionRE;
-    public Sprite parcdattraction;
-    public Sprite tourradioRE;
-    public Sprite tourradio;
+    public GameObject centrecommercialRE;
+    public GameObject centrecommercial;
+    public GameObject gareRE;
+    public GameObject gare;
+    public GameObject parcdattractionRE;
+    public GameObject parcdattraction;
+    public GameObject tourradioRE;
+    public GameObject tourradio;
+
+    private List<GameObject> listEta;
 
     public Sprite piece1;
     public Sprite piece5;
@@ -61,6 +48,7 @@ public class AffichageManager : MonoBehaviour
         //RefreshHand();
         //RefreshPile();
 
+        listEta = new List<GameObject>() { centrecommercial, gare, parcdattraction, tourradio };
         cameraObject = GameObject.FindWithTag("MainCamera");
         cameraScript = cameraObject.GetComponent<Camera>();
     }
@@ -98,9 +86,12 @@ public class AffichageManager : MonoBehaviour
 
 
         }
+
+        for (int i = 0; i < 4; i++)
+        {
+
+        }
     }
-
-
 
     public void RefreshPile(List<Pile> LP)
     {

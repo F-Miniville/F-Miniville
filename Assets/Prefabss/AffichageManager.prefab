@@ -47,29 +47,14 @@ MonoBehaviour:
   cameraObject: {fileID: 0}
   cameraScript: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  boulangerie: {fileID: 21300000, guid: dffb18e17a0e05d4f998dd245e636352, type: 3}
-  cafe: {fileID: 21300000, guid: 54096b75dc4a42d4cbf9ea334f80f85b, type: 3}
-  centredaffaires: {fileID: 21300000, guid: 22e03f334a97143408a4e049f1170821, type: 3}
-  chainedetele: {fileID: 21300000, guid: 148f6144ad44ae444834b2b26f1b6c98, type: 3}
-  champsdeble: {fileID: 21300000, guid: 8c69224e6b9400d4fb4c0445b1205fbb, type: 3}
-  fabriquedemeuble: {fileID: 21300000, guid: 5f457122ff9f1ba4aae8487031891034, type: 3}
-  ferme: {fileID: 21300000, guid: 45ee5a3b0199bc34b9555a97304e2ed7, type: 3}
-  "for\xEAt": {fileID: 21300000, guid: 101c9445699c7d3478271eae8db17a99, type: 3}
-  fromagerie: {fileID: 21300000, guid: c7cf720a47f5719429f31002c2da4c18, type: 3}
-  marchedefuitsetlegumes: {fileID: 21300000, guid: 2646d2267c186f4429149c243ce4d9f0, type: 3}
-  mine: {fileID: 21300000, guid: c24ec1fcfe86a8d43972b00aa63ee508, type: 3}
-  restaurant: {fileID: 21300000, guid: c622976eaaae9e94d9a0efd86a069dde, type: 3}
-  stade: {fileID: 21300000, guid: 4d5d1ac9c6e547a429faacacd14b3492, type: 3}
-  superette: {fileID: 21300000, guid: 04e5faf31410bbb43a38f2194a29eaaf, type: 3}
-  verger: {fileID: 21300000, guid: bf35eb688994f0449ac246f1c97ef3c4, type: 3}
-  centrecommercialRE: {fileID: 21300000, guid: 8e52bc5ae1965fa448e43d14347e81bc, type: 3}
-  centrecommercial: {fileID: 21300000, guid: 7e9546e778706a74eb923688438941c1, type: 3}
-  gareRE: {fileID: 21300000, guid: 1dc8f800d03e3054aa5d956b68a311b0, type: 3}
-  gare: {fileID: 21300000, guid: ac346fe2198c2e0429e8c88cb0b85d61, type: 3}
-  parcdattractionRE: {fileID: 21300000, guid: fbd16d7c75aada741ac6d39b6ff1fd9f, type: 3}
-  parcdattraction: {fileID: 21300000, guid: 06f7915a9ca7f954f960e16e68b16878, type: 3}
-  tourradioRE: {fileID: 21300000, guid: 5561a61147e42654b9b8fbffce2b2323, type: 3}
-  tourradio: {fileID: 21300000, guid: e6ac7e4ebb8268843ab054446cc57e33, type: 3}
+  centrecommercialRE: {fileID: 1777437950874239481, guid: c207fcfe926c93548898a96236ce56cf, type: 3}
+  centrecommercial: {fileID: 7502647097823395156, guid: df7c869517c0dc9438d3c737f79510d6, type: 3}
+  gareRE: {fileID: 646520982685906821, guid: 7e37a317e7723414eba0e7fe59653493, type: 3}
+  gare: {fileID: 5288012524901840003, guid: ed5ab9086179c6e49a9b0e6d48a2aeff, type: 3}
+  parcdattractionRE: {fileID: 6933739691358424996, guid: 27c962ed0b89e3a44b6a6c27c2409169, type: 3}
+  parcdattraction: {fileID: 4597852284209979575, guid: f9cb6748a8227e742a97db1b3b4752a1, type: 3}
+  tourradioRE: {fileID: 6944537432518664446, guid: e5a46b7009f6e31438b0b4b8240813c1, type: 3}
+  tourradio: {fileID: 7574865579908092628, guid: ea334242af6e6f4438bb32c923e728d8, type: 3}
   piece1: {fileID: 0}
   piece5: {fileID: 0}
   piece10: {fileID: 0}
