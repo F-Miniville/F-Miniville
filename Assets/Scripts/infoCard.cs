@@ -11,6 +11,7 @@ public class infoCard : MonoBehaviour
     public GameObject newObj;
     public GameObject square;
     public Sprite Square;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class infoCard : MonoBehaviour
     {
         if (condi)
         {
+            audioSource.Play();
+
             newObj = new GameObject("text", typeof(infoCard));
             newObj.AddComponent<TextMeshPro>();
 
