@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa36c1963d572a498c76a58ce58deee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 0}
+  cameraScript: {fileID: 0}
+  Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   boulangerie: {fileID: 21300000, guid: dffb18e17a0e05d4f998dd245e636352, type: 3}
   cafe: {fileID: 21300000, guid: 54096b75dc4a42d4cbf9ea334f80f85b, type: 3}
   centredaffaires: {fileID: 21300000, guid: 22e03f334a97143408a4e049f1170821, type: 3}

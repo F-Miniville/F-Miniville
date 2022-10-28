@@ -6,7 +6,20 @@ using TMPro;
 
 public class AffichageManager : MonoBehaviour
 {
-    public Camera camera;
+    static public AffichageManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("Il y a plus d'une Instance de AffichageManager dans la scene");
+            return;
+        }
+        instance = this;
+    }
+
+    public GameObject cameraObject;
+    public Camera cameraScript;
     public Sprite Square;
 
     private Pile P;
@@ -47,6 +60,9 @@ public class AffichageManager : MonoBehaviour
     {
         //RefreshHand();
         //RefreshPile();
+
+        cameraObject = GameObject.FindWithTag("MainCamera");
+        cameraScript = cameraObject.GetComponent<Camera>();
     }
 
     void Update()
@@ -59,22 +75,20 @@ public class AffichageManager : MonoBehaviour
         List<string> alreadydo = new List<string>();
         Dictionary<string, int> nbr = CreateDictionnary(LP);
         int j = 1;
-        int ligne = 1;
         foreach (GameObject P in LP)
         {
             if (!alreadydo.Contains(P.name))
             {
                 for (int i = 0; i < nbr[P.name]; i++)
                 {
-                    Instantiate(P, camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10)), Quaternion.identity);
-                    infoCard inf = P.AddComponent<infoCard>();
-                    inf.name = P.name;
+                    Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10)), Quaternion.identity);
+                    infoCard inf = P.GetComponent<infoCard>();
                     inf.Square = Square;
-                    BoxCollider2D bc = P.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+                    BoxCollider2D bc = P.GetComponent<BoxCollider2D>();
                     bc.size = new Vector2(5, 8);
                     bc.isTrigger = true;
                     P.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
-                    
+
 
                     alreadydo.Add(P.name);
                 }
@@ -97,7 +111,7 @@ public class AffichageManager : MonoBehaviour
             for (int i = 0; i < P.cardsInPile.Count; i++)
             {
                 GameObject card = P.cardsInPile[i];
-                Instantiate(card, camera.ScreenToWorldPoint(new Vector3(Screen.width / 2 - card.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne) - i * 6f, 1)), Quaternion.identity);
+                Instantiate(card, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - card.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne) - i * 6f, 1)), Quaternion.identity);
                 infoCard inf = card.AddComponent<infoCard>();
                 inf.name = card.name;
                 inf.Square = Square;
