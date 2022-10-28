@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
+    [SerializeField] string sceneToLoad;
     public void QuitGame()
     {
         //on rajoute ces quelques lignes pour pouvoir tester le bouton Exit sur Unity
@@ -17,7 +18,7 @@ public class UIScript : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public void Credit()
