@@ -39,12 +39,16 @@ public class Game : MonoBehaviour
 
 
         //Player and IA
-        _PlayersList = new List<GameObject>() { PlayerPrefab, IAPrefabs };
+        _PlayersList = new List<GameObject>() { PlayerPrefab };
         _PlayerListReel = new List<GameObject>();
 
         foreach(GameObject player in _PlayersList)
         {
             _PlayerListReel.Add(Instantiate(player));
+        }
+        foreach (GameObject player in _PlayerListReel)
+        {
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject);
         }
 
         _intPlayerTurn = 0;
