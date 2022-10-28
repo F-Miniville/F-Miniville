@@ -30,6 +30,9 @@ public class Game : MonoBehaviour
 
     [SerializeField] int nbJoueur;
 
+    [SerializeField] Gare gare;
+    [SerializeField] GameObject _TwoDice;
+
 
 
 
@@ -64,6 +67,8 @@ public class Game : MonoBehaviour
         }
 
         _intPlayerTurn = 0;
+
+        PrepareTurn();
     }
 
     public void PlayGame()
@@ -85,7 +90,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    public void PlayNextTurn()
+    public void PrepareTurn()
     {
         if (_finTour)
         {
@@ -94,15 +99,40 @@ public class Game : MonoBehaviour
             {
                 _intPlayerTurn = 0;
             }
-            PlayOneTurn(_PlayerListReel[_intPlayerTurn]);
+
+            playerTurn = _PlayerListReel[_intPlayerTurn];
+
+            Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
+
+            DiceManager.instance.secondDice = false;
+            _TwoDice.SetActive(false);
+            foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
+            {
+                if (etablissement.GetType() == gare.GetType())
+                {
+                    DiceManager.instance.secondDice = true;
+                    _TwoDice.SetActive(true);
+                }
+            }
             _intPlayerTurn++;
         }
+    }
+
+    public void TurnWithOneDice()
+    {
+        PlayOneTurn(playerTurn);
+    }
+    public void TurnWithTwoDice()
+    {
+        DiceManager.instance.playerChoiceDice = true;
+        PlayOneTurn(playerTurn);
     }
 
     public void FindeTour()
     {
         AnimateRollDice();
         _finTour = true;
+        PrepareTurn();
     }
 
     public void PlayOneTurn(GameObject player)
@@ -134,11 +164,9 @@ public class Game : MonoBehaviour
 
     public void TourPlayer(GameObject player)
     {
-        playerTurn = player;
-        Debug.Log("Tour Player : " + playerTurn);
+        Debug.Log("Tour Player : " + player);
 
-        DiceManager.instance.alreadyClick = false;
-        ResolutionActionTour(DiceManager.instance.RollAllDices(player), playerTurn);
+        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
     }
 
     public void ResolutionActionTour(int result, GameObject playerTurn)
