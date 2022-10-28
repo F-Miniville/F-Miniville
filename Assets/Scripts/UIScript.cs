@@ -45,7 +45,6 @@ public class UIScript : MonoBehaviour
 
     public void MenuReturn()
     {
-        DontDestroyOnLoad(_AudioManager);
         SceneManager.LoadScene("Menu");
     }
 }
