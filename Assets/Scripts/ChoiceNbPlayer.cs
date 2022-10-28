@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class ChoiceNbPlayer : MonoBehaviour
 {
     public static ChoiceNbPlayer Instance;
+
+    public int nbPlayerChoice;
+    [SerializeField] string sceneToLoad;
+    GameObject _AudioManager;
+
     private void Awake()
     {
         if(Instance != null)
@@ -15,10 +20,10 @@ public class ChoiceNbPlayer : MonoBehaviour
             return;
         }
         Instance = this;
+
+        _AudioManager = UIScript.instance._AudioManager;
     }
 
-    public int nbPlayerChoice;
-    [SerializeField] string sceneToLoad;
     public void TwoPlayer()
     {
         nbPlayerChoice = 2;
@@ -39,6 +44,7 @@ public class ChoiceNbPlayer : MonoBehaviour
 
     private void UpdateNbPlayer()
     {
+        Destroy(_AudioManager);
         DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene(sceneToLoad);
     }
