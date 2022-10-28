@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public List<Etablissement> etablissements;
 
     public List<Cards> cards;
+    public List<GameObject> cardsObject;
 
 
     [SerializeField] GameObject boulangerie;
@@ -32,10 +33,15 @@ public class Player : MonoBehaviour
     {
         Gold = 0;
 
-        boulangerieScript = boulangerie.GetComponent<Boulangerie>();
-        champsdebleScript = champsdeble.GetComponent<Champsdeble>();
+        
 
-        cards = new List<Cards>() { champsdebleScript, boulangerieScript };
+        cardsObject = new List<GameObject>() { boulangerie, champsdeble};
+        foreach(GameObject card in cardsObject)
+        {
+            Cards _cards = card.GetComponent<Cards>();
+            cards.Add(_cards);
+        }
+
         etablissements = new List<Etablissement>();
 
         ClasifiedCards();
@@ -71,10 +77,11 @@ public class Player : MonoBehaviour
             }
         }
     }
-    public void AddCards(Cards card)
+    public void AddCards(GameObject card)
     {
-        cards.Add(card);
-        Debug.Log("Add : " + card + " to Cards");
+        Cards _cards = card.GetComponent<Cards>();
+        cards.Add(_cards);
+        Debug.Log("Add : " + _cards + " to Cards");
     }
 
     public void spendGold(int i)
