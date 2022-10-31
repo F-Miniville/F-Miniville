@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public List<Cards> redCards;
     public List<Cards> purpleCards;
 
+    public int _intPlayer;
+
 
 
     public void Awake()
