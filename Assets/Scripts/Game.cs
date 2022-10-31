@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEditor;
 using System.Text;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class Game : MonoBehaviour
     [SerializeField] GameObject _TwoDice;
     [SerializeField] GameObject _OneDice;
     [SerializeField] GameObject _EndTurn;
+
+    [SerializeField] GameObject _WinPanel;
+    [SerializeField] Text _WinText;
 
 
 
@@ -70,6 +74,7 @@ public class Game : MonoBehaviour
 
         _intPlayerTurn = 0;
 
+        _WinPanel.SetActive(false);
         PrepareTurn();
     }
 
@@ -137,8 +142,15 @@ public class Game : MonoBehaviour
         if (CheckWin(player))
         {
             Debug.Log("Win : " + player);
-            //Panel de victoire
+            _WinPanel.SetActive(true);
+            _WinText.text = player + " à Gagné la Parti";
         }
+
+        foreach (GameObject _player in _PlayerListReel)
+        {
+            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
+        }
+
     }
 
 
