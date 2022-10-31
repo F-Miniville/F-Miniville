@@ -39,6 +39,8 @@ public class Game : MonoBehaviour
     [SerializeField] GameObject _WinPanel;
     [SerializeField] Text _WinText;
 
+    public bool _IA;
+
 
 
 
@@ -80,15 +82,26 @@ public class Game : MonoBehaviour
 
     public void PrepareTurn()
     {
-        if (_finTour)
+        if (_intPlayerTurn >= _PlayerListReel.Count)
+        {
+            _intPlayerTurn = 0;
+        }
+
+        playerTurn = _PlayerListReel[_intPlayerTurn];
+
+        if(playerTurn.tag == "IA")
+        {
+            _IA = true;
+        }
+        else
+        {
+            _IA = false;
+        }
+        
+
+        if (_finTour && !_IA)
         {
             _finTour = false;
-            if (_intPlayerTurn >= _PlayerListReel.Count)
-            {
-                _intPlayerTurn = 0;
-            }
-
-            playerTurn = _PlayerListReel[_intPlayerTurn];
 
             Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
 
@@ -105,6 +118,17 @@ public class Game : MonoBehaviour
                 }
             }
             _intPlayerTurn++;
+        }
+
+        if (_finTour && _IA)
+        {
+            ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+
+            StartCoroutine("IATurn");
+
+            //Ajouter IA
+
+            FindeTour();
         }
     }
 
@@ -141,11 +165,12 @@ public class Game : MonoBehaviour
 
         if (CheckWin(player))
         {
-            Debug.Log("Win : " + player);
+            Debug.Log("Win : " + player.name);
             _WinPanel.SetActive(true);
-            _WinText.text = player + " à Gagné la Parti";
+            _WinText.text = player.name + " à Gagné la Parti";
         }
 
+        AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
             AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
@@ -263,4 +288,11 @@ public class Game : MonoBehaviour
         DiceManager.instance.animatorDice2.SetInteger("FaceDice2", 0);
     }
 
+
+    IEnumerator IATurn()
+    {
+
+
+        yield return new WaitForSeconds(5f);
+    }
 }
