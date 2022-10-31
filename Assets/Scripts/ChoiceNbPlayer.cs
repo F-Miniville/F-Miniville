@@ -11,6 +11,7 @@ public class ChoiceNbPlayer : MonoBehaviour
     public int nbPlayerChoice;
     [SerializeField] string sceneToLoad;
     GameObject _AudioManager;
+    public bool _haveIA;
 
     private void Awake()
     {
@@ -49,4 +50,15 @@ public class ChoiceNbPlayer : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
+    public void DestroyNbPlayerManager()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void PlayerVSIA()
+    {
+        nbPlayerChoice = 1;
+        _haveIA = true;
+        UpdateNbPlayer();
+    }
 }
