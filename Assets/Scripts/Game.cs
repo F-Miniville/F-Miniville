@@ -137,6 +137,7 @@ public class Game : MonoBehaviour
         if (CheckWin(player))
         {
             Debug.Log("Win : " + player);
+            //Panel de victoire
         }
     }
 
