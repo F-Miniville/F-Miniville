@@ -23,7 +23,7 @@ public class Game : MonoBehaviour
     //Gestion des joueurs
     List<GameObject> _PlayersList;
     [SerializeField] GameObject PlayerPrefab;
-    [SerializeField] GameObject IAPrefabs;
+    [SerializeField] GameObject IAPrefab;
     public GameObject playerTurn;
     [SerializeField] List<GameObject> _PlayerListReel;
     [SerializeField] int _intPlayerTurn;
@@ -62,11 +62,26 @@ public class Game : MonoBehaviour
         {
             _PlayersList.Add(PlayerPrefab);
         }
+        if (ChoiceNbPlayer.Instance._haveIA)
+        {
+            _PlayersList.Add(IAPrefab);
+            ChoiceNbPlayer.Instance._haveIA = false;
+        }
 
         for(int i = 0; i < _PlayersList.Count; i++)
         {
             _PlayerListReel.Add(Instantiate(_PlayersList[i]));
-            _PlayerListReel[i].name = "Player " + (i + 1);
+
+            if(_PlayerListReel[i].tag != "IA")
+            {
+                _PlayerListReel[i].name = "Player " + (i + 1);
+            }
+            else
+            {
+                _PlayerListReel[i].name = "IA";
+            }
+
+            _PlayerListReel[i].GetComponent<Player>()._intPlayer = i + 1;
         }
 
         foreach (GameObject player in _PlayerListReel)
@@ -122,9 +137,14 @@ public class Game : MonoBehaviour
 
         if (_finTour && _IA)
         {
+            Debug.Log("Resolution Action Tour IA");
+            _finTour = false;
             ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+            Debug.Log("Fin Resolution Action Tour IA");
 
-            StartCoroutine("IATurn");
+            Debug.Log("Coroutine IA");
+            StartCoroutine(IATurn());
+            Debug.Log("Fin Coroutine IA");
 
             //Ajouter IA
 
@@ -170,7 +190,7 @@ public class Game : MonoBehaviour
             _WinText.text = player.name + " à Gagné la Parti";
         }
 
-        AffichageManager.instance.DelCard();
+        //AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
             AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
@@ -291,8 +311,7 @@ public class Game : MonoBehaviour
 
     IEnumerator IATurn()
     {
-
-
-        yield return new WaitForSeconds(5f);
+        Debug.Log("In Coroutine");
+        yield return new WaitForSeconds(2f);
     }
 }
