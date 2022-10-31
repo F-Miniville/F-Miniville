@@ -24,43 +24,34 @@ public class AffichageManager : MonoBehaviour
 
     private Pile P;
 
-    public GameObject boulangerie;
-    public GameObject cafe;
-    public GameObject centredaffaires;
-    public GameObject chainedetele;
-    public GameObject champsdeble;
-    public GameObject fabriquedemeuble;
-    public GameObject ferme;
-    public GameObject forêt;
-    public GameObject fromagerie;
-    public GameObject marchedefuitsetlegumes;
-    public GameObject mine;
-    public GameObject restaurant;
-    public GameObject stade;
-    public GameObject superette;
-    public GameObject verger;
     private Dictionary<string, Sprite> strSprite;
 
-    public Sprite centrecommercialRE;
-    public Sprite centrecommercial;
-    public Sprite gareRE;
-    public Sprite gare;
-    public Sprite parcdattractionRE;
-    public Sprite parcdattraction;
-    public Sprite tourradioRE;
-    public Sprite tourradio;
+    public GameObject centrecommercialRE;
+    public GameObject centrecommercial;
+    public GameObject gareRE;
+    public GameObject gare;
+    public GameObject parcdattractionRE;
+    public GameObject parcdattraction;
+    public GameObject tourradioRE;
+    public GameObject tourradio;
+
+    private List<GameObject> listEta;
 
     public Sprite piece1;
     public Sprite piece5;
     public Sprite piece10;
 
     public Sprite nothing;
+    
+    private List<GameObject> cardList;
 
     void Start()
     {
         //RefreshHand();
         //RefreshPile();
 
+        cardList = new List<GameObject>();
+        listEta = new List<GameObject>() { centrecommercial, gare, parcdattraction, tourradio };
         cameraObject = GameObject.FindWithTag("MainCamera");
         cameraScript = cameraObject.GetComponent<Camera>();
     }
@@ -70,8 +61,22 @@ public class AffichageManager : MonoBehaviour
 
     }
 
+    public void DelCard()
+    {
+        if (cardList.Count != 0)
+        {
+            foreach (GameObject GO in cardList)
+            {
+                Destroy(GO);
+                Debug.Log("yeah");
+            }
+            cardList.Clear();
+        }
+    }
+
     public void RefreshHand(List<GameObject> LP)
     {
+        
         List<string> alreadydo = new List<string>();
         Dictionary<string, int> nbr = CreateDictionnary(LP);
         int j = 1;
@@ -81,7 +86,7 @@ public class AffichageManager : MonoBehaviour
             {
                 for (int i = 0; i < nbr[P.name]; i++)
                 {
-                    Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10)), Quaternion.identity);
+                    cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width/2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j-1), Screen.height / 10 + i * 20f, 1 + j / 3)), Quaternion.identity));
                     infoCard inf = P.GetComponent<infoCard>();
                     inf.Square = Square;
                     BoxCollider2D bc = P.GetComponent<BoxCollider2D>();
@@ -98,9 +103,12 @@ public class AffichageManager : MonoBehaviour
 
 
         }
+
+        for (int i = 0; i < 4; i++)
+        {
+
+        }
     }
-
-
 
     public void RefreshPile(List<Pile> LP)
     {
