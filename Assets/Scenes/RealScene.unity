@@ -565,6 +565,8 @@ MonoBehaviour:
   nbJoueur: 0
   gare: {fileID: 4874880798291971483, guid: 5ad6cfc334e89d84d9c7bb4d8ca71ad5, type: 3}
   _TwoDice: {fileID: 1398664879}
+  _OneDice: {fileID: 1639390298}
+  _EndTurn: {fileID: 323032050}
 --- !u!4 &812119431
 Transform:
   m_ObjectHideFlags: 0
@@ -720,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 152.9}
+  m_AnchoredPosition: {x: 150, y: 85}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398664881
@@ -1050,7 +1052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 100}
+  m_AnchoredPosition: {x: 150, y: 50}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639390300

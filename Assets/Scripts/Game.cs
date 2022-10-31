@@ -32,6 +32,8 @@ public class Game : MonoBehaviour
 
     [SerializeField] Gare gare;
     [SerializeField] GameObject _TwoDice;
+    [SerializeField] GameObject _OneDice;
+    [SerializeField] GameObject _EndTurn;
 
 
 
@@ -71,25 +73,6 @@ public class Game : MonoBehaviour
         PrepareTurn();
     }
 
-    public void PlayGame()
-    {
-        foreach(GameObject player in _PlayerListReel)
-        {
-            TourPlayer(player);
-            if (CheckWin(player))
-            {
-                break;
-            }
-        }
-        foreach(GameObject player in _PlayerListReel)
-        {
-            if (CheckWin(player))
-            {
-                Debug.Log("Win : " + player);
-            }
-        }
-    }
-
     public void PrepareTurn()
     {
         if (_finTour)
@@ -105,6 +88,8 @@ public class Game : MonoBehaviour
             Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
 
             DiceManager.instance.secondDice = false;
+            _EndTurn.SetActive(false);
+            _OneDice.SetActive(true);
             _TwoDice.SetActive(false);
             foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
             {
@@ -121,23 +106,34 @@ public class Game : MonoBehaviour
     public void TurnWithOneDice()
     {
         PlayOneTurn(playerTurn);
+        _OneDice.SetActive(false);
+        _TwoDice.SetActive(false);
+        _EndTurn.SetActive(true);
     }
     public void TurnWithTwoDice()
     {
         DiceManager.instance.playerChoiceDice = true;
         PlayOneTurn(playerTurn);
+        _OneDice.SetActive(false);
+        _TwoDice.SetActive(false);
+        _EndTurn.SetActive(true);
     }
 
     public void FindeTour()
     {
-        AnimateRollDice();
-        _finTour = true;
-        PrepareTurn();
+        if (!_finTour)
+        {
+            AnimateRollDice();
+            _finTour = true;
+            PrepareTurn();
+        }
     }
 
     public void PlayOneTurn(GameObject player)
     {
-        TourPlayer(player);
+        Debug.Log("Tour Player : " + player);
+        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+
         if (CheckWin(player))
         {
             Debug.Log("Win : " + player);
@@ -160,13 +156,6 @@ public class Game : MonoBehaviour
             _win = true;
 
         return _win;
-    }
-
-    public void TourPlayer(GameObject player)
-    {
-        Debug.Log("Tour Player : " + player);
-
-        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
     }
 
     public void ResolutionActionTour(int result, GameObject playerTurn)
