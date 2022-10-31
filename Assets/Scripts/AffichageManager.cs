@@ -42,12 +42,15 @@ public class AffichageManager : MonoBehaviour
     public Sprite piece10;
 
     public Sprite nothing;
+    
+    private List<GameObject> cardList;
 
     void Start()
     {
         //RefreshHand();
         //RefreshPile();
 
+        cardList = new List<GameObject>();
         listEta = new List<GameObject>() { centrecommercial, gare, parcdattraction, tourradio };
         cameraObject = GameObject.FindWithTag("MainCamera");
         cameraScript = cameraObject.GetComponent<Camera>();
@@ -58,8 +61,22 @@ public class AffichageManager : MonoBehaviour
 
     }
 
+    public void DelCard()
+    {
+        if (cardList.Count != 0)
+        {
+            foreach (GameObject GO in cardList)
+            {
+                Destroy(GO);
+                Debug.Log("yeah");
+            }
+            cardList.Clear();
+        }
+    }
+
     public void RefreshHand(List<GameObject> LP)
     {
+        
         List<string> alreadydo = new List<string>();
         Dictionary<string, int> nbr = CreateDictionnary(LP);
         int j = 1;
@@ -69,7 +86,7 @@ public class AffichageManager : MonoBehaviour
             {
                 for (int i = 0; i < nbr[P.name]; i++)
                 {
-                    Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.4f * Screen.width / 640)) + (Screen.width / 5) * 2.115f, Screen.height / 10 + i * 20f, 1 + j / 10)), Quaternion.identity);
+                    cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width/2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j-1), Screen.height / 10 + i * 20f, 1 + j / 3)), Quaternion.identity));
                     infoCard inf = P.GetComponent<infoCard>();
                     inf.Square = Square;
                     BoxCollider2D bc = P.GetComponent<BoxCollider2D>();

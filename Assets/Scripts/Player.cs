@@ -18,8 +18,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject boulangerie;
     [SerializeField] GameObject champsdeble;
 
-    Boulangerie boulangerieScript;
-    Champsdeble champsdebleScript;
 
     public List<Cards> blueCards;
     public List<Cards> greenCards;
@@ -80,7 +78,7 @@ public class Player : MonoBehaviour
     {
         Cards _cards = card.GetComponent<Cards>();
         cards.Add(_cards);
-        Debug.Log("Add : " + _cards + " to Cards");
+        Debug.Log("Add : " + _cards.name + " to Cards");
     }
 
     public void spendGold(int i)
