@@ -86,7 +86,8 @@ public class Game : MonoBehaviour
 
         foreach (GameObject player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject);
+            Debug.Log(player.GetComponent<Player>().cardsObject[1]);
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
         }
 
         _intPlayerTurn = 0;
@@ -190,7 +191,7 @@ public class Game : MonoBehaviour
         AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
+            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
         }
 
     }
@@ -327,7 +328,7 @@ public class Game : MonoBehaviour
         AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
+            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
         }
 
 

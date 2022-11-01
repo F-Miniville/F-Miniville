@@ -49,6 +49,11 @@ public class AffichageManager : MonoBehaviour
     {
         //RefreshHand();
         //RefreshPile();
+        RefreshMonuments(new List<GameObject>() { centrecommercialRE, gareRE, parcdattractionRE, tourradioRE }, 1);
+        RefreshMonuments(new List<GameObject>() { centrecommercialRE, gareRE, parcdattractionRE, tourradioRE }, 2);
+        RefreshMonuments(new List<GameObject>() { centrecommercialRE, gareRE, parcdattractionRE, tourradioRE }, 3);
+        RefreshMonuments(new List<GameObject>() { centrecommercialRE, gareRE, parcdattractionRE, tourradioRE }, 4);
+
 
         cardList = new List<GameObject>();
         listEta = new List<GameObject>() { centrecommercial, gare, parcdattraction, tourradio };
@@ -68,25 +73,52 @@ public class AffichageManager : MonoBehaviour
             foreach (GameObject GO in cardList)
             {
                 Destroy(GO);
-                Debug.Log("yeah");
             }
             cardList.Clear();
         }
     }
 
-    public void RefreshHand(List<GameObject> LP)
+    public void RefreshHand(List<GameObject> LP, int intplayer)
     {
-        
+        Debug.Log(intplayer);
         List<string> alreadydo = new List<string>();
         Dictionary<string, int> nbr = CreateDictionnary(LP);
         int j = 1;
+        int colonne = 0;
+        int k = 1;
+        Debug.Log(LP[1]);
         foreach (GameObject P in LP)
         {
             if (!alreadydo.Contains(P.name))
             {
                 for (int i = 0; i < nbr[P.name]; i++)
                 {
-                    cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width/2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j-1), Screen.height / 10 + i * 20f, 1 + j / 3)), Quaternion.identity));
+                    if (intplayer == 1)
+                    {
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 10 + i * 20f, 1 + j)), Quaternion.identity));
+                    }
+                    else if (intplayer == 2)
+                    {
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 1.1f + i * -20f, 1 + j)), Quaternion.identity));
+                    }
+                    else if (intplayer == 3)
+                    {
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 1.045f + colonne * -(P.GetComponent<SpriteRenderer>().bounds.size.y * 50), Screen.height / 1.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.y * 100) / 6) * -(k - 1), 15 - k)), Quaternion.identity));
+                        if (k % 8 == 0)
+                        {
+                            colonne += 1;
+                            k = 0;
+                        }
+                    }
+                    else if (intplayer == 4)
+                    {
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 22.5f+ colonne * (P.GetComponent<SpriteRenderer>().bounds.size.y * 50), Screen.height / 1.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.y * 100) / 6) * -(k - 1), 15 - k)), Quaternion.identity));
+                        if (k % 8 == 0)
+                        {
+                            colonne += 1;
+                            k = 0;
+                        }
+                    }
                     infoCard inf = P.GetComponent<infoCard>();
                     inf.Square = Square;
                     BoxCollider2D bc = P.GetComponent<BoxCollider2D>();
@@ -94,18 +126,54 @@ public class AffichageManager : MonoBehaviour
                     bc.isTrigger = true;
                     P.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
-
                     alreadydo.Add(P.name);
                 }
+                k++;
                 j++;
             }
 
 
 
         }
+    }
 
-        for (int i = 0; i < 4; i++)
+    public void RefreshMonuments(List<GameObject> Eta, int intplayer)
+    {
+        Dictionary<string, GameObject> listeEta = new Dictionary<string, GameObject>() { {"Centre commercial" , centrecommercialRE}, {"Gare", gareRE }, {"Parc d'attraction", parcdattractionRE }, {"Tour radio", tourradioRE } };
+        foreach (GameObject E in Eta)
         {
+            listeEta[E.GetComponent<Etablissement>().name] = E;
+        }
+        int i = 1;
+        int ligne = 0;
+        int j = 1;
+        foreach (var EO in listeEta)
+        {
+            if (intplayer == 1)
+            {
+                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 3.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 100)) * (j - 1), Screen.height / (9 + ligne), 1 + ligne)), Quaternion.identity));
+            }
+            if (intplayer == 2)
+            {
+
+            }
+            if (intplayer == 3)
+            {
+
+            }
+            if (intplayer == 4)
+            {
+
+            }
+
+            i++;
+            j++;
+
+            if ( j % 3 ==0)
+            {
+                ligne += 1;
+                j = 1;
+            }
 
         }
     }

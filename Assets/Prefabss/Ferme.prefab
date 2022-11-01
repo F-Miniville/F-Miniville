@@ -114,11 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedd898b6d111e04985535297338de14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Ferme
   newObj: {fileID: 0}
   square: {fileID: 0}
-  Square: {fileID: 0}
-  audioSource: {fileID: 0}
+  Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  audioSource: {fileID: -2653977418665834981, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
 --- !u!61 &3615858532649555070
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,5 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.21, y: 8.02}
+  m_Size: {x: 5, y: 8}
   m_EdgeRadius: 0
