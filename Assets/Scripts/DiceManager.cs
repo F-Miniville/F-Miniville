@@ -50,7 +50,7 @@ public class DiceManager : MonoBehaviour
         result += resultDice1;
 
 
-        if ((secondDice && playerChoiceDice) || (secondDice && Game.instance._IA && Random.Range(0 ,2) == 1))
+        if (secondDice && playerChoiceDice)
         {
             int resultDice2 = Dice2.RollDices();
             animatorDice2.SetInteger("FaceDice2", resultDice2);

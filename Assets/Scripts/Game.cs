@@ -104,7 +104,6 @@ public class Game : MonoBehaviour
         }
 
         playerTurn = _PlayerListReel[_intPlayerTurn];
-        _intPlayerTurn++;
 
         if(playerTurn.tag == "IA")
         {
@@ -114,37 +113,42 @@ public class Game : MonoBehaviour
         {
             _IA = false;
         }
-
-        DiceManager.instance.secondDice = false;
-        _EndTurn.SetActive(false);
-        _OneDice.SetActive(true);
-        _TwoDice.SetActive(false);
         
-        Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
-        foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
-        {
-            if (etablissement.GetType() == gare.GetType())
-            {
-                DiceManager.instance.secondDice = true;
-                _TwoDice.SetActive(true);
-            }
-        }
 
         if (_finTour && !_IA)
         {
             _finTour = false;
-        }
 
+            Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
+
+            DiceManager.instance.secondDice = false;
+            _EndTurn.SetActive(false);
+            _OneDice.SetActive(true);
+            _TwoDice.SetActive(false);
+            foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
+            {
+                if (etablissement.GetType() == gare.GetType())
+                {
+                    DiceManager.instance.secondDice = true;
+                    _TwoDice.SetActive(true);
+                }
+            }
+            _intPlayerTurn++;
+        }
 
         if (_finTour && _IA)
         {
-            //Debug.Log("Coroutine IA");
-            //StartCoroutine(IATurn());
-            //Debug.Log("Fin Coroutine IA");
-
+            Debug.Log("Resolution Action Tour IA");
             _finTour = false;
-            Debug.Log("Tour Player :" + playerTurn);
             ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+            Debug.Log("Fin Resolution Action Tour IA");
+
+            Debug.Log("Coroutine IA");
+            StartCoroutine(IATurn());
+            Debug.Log("Fin Coroutine IA");
+
+            //Ajouter IA
+
             FindeTour();
         }
     }
@@ -171,7 +175,6 @@ public class Game : MonoBehaviour
         {
             AnimateRollDice();
             _finTour = true;
-            Debug.Log("Fin Tour : " + playerTurn);
             PrepareTurn();
         }
     }
@@ -188,7 +191,7 @@ public class Game : MonoBehaviour
             _WinText.text = player.name + " à Gagné la Parti";
         }
 
-        AffichageManager.instance.DelCard();
+        //AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
             AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
@@ -309,6 +312,7 @@ public class Game : MonoBehaviour
 
     IEnumerator IATurn()
     {
+<<<<<<< HEAD
         DiceManager.instance.secondDice = false;
         _finTour = false;
 
@@ -338,5 +342,9 @@ public class Game : MonoBehaviour
         FindeTour();
 
         yield return new WaitForSeconds(2.0f);
+=======
+        Debug.Log("In Coroutine");
+        yield return new WaitForSeconds(2f);
+>>>>>>> parent of 03ee7bd (Merge branch 'main' into Ryan)
     }
 }
