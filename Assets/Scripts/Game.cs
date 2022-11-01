@@ -12,7 +12,7 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.Log("Il y a plus d'une Instance de Game dans la scene");
             return;
@@ -58,7 +58,7 @@ public class Game : MonoBehaviour
         _PlayersList = new List<GameObject>();
         _PlayerListReel = new List<GameObject>();
 
-        for(int i = 0; i < nbJoueur; i++)
+        for (int i = 0; i < nbJoueur; i++)
         {
             _PlayersList.Add(PlayerPrefab);
         }
@@ -68,11 +68,11 @@ public class Game : MonoBehaviour
             ChoiceNbPlayer.Instance._haveIA = false;
         }
 
-        for(int i = 0; i < _PlayersList.Count; i++)
+        for (int i = 0; i < _PlayersList.Count; i++)
         {
             _PlayerListReel.Add(Instantiate(_PlayersList[i]));
 
-            if(_PlayerListReel[i].tag != "IA")
+            if (_PlayerListReel[i].tag != "IA")
             {
                 _PlayerListReel[i].name = "Player " + (i + 1);
             }
@@ -86,7 +86,9 @@ public class Game : MonoBehaviour
 
         foreach (GameObject player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject);
+            AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);
         }
 
         _intPlayerTurn = 0;
@@ -105,7 +107,7 @@ public class Game : MonoBehaviour
         playerTurn = _PlayerListReel[_intPlayerTurn];
         _intPlayerTurn++;
 
-        if(playerTurn.tag == "IA")
+        if (playerTurn.tag == "IA")
         {
             _IA = true;
         }
@@ -118,7 +120,7 @@ public class Game : MonoBehaviour
         _EndTurn.SetActive(false);
         _OneDice.SetActive(true);
         _TwoDice.SetActive(false);
-        
+
         Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
         foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
         {
@@ -190,7 +192,8 @@ public class Game : MonoBehaviour
         AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
+            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, _player.GetComponent<Player>()._intPlayer);
         }
 
     }
@@ -201,13 +204,13 @@ public class Game : MonoBehaviour
         bool _win = false;
         int win = 0;
         Player p = player.GetComponent<Player>();
-        
-        foreach(Etablissement etablissement in p.etablissements)
+
+        foreach (Etablissement etablissement in p.etablissements)
         {
             win++;
         }
 
-        if(win >= 4)
+        if (win >= 4)
             _win = true;
 
         return _win;
@@ -216,7 +219,7 @@ public class Game : MonoBehaviour
     public void ResolutionActionTour(int result, GameObject playerTurn)
     {
         Debug.Log("Resolution Action Tour");
-        foreach(GameObject p in _PlayerListReel)
+        foreach (GameObject p in _PlayerListReel)
         {
             Player _script = p.GetComponent<Player>();
             _script.ClasifiedCards();
@@ -271,9 +274,9 @@ public class Game : MonoBehaviour
         Debug.Log("GetEnemy");
         List<Player> list = new List<Player>();
 
-        foreach(Player player in allPlayer)
+        foreach (Player player in allPlayer)
         {
-            if(player != p)
+            if (player != p)
             {
                 list.Add(player);
             }
@@ -327,7 +330,7 @@ public class Game : MonoBehaviour
         AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
         {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject);
+            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
         }
 
 
