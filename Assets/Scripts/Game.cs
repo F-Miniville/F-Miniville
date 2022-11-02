@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
-using Unity.VisualScripting;
-using static UnityEditor.Progress;
 
 public class Game : MonoBehaviour
 {
@@ -280,7 +278,6 @@ public class Game : MonoBehaviour
     {
         Debug.Log("Tour Player : " + player);
         resultDice = DiceManager.instance.RollAllDices();
-        _Boutique = true;
         foreach(Etablissement etablissement in player.GetComponent<Player>().etablissements)
         {
             if (etablissement.GetType().ToString() == "Tourradio")
@@ -300,6 +297,7 @@ public class Game : MonoBehaviour
         _OneDice.SetActive(false);
         _TwoDice.SetActive(false);
         _EndTurn.SetActive(true);
+        _Boutique = true;
         RefreshScreen();
     }
 
@@ -311,6 +309,7 @@ public class Game : MonoBehaviour
         _OneDice.SetActive(false);
         _TwoDice.SetActive(false);
         _EndTurn.SetActive(true);
+        _Boutique = true;
         RefreshScreen();
     }
 
