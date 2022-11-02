@@ -91,11 +91,11 @@ public class AffichageManager : MonoBehaviour
                 {
                     if (intplayer == 1)
                     {
-                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 10 + i * 20f, 1 + j)), Quaternion.identity));
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 10 + i * 20f, 1 + i)), Quaternion.identity));
                     }
                     else if (intplayer == 2)
                     {
-                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 1.1f + i * -20f, 1 + j)), Quaternion.identity));
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 1.1f + i * -20f, 1 + i)), Quaternion.identity));
                     }
                     else if (intplayer == 3)
                     {
