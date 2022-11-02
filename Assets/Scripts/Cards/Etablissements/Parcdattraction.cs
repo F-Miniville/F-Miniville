@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Parcdattraction : Etablissement
 {
-<<<<<<< Updated upstream
-    readonly string name;
-    readonly int costEtablissement;
-
-    public Parcdattraction()
-    {
-        this.name = "Parc d'attraction";
-        this.costEtablissement = 16;
-=======
     readonly int costEtablissement = 16;
     [SerializeField] GameObject prefab;
 
@@ -45,6 +36,5 @@ public class Parcdattraction : Etablissement
             Game.instance._Boutique = false;
 
         }
->>>>>>> Stashed changes
     }
 }

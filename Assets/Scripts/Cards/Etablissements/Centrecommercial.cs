@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class Centrecommercial : Etablissement
 {
-<<<<<<< Updated upstream
-    readonly string name;
-    readonly int costEtablissement;
-
-    public Centrecommercial()
-    {
-        this.name = "Centre commercial";
-        this.costEtablissement = 10;
-=======
     readonly int costEtablissement = 10;
     [SerializeField] GameObject prefab;
 
     public Centrecommercial() : base()
     {
 
->>>>>>> Stashed changes
     }
 
     void OnMouseDown()

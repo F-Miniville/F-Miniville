@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Tourradio : Etablissement
 {
-<<<<<<< Updated upstream
-    readonly string name;
-    readonly int costEtablissement;
-
-    public Tourradio()
-    {
-        this.name = "Tour radio";
-        this.costEtablissement = 22;
-=======
     readonly int costEtablissement = 22;
     [SerializeField] GameObject prefab;
 
@@ -45,6 +36,5 @@ public class Tourradio : Etablissement
             Game.instance._Boutique = false;
 
         }
->>>>>>> Stashed changes
     }
 }
