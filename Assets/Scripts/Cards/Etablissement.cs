@@ -6,4 +6,12 @@ public abstract class Etablissement : MonoBehaviour
 {
     string name;
     int costEtablissement;
+<<<<<<< Updated upstream
+=======
+
+    public Etablissement()
+    {
+
+    }
+>>>>>>> Stashed changes
 }

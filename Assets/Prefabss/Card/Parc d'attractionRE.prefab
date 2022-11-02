@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3639143368771760967}
   - component: {fileID: 7773766517920977361}
   - component: {fileID: -3995444487462754416}
+  - component: {fileID: -5629687459435334678}
   m_Layer: 0
   m_Name: Parc d'attractionRE
   m_TagString: Untagged
@@ -128,4 +129,18 @@ MonoBehaviour:
   newObj: {fileID: 0}
   square: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  time: 0
   audioSource: {fileID: -2653977418665834981, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+--- !u!114 &-5629687459435334678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933739691358424996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511f66df181db041930c7fee4d331f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6933739691358424996}

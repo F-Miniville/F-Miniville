@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7981170494245119793}
   - component: {fileID: 6762453218439419779}
   - component: {fileID: 2691083940305663600}
+  - component: {fileID: 5217494899007154037}
   m_Layer: 0
   m_Name: Tour radioRE
   m_TagString: Untagged
@@ -128,4 +129,18 @@ MonoBehaviour:
   newObj: {fileID: 0}
   square: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  time: 0
   audioSource: {fileID: -2653977418665834981, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+--- !u!114 &5217494899007154037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6944537432518664446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cd1413e4ea22049aaecb1fef28fd5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6944537432518664446}
