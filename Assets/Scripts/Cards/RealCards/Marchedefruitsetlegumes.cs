@@ -14,10 +14,20 @@ public class Marchedefruitsetlegumes : GreenCards
         if (activationCost.Contains(result))
         {
             int i = 0;
-            foreach (Champsdeble champsdeble in p.cards)
-                i++;
-            foreach (Verger verger in p.cards)
-                i++;
+            foreach (Cards champsdeble in p.cards)
+            {
+                if(champsdeble.GetType().ToString() == "Champsdeble")
+                {
+                    i += 2;
+                }
+            }
+            foreach (Cards verger in p.cards)
+            {
+                if(verger.GetType().ToString() == "Verger")
+                {
+                    i += 2;
+                }
+            }
 
             p.earnGold(i);
         }

@@ -51,6 +51,13 @@ public class Player : MonoBehaviour
 
     public void ClasifiedCards()
     {
+        cards.Clear();
+        foreach (GameObject card in cardsObject)
+        {
+            Cards _cards = card.GetComponent<Cards>();
+            cards.Add(_cards);
+        }
+
         blueCards = new List<Cards>();
         greenCards = new List<Cards>();
         redCards = new List<Cards>();

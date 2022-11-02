@@ -14,10 +14,20 @@ public class Fabriquedemeuble : GreenCards
         if (activationCost.Contains(result))
         {
             int i = 0;
-            foreach (Mine mine in p.cards)
-                i++;
-            foreach (Forêt forêt in p.cards)
-                i++;
+            foreach (Cards foret in p.cards)
+            {
+                if (foret.GetType().ToString() == "Forêt")
+                {
+                    i += 3;
+                }
+            }
+            foreach (Cards mine in p.cards)
+            {
+                if (mine.GetType().ToString() == "Mine")
+                {
+                    i += 3;
+                }
+            }
 
             p.earnGold(i);
         }
