@@ -103,4 +103,12 @@ public class infoCard : MonoBehaviour
         condi = true;
         time = 0f;
     }
+
+    public void WhenDestroy()
+    {
+        Destroy(newObj);
+        Destroy(square);
+        condi = true;
+        time = 0f;
+    }
 }

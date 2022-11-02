@@ -428,6 +428,7 @@ public class Game : MonoBehaviour
             _boulangeriePileList.Add(_Boulangerie);
         }
         _BoulangeriePile.GetComponent<Pile>().AddCardToPile(_boulangeriePileList);
+        _BoulangeriePile.GetComponent<Pile>().costOfCardsInPile = 1;
 
         _CafePile = Instantiate(_CafePile);
         _PileList.Add(_CafePile);
@@ -437,6 +438,7 @@ public class Game : MonoBehaviour
             _cafePileList.Add(_Cafe);
         }
         _CafePile.GetComponent<Pile>().AddCardToPile(_cafePileList);
+        _CafePile.GetComponent<Pile>().costOfCardsInPile = 2;
 
         _ChampsDeBlePile = Instantiate(_ChampsDeBlePile);
         _PileList.Add(_ChampsDeBlePile);
@@ -446,6 +448,7 @@ public class Game : MonoBehaviour
             _champsdeblePileList.Add(_ChampsDeBle);
         }
         _ChampsDeBlePile.GetComponent<Pile>().AddCardToPile(_champsdeblePileList);
+        _ChampsDeBlePile.GetComponent<Pile>().costOfCardsInPile = 1;
 
         _CentreDAffairePile = Instantiate(_CentreDAffairePile);
         _PileList.Add(_CentreDAffairePile);
@@ -455,6 +458,7 @@ public class Game : MonoBehaviour
             _CentreDAffairePileList.Add(_CentreDAffaire);
         }
         _CentreDAffairePile.GetComponent<Pile>().AddCardToPile(_CentreDAffairePileList);
+        _CentreDAffairePile.GetComponent<Pile>().costOfCardsInPile = 8;
 
         _ChaineDeTelePile = Instantiate(_ChaineDeTelePile);
         _PileList.Add(_ChaineDeTelePile);
@@ -464,6 +468,7 @@ public class Game : MonoBehaviour
             _ChaineDeTelePileList.Add(_ChaineDeTele);
         }
         _ChaineDeTelePile.GetComponent<Pile>().AddCardToPile(_ChaineDeTelePileList);
+        _ChaineDeTelePile.GetComponent<Pile>().costOfCardsInPile = 7;
 
         _FabriqueDeMeublePile = Instantiate(_FabriqueDeMeublePile);
         _PileList.Add(_FabriqueDeMeublePile);
@@ -473,6 +478,7 @@ public class Game : MonoBehaviour
             _FabriqueDeMeublePileList.Add(_FabriqueDeMeuble);
         }
         _FabriqueDeMeublePile.GetComponent<Pile>().AddCardToPile(_FabriqueDeMeublePileList);
+        _FabriqueDeMeublePile.GetComponent<Pile>().costOfCardsInPile = 3;
 
         _FermePile = Instantiate(_FermePile);
         _PileList.Add(_FermePile);
@@ -482,6 +488,7 @@ public class Game : MonoBehaviour
             _FermePileList.Add(_Ferme);
         }
         _FermePile.GetComponent<Pile>().AddCardToPile(_FermePileList);
+        _FermePile.GetComponent<Pile>().costOfCardsInPile = 1;
 
         _FromageriePile = Instantiate(_FromageriePile);
         _PileList.Add(_FromageriePile);
@@ -491,6 +498,7 @@ public class Game : MonoBehaviour
             _FromageriePileList.Add(_Fromagerie);
         }
         _FromageriePile.GetComponent<Pile>().AddCardToPile(_FromageriePileList);
+        _FromageriePile.GetComponent<Pile>().costOfCardsInPile = 5;
 
         _MarcheDeFruitEtLegumePile = Instantiate(_MarcheDeFruitEtLegumePile);
         _PileList.Add(_MarcheDeFruitEtLegumePile);
@@ -500,6 +508,7 @@ public class Game : MonoBehaviour
             _MarcheDeFruitEtLegumePileList.Add(_MarcheDeFruitEtLegume);
         }
         _MarcheDeFruitEtLegumePile.GetComponent<Pile>().AddCardToPile(_MarcheDeFruitEtLegumePileList);
+        _MarcheDeFruitEtLegumePile.GetComponent<Pile>().costOfCardsInPile = 2;
 
         _MinePile = Instantiate(_MinePile);
         _PileList.Add(_MinePile);
@@ -509,6 +518,7 @@ public class Game : MonoBehaviour
             _MinePileList.Add(_Mine);
         }
         _MinePile.GetComponent<Pile>().AddCardToPile(_MinePileList);
+        _MinePile.GetComponent<Pile>().costOfCardsInPile = 6;
 
         _RestaurantPile = Instantiate(_RestaurantPile);
         _PileList.Add(_RestaurantPile);
@@ -518,6 +528,7 @@ public class Game : MonoBehaviour
             _RestaurantPileList.Add(_Restaurant);
         }
         _RestaurantPile.GetComponent<Pile>().AddCardToPile(_RestaurantPileList);
+        _RestaurantPile.GetComponent<Pile>().costOfCardsInPile = 3;
 
         _StadePile = Instantiate(_StadePile);
         _PileList.Add(_StadePile);
@@ -527,6 +538,7 @@ public class Game : MonoBehaviour
             _StadePileList.Add(_Stade);
         }
         _StadePile.GetComponent<Pile>().AddCardToPile(_StadePileList);
+        _StadePile.GetComponent<Pile>().costOfCardsInPile = 6;
 
         _SuperettePile = Instantiate(_SuperettePile);
         _PileList.Add(_SuperettePile);
@@ -536,6 +548,7 @@ public class Game : MonoBehaviour
             _SuperettePileList.Add(_Superette);
         }
         _SuperettePile.GetComponent<Pile>().AddCardToPile(_SuperettePileList);
+        _SuperettePile.GetComponent<Pile>().costOfCardsInPile = 2;
 
         _VergerPile = Instantiate(_VergerPile);
         _PileList.Add(_VergerPile);
@@ -545,6 +558,7 @@ public class Game : MonoBehaviour
             _VergerPileList.Add(_Verger);
         }
         _VergerPile.GetComponent<Pile>().AddCardToPile(_VergerPileList);
+        _VergerPile.GetComponent<Pile>().costOfCardsInPile = 3;
 
         _ForetPile = Instantiate(_ForetPile);
         _PileList.Add(_ForetPile);
@@ -554,7 +568,20 @@ public class Game : MonoBehaviour
             _ForetPileList.Add(_Foret);
         }
         _ForetPile.GetComponent<Pile>().AddCardToPile(_ForetPileList);
+        _ForetPile.GetComponent<Pile>().costOfCardsInPile = 3;
 
+    }
+
+    public void RefreshScreen()
+    {
+        AffichageManager.instance.DelCard();
+        foreach (GameObject player in _PlayerListReel)
+        {
+            AffichageManager.instance.RefreshPile(_PileList);
+            AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);
+        }
     }
 
 }

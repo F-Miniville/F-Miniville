@@ -5,12 +5,15 @@ using UnityEngine;
 public class Pile : MonoBehaviour
 {
     public List<GameObject> cardsInPile;
+    public int costOfCardsInPile;
 
     public void AddCardToPile(List<GameObject> newCards)
     {
         foreach(GameObject card in newCards)
         {
-            cardsInPile.Add(card);
+            var cardAdd = Instantiate(card);
+            cardAdd.transform.position = new Vector3(1000, 1000, 0);
+            cardsInPile.Add(cardAdd);
         }
     }
 
@@ -18,13 +21,10 @@ public class Pile : MonoBehaviour
     {
         GameObject card = null;
 
-        foreach(GameObject cards in cardsInPile)
+        if((cardsInPile.Count != 0) && (cardPlayerWant == cardsInPile[^1]))
         {
-            if(cardPlayerWant == cards)
-            {
-                card = cards;
-                cardsInPile.Remove(cards);
-            }
+            card = cardsInPile[^1];
+            cardsInPile.Remove(cardsInPile[^1]);
         }
 
         return card;
@@ -33,19 +33,28 @@ public class Pile : MonoBehaviour
     void OnMouseDown()
     {
         int _PlayerGold = Game.instance.playerTurn.GetComponent<Player>().Gold;
-        int _CostOfCardsInPile = cardsInPile[0].GetComponent<Cards>().costCards;
 
-        if (Game.instance._Boutique && (_PlayerGold >= _CostOfCardsInPile))
+        if (Game.instance._Boutique && (_PlayerGold >= costOfCardsInPile))
         {
-            Game.instance.playerTurn.GetComponent<Player>().Gold -= _CostOfCardsInPile;
+            Game.instance.playerTurn.GetComponent<Player>().Gold -= costOfCardsInPile;
 
             GameObject card = GetCardsFromPile(cardsInPile[^1]);
 
             Game.instance.playerTurn.GetComponent<Player>().cardsObject.Add(card);
+
+            if (cardsInPile.Count <= 0)
+            {
+                this.gameObject.SetActive(false);
+                Game.instance._PileList.Remove(this.gameObject);
+                this.gameObject.GetComponent<infoCard>().WhenDestroy();
+            }
+
+            Game.instance.RefreshScreen();
             
             Debug.Log(Game.instance.playerTurn.name + " à acheter " + card.name);
 
             Game.instance._Boutique = false;
+
         }
     }
 
