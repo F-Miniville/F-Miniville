@@ -716,8 +716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 5761629831582730833, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
-  IAPrefab: {fileID: 4663307717174169298, guid: d7ee5e5291664c5439467417623f2600, type: 3}
+  PlayerPrefab: {fileID: 7803740685327623539, guid: 0f523295e0b7d3a4b9ef55bb97177fe2, type: 3}
+  IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
   _intPlayerTurn: 0
@@ -733,16 +733,16 @@ MonoBehaviour:
   _Boutique: 0
   _PileList: []
   _BoulangeriePile: {fileID: 3846485456004482676, guid: c5e1ff69e69e83b4692bb99830dc1d68, type: 3}
-  _Boulangerie: {fileID: 2891134883580391916, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+  _Boulangerie: {fileID: 2891134883580391916, guid: 14c5edc554a3d6f4082466bbc2107ced, type: 3}
   _nbBoulangerie: 3
   _CafePile: {fileID: 3846485456004482676, guid: edabba736787e6443a2eb37fb4bc8c32, type: 3}
-  _Cafe: {fileID: 6112362894101370758, guid: 6d688faa1e0b5114a91b87621dcc0084, type: 3}
+  _Cafe: {fileID: 6112362894101370758, guid: 9227e3fe0d731994bad7f521c887b262, type: 3}
   _nbCafe: 3
   _ChampsDeBlePile: {fileID: 3846485456004482676, guid: 6f88d7ecf5a36fe4fab24953cf87470d, type: 3}
-  _ChampsDeBle: {fileID: 805396943213594631, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
+  _ChampsDeBle: {fileID: 805396943213594631, guid: 0e2b6089fe81e7a448562ce4e2916039, type: 3}
   _nbChampsDeBle: 3
   _CentreDAffairePile: {fileID: 3846485456004482676, guid: bdeed1ccbb4e4d344a687d961347784c, type: 3}
-  _CentreDAffaire: {fileID: 2479920560977976136, guid: c3cf982b18b5e734eae19efcb287d450, type: 3}
+  _CentreDAffaire: {fileID: 2479920560977976136, guid: edf78cee1f56a67479d4043ce34fb08b, type: 3}
   _nbCentreDAffaire: 3
   _ChaineDeTelePile: {fileID: 3846485456004482676, guid: 4eb07bdc392cc044e88d2d29c29353b5, type: 3}
   _ChaineDeTele: {fileID: 6109264215666763103, guid: e60d37f1f16a5194581811a5b6e1dcfd, type: 3}
