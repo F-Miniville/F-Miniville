@@ -6,6 +6,7 @@ using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using static UnityEditor.Progress;
 
 public class Game : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Game : MonoBehaviour
     [SerializeField] GameObject IAPrefab;
     public GameObject playerTurn;
     [SerializeField] List<GameObject> _PlayerListReel;
-    [SerializeField] int _intPlayerTurn;
+    public int _intPlayerTurn;
     [SerializeField] bool _finTour;
 
     [SerializeField] int nbJoueur;
@@ -36,12 +37,15 @@ public class Game : MonoBehaviour
     [SerializeField] GameObject _TwoDice;
     [SerializeField] GameObject _OneDice;
     [SerializeField] GameObject _EndTurn;
+    [SerializeField] GameObject _ReRollDice;
+    [SerializeField] GameObject _Execute;
 
     [SerializeField] GameObject _WinPanel;
     [SerializeField] Text _WinText;
 
     public bool _IA;
     public bool _Boutique = false;
+    int resultDice;
 
     #region Pile
 
@@ -197,6 +201,8 @@ public class Game : MonoBehaviour
         _EndTurn.SetActive(false);
         _OneDice.SetActive(true);
         _TwoDice.SetActive(false);
+        _ReRollDice.SetActive(false);
+        _Execute.SetActive(false);
 
         Player _PlayerListReelScript = playerTurn.GetComponent<Player>();
         foreach (Etablissement etablissement in _PlayerListReelScript.etablissements)
@@ -222,7 +228,8 @@ public class Game : MonoBehaviour
 
             _finTour = false;
             Debug.Log("Tour Player :" + playerTurn);
-            ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+            int result = DiceManager.instance.RollAllDices();
+            ResolutionActionTour(result, playerTurn);
             _Boutique = true;
 
             IATurn();
@@ -236,7 +243,7 @@ public class Game : MonoBehaviour
         PlayOneTurn(playerTurn);
         _OneDice.SetActive(false);
         _TwoDice.SetActive(false);
-        _EndTurn.SetActive(true);
+        _Execute.SetActive(true);
     }
     public void TurnWithTwoDice()
     {
@@ -244,7 +251,7 @@ public class Game : MonoBehaviour
         PlayOneTurn(playerTurn);
         _OneDice.SetActive(false);
         _TwoDice.SetActive(false);
-        _EndTurn.SetActive(true);
+        _Execute.SetActive(true);
     }
 
     public void FindeTour()
@@ -271,11 +278,39 @@ public class Game : MonoBehaviour
     public void PlayOneTurn(GameObject player)
     {
         Debug.Log("Tour Player : " + player);
-        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+        resultDice = DiceManager.instance.RollAllDices();
         _Boutique = true;
+        foreach(Etablissement etablissement in player.GetComponent<Player>().etablissements)
+        {
+            if (etablissement.GetType().ToString() == "Tourradio")
+            {
+                _ReRollDice.SetActive(true);
+                break;
+            }
+        }
 
+    }
+
+    public void ExecuteCards()
+    {
+        ResolutionActionTour(resultDice, playerTurn);
+        _ReRollDice.SetActive(false);
+        _Execute.SetActive(false);
+        _OneDice.SetActive(false);
+        _TwoDice.SetActive(false);
+        _EndTurn.SetActive(true);
         RefreshScreen();
+    }
 
+    public void ReRollAllDice()
+    {
+        ResolutionActionTour(DiceManager.instance.ReRollDice(), playerTurn);
+        _ReRollDice.SetActive(false);
+        _Execute.SetActive(false);
+        _OneDice.SetActive(false);
+        _TwoDice.SetActive(false);
+        _EndTurn.SetActive(true);
+        RefreshScreen();
     }
 
 
