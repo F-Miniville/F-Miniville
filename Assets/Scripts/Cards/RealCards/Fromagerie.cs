@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Fromagerie : GreenCards
@@ -14,8 +15,13 @@ public class Fromagerie : GreenCards
         if (activationCost.Contains(result))
         {
             int i = 0;
-            foreach (Ferme ferme in p.cards)
-                i++;
+            foreach (Cards ferme in p.cards)
+            {
+                if(ferme.GetType().ToString() == "Ferme")
+                {
+                    i += 3;
+                }
+            }
 
             p.earnGold(i);
         }
