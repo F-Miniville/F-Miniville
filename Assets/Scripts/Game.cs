@@ -44,62 +44,67 @@ public class Game : MonoBehaviour
 
     #region Pile
 
+    public List<GameObject> _PileList;
 
     [SerializeField] GameObject _BoulangeriePile;
     [SerializeField] GameObject _Boulangerie;
-    [SerializeField] int _nbBoulangerie;
+    public int _nbBoulangerie;
 
     [SerializeField] GameObject _CafePile;
     [SerializeField] GameObject _Cafe;
-    [SerializeField] int _nbCafe;
+    public int _nbCafe;
 
     [SerializeField] GameObject _ChampsDeBlePile;
     [SerializeField] GameObject _ChampsDeBle;
-    [SerializeField] int _nbChampsDeBle;
+    public int _nbChampsDeBle;
 
     [SerializeField] GameObject _CentreDAffairePile;
     [SerializeField] GameObject _CentreDAffaire;
-    [SerializeField] int _nbCentreDAffaire;
+    public int _nbCentreDAffaire;
 
     [SerializeField] GameObject _ChaineDeTelePile;
     [SerializeField] GameObject _ChaineDeTele;
-    [SerializeField] int _nbChaineDeTele;
+    public int _nbChaineDeTele;
 
     [SerializeField] GameObject _FabriqueDeMeublePile;
     [SerializeField] GameObject _FabriqueDeMeuble;
-    [SerializeField] int _nbFabriqueDeMeuble;
+    public int _nbFabriqueDeMeuble;
 
     [SerializeField] GameObject _FermePile;
     [SerializeField] GameObject _Ferme;
-    [SerializeField] int _nbFerme;
+    public int _nbFerme;
 
     [SerializeField] GameObject _FromageriePile;
     [SerializeField] GameObject _Fromagerie;
-    [SerializeField] int _nbFromagerie;
+    public int _nbFromagerie;
 
     [SerializeField] GameObject _MarcheDeFruitEtLegumePile;
     [SerializeField] GameObject _MarcheDeFruitEtLegume;
-    [SerializeField] int _nbMarcheDeFruitEtLegume;
+    public int _nbMarcheDeFruitEtLegume;
 
     [SerializeField] GameObject _MinePile;
     [SerializeField] GameObject _Mine;
-    [SerializeField] int _nbMine;
+    public int _nbMine;
 
     [SerializeField] GameObject _RestaurantPile;
     [SerializeField] GameObject _Restaurant;
-    [SerializeField] int _nbRestaurant;
+    public int _nbRestaurant;
 
     [SerializeField] GameObject _StadePile;
     [SerializeField] GameObject _Stade;
-    [SerializeField] int _nbStade;
+    public int _nbStade;
 
     [SerializeField] GameObject _SuperettePile;
     [SerializeField] GameObject _Superette;
-    [SerializeField] int _nbSuperette;
+    public int _nbSuperette;
 
     [SerializeField] GameObject _VergerPile;
     [SerializeField] GameObject _Verger;
-    [SerializeField] int _nbVerger;
+    public int _nbVerger;
+
+    [SerializeField] GameObject _ForetPile;
+    [SerializeField] GameObject _Foret;
+    public int _nbForet;
 
     #endregion
     public void Start()
@@ -407,7 +412,10 @@ public class Game : MonoBehaviour
 
     public void InstanciatePile()
     {
+        _PileList = new List<GameObject>();
+
         _BoulangeriePile = Instantiate(_BoulangeriePile);
+        _PileList.Add(_BoulangeriePile);
         List<GameObject> _boulangeriePileList = new List<GameObject>();
         for (int i = 0; i < _nbBoulangerie; i++)
         {
@@ -416,6 +424,7 @@ public class Game : MonoBehaviour
         _BoulangeriePile.GetComponent<Pile>().AddCardToPile(_boulangeriePileList);
 
         _CafePile = Instantiate(_CafePile);
+        _PileList.Add(_CafePile);
         List<GameObject> _cafePileList = new List<GameObject>();
         for (int i = 0; i < _nbCafe; i++)
         {
@@ -424,6 +433,7 @@ public class Game : MonoBehaviour
         _CafePile.GetComponent<Pile>().AddCardToPile(_cafePileList);
 
         _ChampsDeBlePile = Instantiate(_ChampsDeBlePile);
+        _PileList.Add(_ChampsDeBlePile);
         List<GameObject> _champsdeblePileList = new List<GameObject>();
         for (int i = 0; i < _nbChampsDeBle; i++)
         {
@@ -432,6 +442,7 @@ public class Game : MonoBehaviour
         _ChampsDeBlePile.GetComponent<Pile>().AddCardToPile(_champsdeblePileList);
 
         _CentreDAffairePile = Instantiate(_CentreDAffairePile);
+        _PileList.Add(_CentreDAffairePile);
         List<GameObject> _CentreDAffairePileList = new List<GameObject>();
         for (int i = 0; i < _nbCentreDAffaire; i++)
         {
@@ -440,6 +451,7 @@ public class Game : MonoBehaviour
         _CentreDAffairePile.GetComponent<Pile>().AddCardToPile(_CentreDAffairePileList);
 
         _ChaineDeTelePile = Instantiate(_ChaineDeTelePile);
+        _PileList.Add(_ChaineDeTelePile);
         List<GameObject> _ChaineDeTelePileList = new List<GameObject>();
         for (int i = 0; i < _nbChaineDeTele; i++)
         {
@@ -448,6 +460,7 @@ public class Game : MonoBehaviour
         _ChaineDeTelePile.GetComponent<Pile>().AddCardToPile(_ChaineDeTelePileList);
 
         _FabriqueDeMeublePile = Instantiate(_FabriqueDeMeublePile);
+        _PileList.Add(_FabriqueDeMeublePile);
         List<GameObject> _FabriqueDeMeublePileList = new List<GameObject>();
         for (int i = 0; i < _nbFabriqueDeMeuble; i++)
         {
@@ -456,6 +469,7 @@ public class Game : MonoBehaviour
         _FabriqueDeMeublePile.GetComponent<Pile>().AddCardToPile(_FabriqueDeMeublePileList);
 
         _FermePile = Instantiate(_FermePile);
+        _PileList.Add(_FermePile);
         List<GameObject> _FermePileList = new List<GameObject>();
         for (int i = 0; i < _nbFerme; i++)
         {
@@ -464,6 +478,7 @@ public class Game : MonoBehaviour
         _FermePile.GetComponent<Pile>().AddCardToPile(_FermePileList);
 
         _FromageriePile = Instantiate(_FromageriePile);
+        _PileList.Add(_FromageriePile);
         List<GameObject> _FromageriePileList = new List<GameObject>();
         for (int i = 0; i < _nbFromagerie; i++)
         {
@@ -472,6 +487,7 @@ public class Game : MonoBehaviour
         _FromageriePile.GetComponent<Pile>().AddCardToPile(_FromageriePileList);
 
         _MarcheDeFruitEtLegumePile = Instantiate(_MarcheDeFruitEtLegumePile);
+        _PileList.Add(_MarcheDeFruitEtLegumePile);
         List<GameObject> _MarcheDeFruitEtLegumePileList = new List<GameObject>();
         for (int i = 0; i < _nbMarcheDeFruitEtLegume; i++)
         {
@@ -480,6 +496,7 @@ public class Game : MonoBehaviour
         _MarcheDeFruitEtLegumePile.GetComponent<Pile>().AddCardToPile(_MarcheDeFruitEtLegumePileList);
 
         _MinePile = Instantiate(_MinePile);
+        _PileList.Add(_MinePile);
         List<GameObject> _MinePileList = new List<GameObject>();
         for (int i = 0; i < _nbMine; i++)
         {
@@ -488,6 +505,7 @@ public class Game : MonoBehaviour
         _MinePile.GetComponent<Pile>().AddCardToPile(_MinePileList);
 
         _RestaurantPile = Instantiate(_RestaurantPile);
+        _PileList.Add(_RestaurantPile);
         List<GameObject> _RestaurantPileList = new List<GameObject>();
         for (int i = 0; i < _nbRestaurant; i++)
         {
@@ -496,6 +514,7 @@ public class Game : MonoBehaviour
         _RestaurantPile.GetComponent<Pile>().AddCardToPile(_RestaurantPileList);
 
         _StadePile = Instantiate(_StadePile);
+        _PileList.Add(_StadePile);
         List<GameObject> _StadePileList = new List<GameObject>();
         for (int i = 0; i < _nbStade; i++)
         {
@@ -504,6 +523,7 @@ public class Game : MonoBehaviour
         _StadePile.GetComponent<Pile>().AddCardToPile(_StadePileList);
 
         _SuperettePile = Instantiate(_SuperettePile);
+        _PileList.Add(_SuperettePile);
         List<GameObject> _SuperettePileList = new List<GameObject>();
         for (int i = 0; i < _nbSuperette; i++)
         {
@@ -512,12 +532,22 @@ public class Game : MonoBehaviour
         _SuperettePile.GetComponent<Pile>().AddCardToPile(_SuperettePileList);
 
         _VergerPile = Instantiate(_VergerPile);
+        _PileList.Add(_VergerPile);
         List<GameObject> _VergerPileList = new List<GameObject>();
         for (int i = 0; i < _nbVerger; i++)
         {
             _VergerPileList.Add(_Verger);
         }
         _VergerPile.GetComponent<Pile>().AddCardToPile(_VergerPileList);
+
+        _ForetPile = Instantiate(_ForetPile);
+        _PileList.Add(_ForetPile);
+        List<GameObject> _ForetPileList = new List<GameObject>();
+        for (int i = 0; i < _nbForet; i++)
+        {
+            _ForetPileList.Add(_Foret);
+        }
+        _ForetPile.GetComponent<Pile>().AddCardToPile(_ForetPileList);
 
     }
 

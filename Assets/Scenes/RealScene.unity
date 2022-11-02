@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.79999, y: 21.899994}
+  m_AnchoredPosition: {x: 105.79999, y: 21.900024}
   m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323032052
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 4626729085261928784, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
+  PlayerPrefab: {fileID: 0}
   IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
@@ -731,6 +731,7 @@ MonoBehaviour:
   _WinText: {fileID: 1516463578}
   _IA: 0
   _Boutique: 0
+  _PileList: []
   _BoulangeriePile: {fileID: 3846485456004482676, guid: c5e1ff69e69e83b4692bb99830dc1d68, type: 3}
   _Boulangerie: {fileID: 2891134883580391916, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
   _nbBoulangerie: 3
@@ -773,6 +774,9 @@ MonoBehaviour:
   _VergerPile: {fileID: 3846485456004482676, guid: 349c9da3913955844a67300ea700e1d9, type: 3}
   _Verger: {fileID: 7831657913534222933, guid: e3bf79e15fd14de45833e3a8d98eb57d, type: 3}
   _nbVerger: 3
+  _ForetPile: {fileID: 3846485456004482676, guid: 03cdbd0a9960f6c4eb3525258f24625c, type: 3}
+  _Foret: {fileID: 5852455992668739102, guid: 09ee9507f3d24c94d862dc7dc48dc4e7, type: 3}
+  _nbForet: 3
 --- !u!4 &812119431
 Transform:
   m_ObjectHideFlags: 0
@@ -1583,7 +1587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.8, y: 21.899994}
+  m_AnchoredPosition: {x: 105.79999, y: 21.900024}
   m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639390300
