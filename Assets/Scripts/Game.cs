@@ -40,10 +40,68 @@ public class Game : MonoBehaviour
     [SerializeField] Text _WinText;
 
     public bool _IA;
+    public bool _Boutique;
+
+    #region Pile
 
 
+    [SerializeField] GameObject _BoulangeriePile;
+    [SerializeField] GameObject _Boulangerie;
+    [SerializeField] int _nbBoulangerie;
 
+    [SerializeField] GameObject _CafePile;
+    [SerializeField] GameObject _Cafe;
+    [SerializeField] int _nbCafe;
 
+    [SerializeField] GameObject _ChampsDeBlePile;
+    [SerializeField] GameObject _ChampsDeBle;
+    [SerializeField] int _nbChampsDeBle;
+
+    [SerializeField] GameObject _CentreDAffairePile;
+    [SerializeField] GameObject _CentreDAffaire;
+    [SerializeField] int _nbCentreDAffaire;
+
+    [SerializeField] GameObject _ChaineDeTelePile;
+    [SerializeField] GameObject _ChaineDeTele;
+    [SerializeField] int _nbChaineDeTele;
+
+    [SerializeField] GameObject _FabriqueDeMeublePile;
+    [SerializeField] GameObject _FabriqueDeMeuble;
+    [SerializeField] int _nbFabriqueDeMeuble;
+
+    [SerializeField] GameObject _FermePile;
+    [SerializeField] GameObject _Ferme;
+    [SerializeField] int _nbFerme;
+
+    [SerializeField] GameObject _FromageriePile;
+    [SerializeField] GameObject _Fromagerie;
+    [SerializeField] int _nbFromagerie;
+
+    [SerializeField] GameObject _MarcheDeFruitEtLegumePile;
+    [SerializeField] GameObject _MarcheDeFruitEtLegume;
+    [SerializeField] int _nbMarcheDeFruitEtLegume;
+
+    [SerializeField] GameObject _MinePile;
+    [SerializeField] GameObject _Mine;
+    [SerializeField] int _nbMine;
+
+    [SerializeField] GameObject _RestaurantPile;
+    [SerializeField] GameObject _Restaurant;
+    [SerializeField] int _nbRestaurant;
+
+    [SerializeField] GameObject _StadePile;
+    [SerializeField] GameObject _Stade;
+    [SerializeField] int _nbStade;
+
+    [SerializeField] GameObject _SuperettePile;
+    [SerializeField] GameObject _Superette;
+    [SerializeField] int _nbSuperette;
+
+    [SerializeField] GameObject _VergerPile;
+    [SerializeField] GameObject _Verger;
+    [SerializeField] int _nbVerger;
+
+    #endregion
     public void Start()
     {
         //Set nb Player
@@ -52,6 +110,10 @@ public class Game : MonoBehaviour
         //Dice
         AnimateRollDice();
         _finTour = true;
+
+        //Pile
+        InstanciatePile();
+
 
 
         //Player and IA
@@ -341,4 +403,122 @@ public class Game : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
     }
+
+
+    public void InstanciatePile()
+    {
+        _BoulangeriePile = Instantiate(_BoulangeriePile);
+        List<GameObject> _boulangeriePileList = new List<GameObject>();
+        for (int i = 0; i < _nbBoulangerie; i++)
+        {
+            _boulangeriePileList.Add(_Boulangerie);
+        }
+        _BoulangeriePile.GetComponent<Pile>().AddCardToPile(_boulangeriePileList);
+
+        _CafePile = Instantiate(_CafePile);
+        List<GameObject> _cafePileList = new List<GameObject>();
+        for (int i = 0; i < _nbCafe; i++)
+        {
+            _cafePileList.Add(_Cafe);
+        }
+        _CafePile.GetComponent<Pile>().AddCardToPile(_cafePileList);
+
+        _ChampsDeBlePile = Instantiate(_ChampsDeBlePile);
+        List<GameObject> _champsdeblePileList = new List<GameObject>();
+        for (int i = 0; i < _nbChampsDeBle; i++)
+        {
+            _champsdeblePileList.Add(_ChampsDeBle);
+        }
+        _ChampsDeBlePile.GetComponent<Pile>().AddCardToPile(_champsdeblePileList);
+
+        _CentreDAffairePile = Instantiate(_CentreDAffairePile);
+        List<GameObject> _CentreDAffairePileList = new List<GameObject>();
+        for (int i = 0; i < _nbCentreDAffaire; i++)
+        {
+            _CentreDAffairePileList.Add(_CentreDAffaire);
+        }
+        _CentreDAffairePile.GetComponent<Pile>().AddCardToPile(_CentreDAffairePileList);
+
+        _ChaineDeTelePile = Instantiate(_ChaineDeTelePile);
+        List<GameObject> _ChaineDeTelePileList = new List<GameObject>();
+        for (int i = 0; i < _nbChaineDeTele; i++)
+        {
+            _ChaineDeTelePileList.Add(_ChaineDeTele);
+        }
+        _ChaineDeTelePile.GetComponent<Pile>().AddCardToPile(_ChaineDeTelePileList);
+
+        _FabriqueDeMeublePile = Instantiate(_FabriqueDeMeublePile);
+        List<GameObject> _FabriqueDeMeublePileList = new List<GameObject>();
+        for (int i = 0; i < _nbFabriqueDeMeuble; i++)
+        {
+            _FabriqueDeMeublePileList.Add(_FabriqueDeMeuble);
+        }
+        _FabriqueDeMeublePile.GetComponent<Pile>().AddCardToPile(_FabriqueDeMeublePileList);
+
+        _FermePile = Instantiate(_FermePile);
+        List<GameObject> _FermePileList = new List<GameObject>();
+        for (int i = 0; i < _nbFerme; i++)
+        {
+            _FermePileList.Add(_Ferme);
+        }
+        _FermePile.GetComponent<Pile>().AddCardToPile(_FermePileList);
+
+        _FromageriePile = Instantiate(_FromageriePile);
+        List<GameObject> _FromageriePileList = new List<GameObject>();
+        for (int i = 0; i < _nbFromagerie; i++)
+        {
+            _FromageriePileList.Add(_Fromagerie);
+        }
+        _FromageriePile.GetComponent<Pile>().AddCardToPile(_FromageriePileList);
+
+        _MarcheDeFruitEtLegumePile = Instantiate(_MarcheDeFruitEtLegumePile);
+        List<GameObject> _MarcheDeFruitEtLegumePileList = new List<GameObject>();
+        for (int i = 0; i < _nbMarcheDeFruitEtLegume; i++)
+        {
+            _MarcheDeFruitEtLegumePileList.Add(_MarcheDeFruitEtLegume);
+        }
+        _MarcheDeFruitEtLegumePile.GetComponent<Pile>().AddCardToPile(_MarcheDeFruitEtLegumePileList);
+
+        _MinePile = Instantiate(_MinePile);
+        List<GameObject> _MinePileList = new List<GameObject>();
+        for (int i = 0; i < _nbMine; i++)
+        {
+            _MinePileList.Add(_Mine);
+        }
+        _MinePile.GetComponent<Pile>().AddCardToPile(_MinePileList);
+
+        _RestaurantPile = Instantiate(_RestaurantPile);
+        List<GameObject> _RestaurantPileList = new List<GameObject>();
+        for (int i = 0; i < _nbRestaurant; i++)
+        {
+            _RestaurantPileList.Add(_Restaurant);
+        }
+        _RestaurantPile.GetComponent<Pile>().AddCardToPile(_RestaurantPileList);
+
+        _StadePile = Instantiate(_StadePile);
+        List<GameObject> _StadePileList = new List<GameObject>();
+        for (int i = 0; i < _nbStade; i++)
+        {
+            _StadePileList.Add(_Stade);
+        }
+        _StadePile.GetComponent<Pile>().AddCardToPile(_StadePileList);
+
+        _SuperettePile = Instantiate(_SuperettePile);
+        List<GameObject> _SuperettePileList = new List<GameObject>();
+        for (int i = 0; i < _nbSuperette; i++)
+        {
+            _SuperettePileList.Add(_Superette);
+        }
+        _SuperettePile.GetComponent<Pile>().AddCardToPile(_SuperettePileList);
+
+        _VergerPile = Instantiate(_VergerPile);
+        List<GameObject> _VergerPileList = new List<GameObject>();
+        for (int i = 0; i < _nbVerger; i++)
+        {
+            _VergerPileList.Add(_Verger);
+        }
+        _VergerPile.GetComponent<Pile>().AddCardToPile(_VergerPileList);
+
+    }
+
 }
