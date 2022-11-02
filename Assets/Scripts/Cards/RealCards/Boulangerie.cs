@@ -14,7 +14,16 @@ public class Boulangerie : GreenCards
         Debug.Log("effectCards Boulangerie");
         if (activationCost.Contains(result))
         {
-            p.earnGold(1);
+            int add = 1;
+            foreach(Etablissement etablissement in p.etablissements)
+            {
+                if(etablissement.GetType().ToString() == "Centrecommercial")
+                {
+                    add++;
+                    break;
+                }
+            }
+            p.earnGold(add);
         }
     }
 }
