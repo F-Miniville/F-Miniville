@@ -48,9 +48,10 @@ MonoBehaviour:
   etablissements: []
   cards: []
   cardsObject: []
-  boulangerie: {fileID: 2891134883580391916, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
-  champsdeble: {fileID: 805396943213594631, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
+  boulangerie: {fileID: 2891134883580391916, guid: 14c5edc554a3d6f4082466bbc2107ced, type: 3}
+  champsdeble: {fileID: 805396943213594631, guid: 0e2b6089fe81e7a448562ce4e2916039, type: 3}
   blueCards: []
   greenCards: []
   redCards: []
   purpleCards: []
+  _intPlayer: 0

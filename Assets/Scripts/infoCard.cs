@@ -27,7 +27,6 @@ public class infoCard : MonoBehaviour
         {
             if (condi)
             {
-                audioSource.Play();
 
                 newObj = new GameObject("text", typeof(infoCard));
                 newObj.AddComponent<TextMeshPro>();

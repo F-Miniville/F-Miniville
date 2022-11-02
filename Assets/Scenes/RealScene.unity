@@ -716,8 +716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 0}
-  IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
+  PlayerPrefab: {fileID: 5761629831582730833, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
+  IAPrefab: {fileID: 4663307717174169298, guid: d7ee5e5291664c5439467417623f2600, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
   _intPlayerTurn: 0
@@ -1485,13 +1485,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6944537432518664446, guid: e5a46b7009f6e31438b0b4b8240813c1, type: 3}
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: cameraObject
+      value: 
+      objectReference: {fileID: 2026792274}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: cameraScript
+      value: 
+      objectReference: {fileID: 2026792276}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: parcdattraction
       value: 
       objectReference: {fileID: 4597852284209979575, guid: f9cb6748a8227e742a97db1b3b4752a1, type: 3}
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: centrecommercial
       value: 
-      objectReference: {fileID: 7502647097823395156, guid: df7c869517c0dc9438d3c737f79510d6, type: 3}
+      objectReference: {fileID: 7502647097823395156, guid: 131c04c9f5654394f8e86b27c4fc4762, type: 3}
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: parcdattractionRE
       value: 
@@ -1499,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: centrecommercialRE
       value: 
-      objectReference: {fileID: 1777437950874239481, guid: c207fcfe926c93548898a96236ce56cf, type: 3}
+      objectReference: {fileID: 1777437950874239481, guid: 85786ef877900914fa35272d85886e04, type: 3}
     - target: {fileID: 4606511750392770785, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: m_RootOrder
       value: 5
