@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.79999, y: 21.899994}
+  m_AnchoredPosition: {x: 105.79999, y: 21.900024}
   m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323032052
@@ -716,8 +716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 5256519456309516000, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
-  IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
+  PlayerPrefab: {fileID: 5256519456309516000, guid: 881fd0440acd9c74db6767a9e4b761e3, type: 3}
+  IAPrefab: {fileID: 4663307717174169298, guid: 98f3f1944714114468e5c4eb9fca3f53, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
   _intPlayerTurn: 0
@@ -1418,9 +1418,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: gare
+      value: 
+      objectReference: {fileID: 5288012524901840003, guid: ed5ab9086179c6e49a9b0e6d48a2aeff, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: Square
       value: 
       objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: gareRE
+      value: 
+      objectReference: {fileID: 646520982685906821, guid: 7e37a317e7723414eba0e7fe59653493, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: tourradio
+      value: 
+      objectReference: {fileID: 7574865579908092628, guid: ea334242af6e6f4438bb32c923e728d8, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: tourradioRE
+      value: 
+      objectReference: {fileID: 6944537432518664446, guid: e5a46b7009f6e31438b0b4b8240813c1, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: parcdattraction
+      value: 
+      objectReference: {fileID: 4597852284209979575, guid: f9cb6748a8227e742a97db1b3b4752a1, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: centrecommercial
+      value: 
+      objectReference: {fileID: 7502647097823395156, guid: df7c869517c0dc9438d3c737f79510d6, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: parcdattractionRE
+      value: 
+      objectReference: {fileID: 6933739691358424996, guid: 27c962ed0b89e3a44b6a6c27c2409169, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: centrecommercialRE
+      value: 
+      objectReference: {fileID: 1777437950874239481, guid: c207fcfe926c93548898a96236ce56cf, type: 3}
     - target: {fileID: 4606511750392770785, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1508,7 +1540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.8, y: 21.899994}
+  m_AnchoredPosition: {x: 105.79999, y: 21.900024}
   m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639390300
