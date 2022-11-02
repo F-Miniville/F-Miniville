@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7184175905133618519}
   - component: {fileID: 1622095606751112293}
-  - component: {fileID: 7968740501273127138}
   - component: {fileID: 1520080427643606379}
   - component: {fileID: 3615858532649555070}
   m_Layer: 0
@@ -87,21 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7968740501273127138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793101663019342507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39cb9507a6cc0f54cad4614447c09ac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationCost: 
-  costCards: 0
-  color: 
 --- !u!114 &1520080427643606379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +102,7 @@ MonoBehaviour:
   newObj: {fileID: 0}
   square: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  time: 0
   audioSource: {fileID: -2653977418665834981, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
 --- !u!61 &3615858532649555070
 BoxCollider2D:
