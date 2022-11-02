@@ -168,7 +168,7 @@ public class Game : MonoBehaviour
         {
             AffichageManager.instance.RefreshPile(_PileList);
             AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
-            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer, _PlayerListReel[0]);
             AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);
         }
 
@@ -236,6 +236,7 @@ public class Game : MonoBehaviour
 
             FindeTour();
         }
+        RefreshScreen();
     }
 
     public void TurnWithOneDice()
@@ -634,7 +635,7 @@ public class Game : MonoBehaviour
         {
             AffichageManager.instance.RefreshPile(_PileList);
             AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
-            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
+            AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer, playerTurn);
             AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);
         }
     }
