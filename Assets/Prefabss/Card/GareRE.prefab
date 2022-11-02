@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1011936523681540339}
   - component: {fileID: -5606958636158235834}
   - component: {fileID: -8490673181307394070}
+  - component: {fileID: 7618712651252152107}
   m_Layer: 0
   m_Name: GareRE
   m_TagString: Untagged
@@ -128,4 +129,18 @@ MonoBehaviour:
   newObj: {fileID: 0}
   square: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  time: 0
   audioSource: {fileID: -2653977418665834981, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+--- !u!114 &7618712651252152107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646520982685906821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03beb56be8d3504393e1407b90a8c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 646520982685906821}

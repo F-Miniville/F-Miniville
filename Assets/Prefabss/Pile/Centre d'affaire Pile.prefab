@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsInPile: []
+  costOfCardsInPile: 0
 --- !u!114 &-5716277594629181939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedd898b6d111e04985535297338de14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Centre d'affaire
+  _name: Centre d'affaires
   newObj: {fileID: 0}
   square: {fileID: 0}
   Square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
