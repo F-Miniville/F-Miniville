@@ -22,8 +22,6 @@ public class AffichageManager : MonoBehaviour
     public Camera cameraScript;
     public Sprite Square;
 
-    private Pile P;
-
     private Dictionary<string, Sprite> strSprite;
 
     public GameObject centrecommercialRE;
@@ -35,26 +33,20 @@ public class AffichageManager : MonoBehaviour
     public GameObject tourradioRE;
     public GameObject tourradio;
 
+    public List<GameObject> listRectangle; 
+
     private List<GameObject> listEta;
-
-    public Sprite piece1;
-    public Sprite piece5;
-    public Sprite piece10;
-
-    public Sprite nothing;
     
     private List<GameObject> cardList;
 
     void Start()
     {
-        //RefreshHand();
-        //RefreshPile();
-
-
         cardList = new List<GameObject>();
         listEta = new List<GameObject>() { centrecommercial, gare, parcdattraction, tourradio };
         cameraObject = GameObject.FindWithTag("MainCamera");
         cameraScript = cameraObject.GetComponent<Camera>();
+
+
     }
 
     void Update()
@@ -74,7 +66,7 @@ public class AffichageManager : MonoBehaviour
         }
     }
 
-    public void RefreshHand(List<GameObject> LP, int intplayer)
+    public void RefreshHand(List<GameObject> LP, int intplayer, GameObject player)
     {
         var newObj = new GameObject("Nom Joueur" + intplayer);
         cardList.Add(newObj);
@@ -82,22 +74,55 @@ public class AffichageManager : MonoBehaviour
 
         newObj.GetComponent<TextMeshPro>().text = "Joueur " + intplayer;
         newObj.GetComponent<TextMeshPro>().fontSize = 4;
+        newObj.GetComponent<TextMeshPro>().fontStyle = FontStyles.Bold;
 
         if (intplayer == 1)
         {
             newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 20, 1));
+            if (player.GetComponent<Player>()._intPlayer == 1)
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(0, 255, 255, 255);
+            }
+            else
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(255, 255, 255, 255);
+            }
         }
-        if (intplayer == 2)
+        else if (intplayer == 2)
         {
             newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 1.55f, 1));
+            if (player.GetComponent<Player>()._intPlayer == 2)
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(0, 255, 255, 255);
+            }
+            else
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(255, 255, 255, 255);
+            }
         }
-        if (intplayer == 3)
+        else if (intplayer == 3)
         {
             newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2.55f, Screen.height / 1.5f, 1));
+            if (player.GetComponent<Player>()._intPlayer == 3)
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(0, 255, 255, 255);
+            }
+            else
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(255, 255, 255, 255);
+            }
         }
-        if (intplayer == 4)
+        else if (intplayer == 4)
         {
             newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 0.775f, Screen.height / 1.5f, 1));
+            if (player.GetComponent<Player>()._intPlayer == 4)
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(0, 255, 255, 255);
+            }
+            else
+            {
+                newObj.GetComponent<TextMeshPro>().color = new Color32(255, 255, 255, 255);
+            }
         }
 
         List<string> alreadydo = new List<string>();
@@ -164,7 +189,8 @@ public class AffichageManager : MonoBehaviour
 
         newObj.GetComponent<TextMeshPro>().text = "Argent = " + piece;
         newObj.GetComponent<TextMeshPro>().fontSize = 4;
-        
+        newObj.GetComponent<TextMeshPro>().fontStyle = FontStyles.Bold;
+
         if (intplayer == 1)
         {
             newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.40f, Screen.height / 20, 1));
@@ -231,8 +257,8 @@ public class AffichageManager : MonoBehaviour
         int ligne = 1;
         foreach (GameObject P in LP)
         {
-                P.GetComponent<Transform>().position = cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne), 1));
-                infoCard inf = P.GetComponent<infoCard>();
+            P.GetComponent<Transform>().position = cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 1.175f - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)), Screen.height / 5 * (4 - ligne), 1));
+            infoCard inf = P.GetComponent<infoCard>();
                 inf.Square = Square;
                 BoxCollider2D bc = P.GetComponent<BoxCollider2D>();
                 bc.size = new Vector2(5, 8);
