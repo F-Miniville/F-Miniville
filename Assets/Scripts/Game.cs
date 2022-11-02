@@ -117,8 +117,8 @@ public class Game : MonoBehaviour
         AnimateRollDice();
         _finTour = true;
 
-        //Pile
-        InstanciatePile();
+        
+        
 
 
 
@@ -154,6 +154,11 @@ public class Game : MonoBehaviour
             _playerScript.Gold = 3;
             
         }
+
+        //Pile
+        _nbBoulangerie = 4 - _PlayerListReel.Count;
+        _nbChampsDeBle = 4 - _PlayerListReel.Count;
+        InstanciatePile();
 
         foreach (GameObject player in _PlayerListReel)
         {
@@ -422,14 +427,21 @@ public class Game : MonoBehaviour
         _PileList = new List<GameObject>();
 
         _BoulangeriePile = Instantiate(_BoulangeriePile);
-        _PileList.Add(_BoulangeriePile);
         List<GameObject> _boulangeriePileList = new List<GameObject>();
         for (int i = 0; i < _nbBoulangerie; i++)
         {
             _boulangeriePileList.Add(_Boulangerie);
         }
-        _BoulangeriePile.GetComponent<Pile>().AddCardToPile(_boulangeriePileList);
-        _BoulangeriePile.GetComponent<Pile>().costOfCardsInPile = 1;
+        if(_boulangeriePileList.Count <= 0)
+        {
+            Destroy(_BoulangeriePile);
+        }
+        else
+        {
+            _PileList.Add(_BoulangeriePile);
+            _BoulangeriePile.GetComponent<Pile>().AddCardToPile(_boulangeriePileList);
+            _BoulangeriePile.GetComponent<Pile>().costOfCardsInPile = 1;
+        }
 
         _CafePile = Instantiate(_CafePile);
         _PileList.Add(_CafePile);
@@ -442,14 +454,21 @@ public class Game : MonoBehaviour
         _CafePile.GetComponent<Pile>().costOfCardsInPile = 2;
 
         _ChampsDeBlePile = Instantiate(_ChampsDeBlePile);
-        _PileList.Add(_ChampsDeBlePile);
         List<GameObject> _champsdeblePileList = new List<GameObject>();
         for (int i = 0; i < _nbChampsDeBle; i++)
         {
             _champsdeblePileList.Add(_ChampsDeBle);
         }
-        _ChampsDeBlePile.GetComponent<Pile>().AddCardToPile(_champsdeblePileList);
-        _ChampsDeBlePile.GetComponent<Pile>().costOfCardsInPile = 1;
+        if(_champsdeblePileList.Count >= 0)
+        {
+            Destroy(_ChampsDeBlePile);
+        }
+        else
+        {
+            _PileList.Add(_ChampsDeBlePile);
+            _ChampsDeBlePile.GetComponent<Pile>().AddCardToPile(_champsdeblePileList);
+            _ChampsDeBlePile.GetComponent<Pile>().costOfCardsInPile = 1;
+        }
 
         _CentreDAffairePile = Instantiate(_CentreDAffairePile);
         _PileList.Add(_CentreDAffairePile);

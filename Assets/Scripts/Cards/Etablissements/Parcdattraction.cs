@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Parcdattraction : Etablissement
 {
-    public new int costEtablissement = 16;
     [SerializeField] GameObject prefab;
 
     public Parcdattraction() : base()
@@ -14,6 +13,7 @@ public class Parcdattraction : Etablissement
 
     void OnMouseDown()
     {
+        this.costEtablissement = 16;
         Debug.Log("OnMouseDown Parcdattraction");
 
         Player _playerScript = Game.instance.playerTurn.GetComponent<Player>();
@@ -28,7 +28,7 @@ public class Parcdattraction : Etablissement
             }
         }
 
-        if (Game.instance._Boutique && (_PlayerGold >= costEtablissement) && _PeuxAcheter)
+        if (Game.instance._Boutique && _PlayerGold >= costEtablissement && _PeuxAcheter)
         {
             _playerScript.Gold -= costEtablissement;
 
@@ -49,6 +49,7 @@ public class Parcdattraction : Etablissement
 
     public override void IAAchatEtablisement()
     {
+        this.costEtablissement = 16;
         Debug.Log("OnMouseDown Tourradio");
 
         Player _playerScript = Game.instance.playerTurn.GetComponent<Player>();
@@ -63,7 +64,7 @@ public class Parcdattraction : Etablissement
             }
         }
 
-        if (Game.instance._Boutique && (_PlayerGold >= costEtablissement) && _PeuxAcheter)
+        if (Game.instance._Boutique && _PlayerGold >= costEtablissement && _PeuxAcheter)
         {
             _playerScript.Gold -= costEtablissement;
 

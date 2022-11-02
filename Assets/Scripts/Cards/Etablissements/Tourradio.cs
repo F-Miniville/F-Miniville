@@ -14,6 +14,7 @@ public class Tourradio : Etablissement
 
     void OnMouseDown()
     {
+        this.costEtablissement = 22;
         Debug.Log("OnMouseDown Tourradio");
 
         Player _playerScript = Game.instance.playerTurn.GetComponent<Player>();
@@ -28,7 +29,7 @@ public class Tourradio : Etablissement
             }
         }
 
-        if (Game.instance._Boutique && (_PlayerGold >= costEtablissement) && _PeuxAcheter)
+        if (Game.instance._Boutique && _PlayerGold >= costEtablissement && _PeuxAcheter)
         {
             _playerScript.Gold -= costEtablissement;
 
@@ -49,6 +50,7 @@ public class Tourradio : Etablissement
 
     public override void IAAchatEtablisement()
     {
+        this.costEtablissement = 22;
         Debug.Log("OnMouseDown Tourradio");
 
         Player _playerScript = Game.instance.playerTurn.GetComponent<Player>();
@@ -63,7 +65,7 @@ public class Tourradio : Etablissement
             }
         }
 
-        if (Game.instance._Boutique && (_PlayerGold >= costEtablissement) && _PeuxAcheter)
+        if (Game.instance._Boutique && _PlayerGold >= costEtablissement && _PeuxAcheter)
         {
             _playerScript.Gold -= costEtablissement;
 
