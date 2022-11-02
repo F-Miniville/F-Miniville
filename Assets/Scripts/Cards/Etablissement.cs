@@ -4,10 +4,14 @@ using UnityEngine;
 
 public abstract class Etablissement : MonoBehaviour
 {
+    string name;
     int costEtablissement;
+<<<<<<< Updated upstream
+=======
 
-    public Etablissement(int costEtablissement)
+    public Etablissement()
     {
-        this.costEtablissement = costEtablissement;
+
     }
+>>>>>>> Stashed changes
 }

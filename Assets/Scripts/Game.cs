@@ -246,6 +246,7 @@ public class Game : MonoBehaviour
             }
             else
             {
+                _Boutique = false;
                 AnimateRollDice();
                 _finTour = true;
                 Debug.Log("Fin Tour : " + playerTurn);
@@ -260,14 +261,7 @@ public class Game : MonoBehaviour
         ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
         _Boutique = true;
 
-        
-
-        AffichageManager.instance.DelCard();
-        foreach (GameObject _player in _PlayerListReel)
-        {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
-            AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, _player.GetComponent<Player>()._intPlayer);
-        }
+        RefreshScreen();
 
     }
 
