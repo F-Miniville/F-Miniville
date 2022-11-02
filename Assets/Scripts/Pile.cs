@@ -32,9 +32,20 @@ public class Pile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Game.instance._Boutique && ( Game.instance.playerTurn.GetComponent<Player>().Gold >= cardsInPile[0].GetComponent<Cards>().costCards ))
+        int _PlayerGold = Game.instance.playerTurn.GetComponent<Player>().Gold;
+        int _CostOfCardsInPile = cardsInPile[0].GetComponent<Cards>().costCards;
+
+        if (Game.instance._Boutique && (_PlayerGold >= _CostOfCardsInPile))
         {
-            Debug.Log("Click on Pile");
+            Game.instance.playerTurn.GetComponent<Player>().Gold -= _CostOfCardsInPile;
+
+            GameObject card = GetCardsFromPile(cardsInPile[^1]);
+
+            Game.instance.playerTurn.GetComponent<Player>().cardsObject.Add(card);
+            
+            Debug.Log(Game.instance.playerTurn.name + " à acheter " + card.name);
+
+            Game.instance._Boutique = false;
         }
     }
 
