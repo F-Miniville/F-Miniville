@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tourradio : Etablissement
 {
-    public new int costEtablissement = 22;
     [SerializeField] GameObject prefab;
 
     public Tourradio() : base()
