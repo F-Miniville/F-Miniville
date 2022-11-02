@@ -153,6 +153,7 @@ public class Game : MonoBehaviour
 
         foreach (GameObject player in _PlayerListReel)
         {
+            AffichageManager.instance.RefreshPile(_PileList);
             AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
             AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
             AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);

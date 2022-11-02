@@ -225,34 +225,30 @@ public class AffichageManager : MonoBehaviour
         }
     }
 
-    public void RefreshPile(List<Pile> LP)
+    public void RefreshPile(List<GameObject> LP)
     {
         int j = 1;
         int ligne = 1;
-        foreach (Pile P in LP)
+        foreach (GameObject P in LP)
         {
-            for (int i = 0; i < P.cardsInPile.Count; i++)
-            {
-                GameObject card = P.cardsInPile[i];
-                Instantiate(card, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - card.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne) - i * 6f, 1)), Quaternion.identity);
-                infoCard inf = card.AddComponent<infoCard>();
-                inf.name = card.name;
+                P.GetComponent<Transform>().position = cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2 - P.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit * (j * (0.5f * Screen.width / 640)) + (Screen.width / 5) * 1.57f, Screen.height / 5 * (4 - ligne), 1));
+                infoCard inf = P.GetComponent<infoCard>();
                 inf.Square = Square;
-                BoxCollider2D bc = card.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+                BoxCollider2D bc = P.GetComponent<BoxCollider2D>();
                 bc.size = new Vector2(5, 8);
                 bc.isTrigger = true;
-                card.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                P.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
-            }
-            if (j % 7 == 0)
+
+            if (j % 8 == 0)
             {
                 ligne += 1;
                 j = 0;
             }
             j++;
-
-
         }
+
+
     }
 
 
