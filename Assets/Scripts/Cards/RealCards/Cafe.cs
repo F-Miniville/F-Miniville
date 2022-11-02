@@ -20,7 +20,16 @@ public class Cafe : RedCards
 
             if (peGold >= 1)
             {
-                p.earnGold(1);
+                int add = 1;
+                foreach (Etablissement etablissement in p.etablissements)
+                {
+                    if (etablissement.GetType().ToString() == "Centrecommercial")
+                    {
+                        add++;
+                        break;
+                    }
+                }
+                p.earnGold(add);
                 currentPlayerScript.spendGold(1);
             }
         }
