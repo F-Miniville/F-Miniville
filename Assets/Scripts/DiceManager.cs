@@ -50,13 +50,54 @@ public class DiceManager : MonoBehaviour
         result += resultDice1;
 
 
-        if (secondDice && playerChoiceDice)
+        int resultDice2 = 0;
+        if ((secondDice && playerChoiceDice) || (secondDice && Game.instance._IA && Random.Range(0 ,2) == 1))
+        {
+            resultDice2 = Dice2.RollDices();
+            animatorDice2.SetInteger("FaceDice2", resultDice2);
+            result += resultDice2;
+            playerChoiceDice = false;
+        }
+
+        bool _haveParc = false;
+        List<Etablissement> list = Game.instance.playerTurn.GetComponent<Player>().etablissements;
+        foreach(Etablissement item in list)
+        {
+            if(item.GetType().ToString() == "Parcdattraction")
+            {
+                _haveParc = true;
+                break;
+            }
+        }
+
+        if (resultDice1 == resultDice2 && _haveParc)
+        {
+            Game.instance._intPlayerTurn--;
+        }
+
+
+        Debug.Log("Get result Roll : " + result);
+        return result;
+    }
+
+    public int ReRollDice()
+    {
+        Debug.Log("ReRollDice");
+        result = 0;
+
+        int resultDice1 = Dice1.RollDices();
+        animatorDice1.SetInteger("FaceDice1", resultDice1);
+        result += resultDice1;
+
+
+        if ((secondDice && playerChoiceDice) || (secondDice && Game.instance._IA && Random.Range(0, 2) == 1))
         {
             int resultDice2 = Dice2.RollDices();
             animatorDice2.SetInteger("FaceDice2", resultDice2);
             result += resultDice2;
             playerChoiceDice = false;
         }
+
 
 
         Debug.Log("Get result Roll : " + result);
