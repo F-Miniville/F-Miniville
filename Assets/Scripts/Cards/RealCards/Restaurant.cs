@@ -30,6 +30,14 @@ public class Restaurant : RedCards
                 currentPlayerScript.spendGold(1);
             }
 
+            foreach (Etablissement etablissement in p.etablissements)
+            {
+                if (etablissement.GetType().ToString() == "Centrecommercial")
+                {
+                    totalGold++;
+                    break;
+                }
+            }
             p.earnGold(totalGold);
         }
     }

@@ -13,7 +13,16 @@ public class Superette : GreenCards
     {
         if (activationCost.Contains(result))
         {
-            p.earnGold(3);
+            int add = 3;
+            foreach (Etablissement etablissement in p.etablissements)
+            {
+                if (etablissement.GetType().ToString() == "Centrecommercial")
+                {
+                    add++;
+                    break;
+                }
+            }
+            p.earnGold(add);
         }
     }
 }

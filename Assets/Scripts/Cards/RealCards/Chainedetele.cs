@@ -13,28 +13,23 @@ public class Chainedetele : PurpleCards
     {    
         if (activationCost.Contains(result))
         {
-            //demander de quel joueur recevoir les pièces
-            //GameObject currentPlayer = Game.instance.playerTurn;
-            //Player currentPlayerScript = currentPlayer.GetComponent<Player>();
+            int _playerAleatoire = Random.Range(0, enemy.Count);
+            Player _enemy = enemy[_playerAleatoire];
 
-            /*
-            int totalGold = 0;
-
-            int peGold = currentPlayerScript.Gold;
-            if (peGold >= 2)
+            int add = 0;
+            if(_enemy.Gold < 5)
             {
-                totalGold += 2;
-                currentPlayerScript.spendGold(2);
+                add = _enemy.Gold;
+                _enemy.Gold -= _enemy.Gold;
             }
-            else if (peGold == 1)
+            else
             {
-                totalGold += 1;
-                currentPlayerScript.spendGold(1);
+                add = 5;
+                _enemy.Gold -= 5;
             }
 
-            p.earnGold(totalGold);
-            */
-            Debug.Log("Recevez 5 pièces du joueur de votre choix");
+            p.earnGold(add);
+
         }
     }
 }
