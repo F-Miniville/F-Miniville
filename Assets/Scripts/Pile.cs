@@ -58,4 +58,32 @@ public class Pile : MonoBehaviour
         }
     }
 
+    public void IAAchatPile()
+    {
+        int _PlayerGold = Game.instance.playerTurn.GetComponent<Player>().Gold;
+
+        if (Game.instance._Boutique && (_PlayerGold >= costOfCardsInPile))
+        {
+            Game.instance.playerTurn.GetComponent<Player>().Gold -= costOfCardsInPile;
+
+            GameObject card = GetCardsFromPile(cardsInPile[^1]);
+
+            Game.instance.playerTurn.GetComponent<Player>().cardsObject.Add(card);
+
+            if (cardsInPile.Count <= 0)
+            {
+                this.gameObject.SetActive(false);
+                Game.instance._PileList.Remove(this.gameObject);
+                this.gameObject.GetComponent<infoCard>().WhenDestroy();
+            }
+
+            Game.instance.RefreshScreen();
+
+            Debug.Log(Game.instance.playerTurn.name + " à acheter " + card.name);
+
+            Game.instance._Boutique = false;
+
+        }
+    }
+
 }

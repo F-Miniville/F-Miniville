@@ -4,8 +4,10 @@ using UnityEngine;
 
 public abstract class Etablissement : MonoBehaviour
 {
+    public int costEtablissement;
     public Etablissement()
     {
 
     }
+    public abstract void IAAchatEtablisement();
 }
