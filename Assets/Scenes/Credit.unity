@@ -505,7 +505,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2010380785}
         m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: MenuReturn
+        m_MethodName: ReturnMenuFromCredit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1032,6 +1032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59191210a39bf8943a3be33e45797160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: 
+  _AudioManager: {fileID: 0}
 --- !u!4 &2010380786
 Transform:
   m_ObjectHideFlags: 0

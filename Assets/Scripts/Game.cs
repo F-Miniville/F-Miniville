@@ -261,7 +261,7 @@ public class Game : MonoBehaviour
             {
                 Debug.Log("Win : " + playerTurn.name);
                 _WinPanel.SetActive(true);
-                _WinText.text = playerTurn.name + " à Gagné la Parti";
+                _WinText.text = playerTurn.name + " à Gagne la Partie";
             }
             else
             {
