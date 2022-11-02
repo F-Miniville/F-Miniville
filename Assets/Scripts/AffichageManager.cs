@@ -185,7 +185,7 @@ public class AffichageManager : MonoBehaviour
 
     public void RefreshMonuments(List<Etablissement> Eta, int intplayer)
     {
-        Dictionary<string, GameObject> listeEta = new Dictionary<string, GameObject>() { {"Centreccommercial" , centrecommercialRE}, {"Gare", gareRE }, { "Parcdattraction", parcdattractionRE }, { "Tourradio", tourradioRE } };
+        Dictionary<string, GameObject> listeEta = new Dictionary<string, GameObject>() { {"Centrecommercial" , centrecommercialRE}, {"Gare", gareRE }, { "Parcdattraction", parcdattractionRE }, { "Tourradio", tourradioRE } };
         Dictionary<string, GameObject> listeEtaChange = new Dictionary<string, GameObject>() { { "Centrecommercial", centrecommercial }, { "Gare", gare }, { "Parcdattraction", parcdattraction }, { "Tourradio", tourradio } };
         foreach (Etablissement E in Eta)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Game : MonoBehaviour
 {
@@ -148,7 +149,10 @@ public class Game : MonoBehaviour
                 _PlayerListReel[i].name = "IA";
             }
 
-            _PlayerListReel[i].GetComponent<Player>()._intPlayer = i + 1;
+            Player _playerScript = _PlayerListReel[i].GetComponent<Player>();
+            _playerScript._intPlayer = i + 1;
+            _playerScript.Gold = 3;
+            
         }
 
         foreach (GameObject player in _PlayerListReel)
@@ -214,6 +218,10 @@ public class Game : MonoBehaviour
             _finTour = false;
             Debug.Log("Tour Player :" + playerTurn);
             ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+            _Boutique = true;
+
+            IATurn();
+
             FindeTour();
         }
     }
@@ -272,9 +280,42 @@ public class Game : MonoBehaviour
         int win = 0;
         Player p = player.GetComponent<Player>();
 
-        foreach (Etablissement etablissement in p.etablissements)
+        List<Etablissement> etablissements = p.etablissements;
+
+        foreach(Etablissement etablissement in etablissements)
         {
-            win++;
+            if(etablissement.GetType() == typeof(Gare))
+            {
+                win++;
+                break;
+            }
+        }
+
+        foreach (Etablissement etablissement in etablissements)
+        {
+            if (etablissement.GetType() == typeof(Tourradio))
+            {
+                win++;
+                break;
+            }
+        }
+
+        foreach (Etablissement etablissement in etablissements)
+        {
+            if (etablissement.GetType() == typeof(Centrecommercial))
+            {
+                win++;
+                break;
+            }
+        }
+
+        foreach (Etablissement etablissement in etablissements)
+        {
+            if (etablissement.GetType() == typeof(Parcdattraction))
+            {
+                win++;
+                break;
+            }
         }
 
         if (win >= 4)
@@ -373,40 +414,6 @@ public class Game : MonoBehaviour
     {
         DiceManager.instance.animatorDice1.SetInteger("FaceDice1", 0);
         DiceManager.instance.animatorDice2.SetInteger("FaceDice2", 0);
-    }
-
-
-    IEnumerator IATurn()
-    {
-        DiceManager.instance.secondDice = false;
-        _finTour = false;
-
-        Debug.Log("Tour Player : " + playerTurn);
-
-        Debug.Log("Resolution Action Tour IA");
-        ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
-        Debug.Log("Fin Resolution Action Tour IA");
-
-        if (CheckWin(playerTurn))
-        {
-            Debug.Log("Win : " + playerTurn.name);
-            _WinPanel.SetActive(true);
-            _WinText.text = playerTurn.name + " à Gagné la Parti";
-        }
-
-        AffichageManager.instance.DelCard();
-        foreach (GameObject _player in _PlayerListReel)
-        {
-            AffichageManager.instance.RefreshHand(_player.GetComponent<Player>().cardsObject, _player.GetComponent<Player>()._intPlayer);
-        }
-
-
-
-        //Ajouter IA
-
-        FindeTour();
-
-        yield return new WaitForSeconds(2.0f);
     }
 
 
@@ -575,6 +582,60 @@ public class Game : MonoBehaviour
             AffichageManager.instance.RefreshPiece(player.GetComponent<Player>().Gold, player.GetComponent<Player>()._intPlayer);
             AffichageManager.instance.RefreshHand(player.GetComponent<Player>().cardsObject, player.GetComponent<Player>()._intPlayer);
             AffichageManager.instance.RefreshMonuments(player.GetComponent<Player>().etablissements, player.GetComponent<Player>()._intPlayer);
+        }
+    }
+
+    public void IATurn()
+    {
+        int gold = playerTurn.GetComponent<Player>().Gold;
+        
+        if(Random.Range(0, 2) == 0)
+        {
+            Etablissement[] etablissements = FindObjectsOfType<Etablissement>();
+            foreach (Etablissement etablissement in etablissements)
+            {
+                if (etablissement.costEtablissement <= gold && Random.Range(0, 2) == 0)
+                {
+                    etablissement.IAAchatEtablisement();
+                    break;
+                }
+            }
+        }
+        else if(Random.Range(0, 5) == 0)
+        {
+            Pile[] piles = FindObjectsOfType<Pile>();
+            foreach(Pile pile in piles)
+            {
+                if(pile.costOfCardsInPile <= gold && Random.Range(0, 2) == 0)
+                {
+                    pile.IAAchatPile();
+                    break;
+                }
+            }
+        }
+        else if(Random.Range(0, 2) == 0)
+        {
+            Etablissement[] etablissements = FindObjectsOfType<Etablissement>();
+            foreach (Etablissement etablissement in etablissements)
+            {
+                if (etablissement.costEtablissement <= gold && Random.Range(0, 2) == 0)
+                {
+                    etablissement.IAAchatEtablisement();
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Pile[] piles = FindObjectsOfType<Pile>();
+            foreach (Pile pile in piles)
+            {
+                if (pile.costOfCardsInPile <= gold && Random.Range(0, 2) == 0)
+                {
+                    pile.IAAchatPile();
+                    break;
+                }
+            }
         }
     }
 
