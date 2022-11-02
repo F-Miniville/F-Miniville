@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
     [SerializeField] Text _WinText;
 
     public bool _IA;
-    public bool _Boutique;
+    public bool _Boutique = false;
 
     #region Pile
 
@@ -237,10 +237,19 @@ public class Game : MonoBehaviour
     {
         if (!_finTour)
         {
-            AnimateRollDice();
-            _finTour = true;
-            Debug.Log("Fin Tour : " + playerTurn);
-            PrepareTurn();
+            if (CheckWin(playerTurn))
+            {
+                Debug.Log("Win : " + playerTurn.name);
+                _WinPanel.SetActive(true);
+                _WinText.text = playerTurn.name + " à Gagné la Parti";
+            }
+            else
+            {
+                AnimateRollDice();
+                _finTour = true;
+                Debug.Log("Fin Tour : " + playerTurn);
+                PrepareTurn();
+            }
         }
     }
 
@@ -248,13 +257,9 @@ public class Game : MonoBehaviour
     {
         Debug.Log("Tour Player : " + player);
         ResolutionActionTour(DiceManager.instance.RollAllDices(), playerTurn);
+        _Boutique = true;
 
-        if (CheckWin(player))
-        {
-            Debug.Log("Win : " + player.name);
-            _WinPanel.SetActive(true);
-            _WinText.text = player.name + " à Gagné la Parti";
-        }
+        
 
         AffichageManager.instance.DelCard();
         foreach (GameObject _player in _PlayerListReel)
