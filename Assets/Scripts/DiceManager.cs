@@ -28,6 +28,7 @@ public class DiceManager : MonoBehaviour
     public int result;
     public bool secondDice = false;
     public bool playerChoiceDice = false;
+    bool _haveRollTwoDice = false;
 
     void Start()
     {
@@ -57,6 +58,11 @@ public class DiceManager : MonoBehaviour
             animatorDice2.SetInteger("FaceDice2", resultDice2);
             result += resultDice2;
             playerChoiceDice = false;
+            _haveRollTwoDice = true;
+        }
+        else
+        {
+            _haveRollTwoDice = false;
         }
 
         bool _haveParc = false;
@@ -82,6 +88,7 @@ public class DiceManager : MonoBehaviour
 
     public int ReRollDice()
     {
+        Game.instance.AnimateRollDice();
         Debug.Log("ReRollDice");
         result = 0;
 
@@ -90,12 +97,13 @@ public class DiceManager : MonoBehaviour
         result += resultDice1;
 
 
-        if ((secondDice && playerChoiceDice) || (secondDice && Game.instance._IA && Random.Range(0, 2) == 1))
+        if (_haveRollTwoDice)
         {
             int resultDice2 = Dice2.RollDices();
             animatorDice2.SetInteger("FaceDice2", resultDice2);
             result += resultDice2;
             playerChoiceDice = false;
+            _haveRollTwoDice = false;
         }
 
 
