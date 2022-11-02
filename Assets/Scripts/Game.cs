@@ -506,16 +506,6 @@ public class Game : MonoBehaviour
             _ChampsDeBlePile.GetComponent<Pile>().costOfCardsInPile = 1;
         }
 
-        _CentreDAffairePile = Instantiate(_CentreDAffairePile);
-        _PileList.Add(_CentreDAffairePile);
-        List<GameObject> _CentreDAffairePileList = new List<GameObject>();
-        for (int i = 0; i < _nbCentreDAffaire; i++)
-        {
-            _CentreDAffairePileList.Add(_CentreDAffaire);
-        }
-        _CentreDAffairePile.GetComponent<Pile>().AddCardToPile(_CentreDAffairePileList);
-        _CentreDAffairePile.GetComponent<Pile>().costOfCardsInPile = 8;
-
         _ChaineDeTelePile = Instantiate(_ChaineDeTelePile);
         _PileList.Add(_ChaineDeTelePile);
         List<GameObject> _ChaineDeTelePileList = new List<GameObject>();

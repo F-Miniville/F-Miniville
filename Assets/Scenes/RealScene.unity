@@ -1098,7 +1098,7 @@ MonoBehaviour:
   _nbChampsDeBle: 3
   _CentreDAffairePile: {fileID: 3846485456004482676, guid: bdeed1ccbb4e4d344a687d961347784c, type: 3}
   _CentreDAffaire: {fileID: 2479920560977976136, guid: edf78cee1f56a67479d4043ce34fb08b, type: 3}
-  _nbCentreDAffaire: 4
+  _nbCentreDAffaire: 0
   _ChaineDeTelePile: {fileID: 3846485456004482676, guid: 4eb07bdc392cc044e88d2d29c29353b5, type: 3}
   _ChaineDeTele: {fileID: 6109264215666763103, guid: e60d37f1f16a5194581811a5b6e1dcfd, type: 3}
   _nbChaineDeTele: 4
