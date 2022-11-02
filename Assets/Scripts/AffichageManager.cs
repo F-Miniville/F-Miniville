@@ -18,6 +18,8 @@ public class AffichageManager : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField] GameObject temp;
+
     public GameObject cameraObject;
     public Camera cameraScript;
     public Sprite Square;
@@ -46,11 +48,6 @@ public class AffichageManager : MonoBehaviour
         cameraObject = GameObject.FindWithTag("MainCamera");
         cameraScript = cameraObject.GetComponent<Camera>();
 
-
-    }
-
-    void Update()
-    {
 
     }
 
@@ -183,9 +180,10 @@ public class AffichageManager : MonoBehaviour
 
     public void RefreshPiece(int piece, int intplayer)
     {
-        var newObj = new GameObject("Piece" + intplayer);
+        var newObj = Instantiate(temp);
         cardList.Add(newObj);
         newObj.AddComponent<TextMeshPro>();
+        newObj.AddComponent<RectTransform>();
 
         newObj.GetComponent<TextMeshPro>().text = "Argent = " + piece;
         newObj.GetComponent<TextMeshPro>().fontSize = 4;

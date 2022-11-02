@@ -46,6 +46,11 @@ public class UIScript : MonoBehaviour
     public void MenuReturn()
     {
         ChoiceNbPlayer.Instance.DestroyNbPlayerManager();
+        SceneManager.LoadScene(0);
+    }
+
+    public void ReturnMenuFromCredit()
+    {
         SceneManager.LoadScene("Menu");
     }
 }
