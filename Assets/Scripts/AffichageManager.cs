@@ -76,7 +76,30 @@ public class AffichageManager : MonoBehaviour
 
     public void RefreshHand(List<GameObject> LP, int intplayer)
     {
-        Debug.Log(intplayer);
+        var newObj = new GameObject("Nom Joueur" + intplayer);
+        cardList.Add(newObj);
+        newObj.AddComponent<TextMeshPro>();
+
+        newObj.GetComponent<TextMeshPro>().text = "Joueur " + intplayer;
+        newObj.GetComponent<TextMeshPro>().fontSize = 4;
+
+        if (intplayer == 1)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 20, 1));
+        }
+        if (intplayer == 2)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 1.55f, 1));
+        }
+        if (intplayer == 3)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2.55f, Screen.height / 1.5f, 1));
+        }
+        if (intplayer == 4)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 0.775f, Screen.height / 1.5f, 1));
+        }
+
         List<string> alreadydo = new List<string>();
         Dictionary<string, int> nbr = CreateDictionnary(LP);
         int j = 1;
@@ -91,11 +114,11 @@ public class AffichageManager : MonoBehaviour
                 {
                     if (intplayer == 1)
                     {
-                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 10 + i * 20f, 1 + j)), Quaternion.identity));
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 10 + i * 20f, 1 + j + i)), Quaternion.identity));
                     }
                     else if (intplayer == 2)
                     {
-                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 1.1f + i * -20f, 1 + j)), Quaternion.identity));
+                        cardList.Add(Instantiate(P, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 2.5f + ((P.GetComponent<SpriteRenderer>().bounds.size.x * 100) / 4) * (j - 1), Screen.height / 1.1f + i * -20f, 1 + j + i)), Quaternion.identity));
                     }
                     else if (intplayer == 3)
                     {
@@ -133,6 +156,33 @@ public class AffichageManager : MonoBehaviour
         }
     }
 
+    public void RefreshPiece(int piece, int intplayer)
+    {
+        var newObj = new GameObject("Piece" + intplayer);
+        cardList.Add(newObj);
+        newObj.AddComponent<TextMeshPro>();
+
+        newObj.GetComponent<TextMeshPro>().text = "Argent = " + piece;
+        newObj.GetComponent<TextMeshPro>().fontSize = 4;
+        
+        if (intplayer == 1)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.40f, Screen.height / 20, 1));
+        }
+        if (intplayer == 2)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.4f, Screen.height / 1.55f, 1));
+        }
+        if (intplayer == 3)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2.55f, Screen.height / 1.6f, 1));
+        }
+        if (intplayer == 4)
+        {
+            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 0.775f, Screen.height / 1.6f, 1));
+        }
+    }
+
     public void RefreshMonuments(List<Etablissement> Eta, int intplayer)
     {
         Dictionary<string, GameObject> listeEta = new Dictionary<string, GameObject>() { {"Centre commercial" , centrecommercialRE}, {"Gare", gareRE }, {"Parc d'attraction", parcdattractionRE }, {"Tour radio", tourradioRE } };
@@ -148,19 +198,19 @@ public class AffichageManager : MonoBehaviour
         {
             if (intplayer == 1)
             {
-                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 3.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 70)) * (j - 1), Screen.height / (9 + ligne*3), 2 - ligne)), Quaternion.identity));
+                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 3.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * ((23f + 1/3) * (Screen.width / 640)))) * (j - 1), Screen.height / (9 + ligne*3), 2 - ligne)), Quaternion.identity));
             }
             if (intplayer == 2)
             {
-                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 3.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 70)) * (j - 1), Screen.height / (1.09f + ligne * 0.03f), 2 - ligne)), Quaternion.identity));
+                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 3.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * ((23f + 1 / 3) * (Screen.width / 640)))) * (j - 1), Screen.height / (1.09f + ligne * 0.03f), 2 - ligne)), Quaternion.identity));
             }
             if (intplayer == 3)
             {
-                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 22.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 70)) * (j - 1), Screen.height / (4 + ligne * 0.6f), 2 - ligne)), Quaternion.identity));
+                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3(Screen.width / 22.5f + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * ((23f + 1 / 3) * (Screen.width / 640)))) * (j - 1), Screen.height / (4 + ligne * 0.6f), 2 - ligne)), Quaternion.identity));
             }
             if (intplayer == 4)
             {
-                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3((Screen.width / 1.045f) - EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 70 + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * 70)) * (j - 1), Screen.height / (4 + ligne * 0.6f), 2 - ligne)), Quaternion.identity));
+                cardList.Add(Instantiate(EO.Value, cameraScript.ScreenToWorldPoint(new Vector3((Screen.width / 1.045f) - ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * ((23f + 1 / 3) * (Screen.width / 640)))) + ((EO.Value.GetComponent<SpriteRenderer>().bounds.size.x * ((23f + 1 / 3) * (Screen.width / 640)))) * (j - 1), Screen.height / (4 + ligne * 0.6f), 2 - ligne)), Quaternion.identity));
             }
 
             i++;
@@ -205,31 +255,6 @@ public class AffichageManager : MonoBehaviour
         }
     }
 
-    public void RefreshPiece(int piece, int intplayer)
-    {
-        var newObj = new GameObject("Piece" + intplayer);
-        newObj.AddComponent<TextMeshPro>();
-
-        newObj.GetComponent<TextMeshPro>().text = "Argent = " + piece;
-        newObj.GetComponent<TextMeshPro>().fontSize = 4;
-        
-        if (intplayer == 1)
-        {
-            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 20, 1));
-        }
-        if (intplayer == 2)
-        {
-            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 1.585f, Screen.height / 1.55f, 1));
-        }
-        if (intplayer == 3)
-        {
-            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2.55f, Screen.height / 1.6f, 1));
-        }
-        if (intplayer == 4)
-        {
-            newObj.GetComponent<RectTransform>().localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 0.775f, Screen.height / 1.6f, 1));
-        }
-    }
 
     private Dictionary<string, int> CreateDictionnary(List<GameObject> list)
     {

@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.65
+  m_fontSize: 19.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 271.25928, y: 69.54361}
-  m_SizeDelta: {x: 400, y: 70}
+  m_AnchoredPosition: {x: 105.79999, y: 21.899994}
+  m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323032052
 MonoBehaviour:
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.65
+  m_fontSize: 19.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfffa96cc16c6e24e8fd6540f3b701bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 5256519456309516000, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
+  PlayerPrefab: {fileID: 4626729085261928784, guid: df92a1fd728e93a44be5fda3b12b5671, type: 3}
   IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
@@ -730,6 +730,49 @@ MonoBehaviour:
   _WinPanel: {fileID: 1318934091}
   _WinText: {fileID: 1516463578}
   _IA: 0
+  _Boutique: 0
+  _BoulangeriePile: {fileID: 3846485456004482676, guid: c5e1ff69e69e83b4692bb99830dc1d68, type: 3}
+  _Boulangerie: {fileID: 2891134883580391916, guid: 7debb02140e41f047a3bac974f1cbe92, type: 3}
+  _nbBoulangerie: 3
+  _CafePile: {fileID: 3846485456004482676, guid: edabba736787e6443a2eb37fb4bc8c32, type: 3}
+  _Cafe: {fileID: 6112362894101370758, guid: 6d688faa1e0b5114a91b87621dcc0084, type: 3}
+  _nbCafe: 3
+  _ChampsDeBlePile: {fileID: 3846485456004482676, guid: 6f88d7ecf5a36fe4fab24953cf87470d, type: 3}
+  _ChampsDeBle: {fileID: 805396943213594631, guid: bb8c9730414a2a5479190876c517e7c6, type: 3}
+  _nbChampsDeBle: 3
+  _CentreDAffairePile: {fileID: 3846485456004482676, guid: bdeed1ccbb4e4d344a687d961347784c, type: 3}
+  _CentreDAffaire: {fileID: 2479920560977976136, guid: c3cf982b18b5e734eae19efcb287d450, type: 3}
+  _nbCentreDAffaire: 3
+  _ChaineDeTelePile: {fileID: 3846485456004482676, guid: 4eb07bdc392cc044e88d2d29c29353b5, type: 3}
+  _ChaineDeTele: {fileID: 6109264215666763103, guid: e60d37f1f16a5194581811a5b6e1dcfd, type: 3}
+  _nbChaineDeTele: 3
+  _FabriqueDeMeublePile: {fileID: 3846485456004482676, guid: 2345baf0fc65ee645b82962b68eddebf, type: 3}
+  _FabriqueDeMeuble: {fileID: 1075494345168083239, guid: 372fb9a1dc9cbbc47bf2294288531819, type: 3}
+  _nbFabriqueDeMeuble: 3
+  _FermePile: {fileID: 3846485456004482676, guid: 86f49ca7519d84641ab4689a7f37ab54, type: 3}
+  _Ferme: {fileID: 1793101663019342507, guid: cde57c223efa08c478add576fbd724ff, type: 3}
+  _nbFerme: 3
+  _FromageriePile: {fileID: 3846485456004482676, guid: f1c558fc03949b74ca51e557dadd511d, type: 3}
+  _Fromagerie: {fileID: 8538433883533182210, guid: c18ac4f6730b4a8419d0aa66de2001a8, type: 3}
+  _nbFromagerie: 3
+  _MarcheDeFruitEtLegumePile: {fileID: 3846485456004482676, guid: 6d133a70cd885504cb096871970ab5f3, type: 3}
+  _MarcheDeFruitEtLegume: {fileID: 4658181739757289145, guid: ae9c79e1e85981e4e92c53c9d6ba4e0c, type: 3}
+  _nbMarcheDeFruitEtLegume: 3
+  _MinePile: {fileID: 3846485456004482676, guid: b39bd22c9c98ffb41b4ea6e95ed18a18, type: 3}
+  _Mine: {fileID: 7064120113258026092, guid: 97820ca475e4b2740bacaf60eab1e4b6, type: 3}
+  _nbMine: 3
+  _RestaurantPile: {fileID: 3846485456004482676, guid: 8d0121baacb9b7e44b57e91bf71c6c8d, type: 3}
+  _Restaurant: {fileID: 448258991575562800, guid: 0fd82abf92b452f4f8cbdef7d27e15da, type: 3}
+  _nbRestaurant: 3
+  _StadePile: {fileID: 3846485456004482676, guid: 8e9294f4a991bf74cb6920418103e5ba, type: 3}
+  _Stade: {fileID: 1984548875843936913, guid: 7bafbe8dcde3ac14f9ff88acc807aac3, type: 3}
+  _nbStade: 3
+  _SuperettePile: {fileID: 3846485456004482676, guid: f26f1562e49f2784cb8f06b19e67fa42, type: 3}
+  _Superette: {fileID: 5628359670718526499, guid: 443f082488fcb1e4abb0915ef62d12df, type: 3}
+  _nbSuperette: 3
+  _VergerPile: {fileID: 3846485456004482676, guid: 349c9da3913955844a67300ea700e1d9, type: 3}
+  _Verger: {fileID: 7831657913534222933, guid: e3bf79e15fd14de45833e3a8d98eb57d, type: 3}
+  _nbVerger: 3
 --- !u!4 &812119431
 Transform:
   m_ObjectHideFlags: 0
@@ -793,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -964,8 +1007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 271.25928, y: 150.14536}
-  m_SizeDelta: {x: 400, y: 70}
+  m_AnchoredPosition: {x: 105.79999, y: 47.820755}
+  m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398664881
 MonoBehaviour:
@@ -1226,7 +1269,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.65
+  m_fontSize: 19.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1418,9 +1461,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: gare
+      value: 
+      objectReference: {fileID: 5288012524901840003, guid: ed5ab9086179c6e49a9b0e6d48a2aeff, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: Square
       value: 
       objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: gareRE
+      value: 
+      objectReference: {fileID: 646520982685906821, guid: 7e37a317e7723414eba0e7fe59653493, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: tourradio
+      value: 
+      objectReference: {fileID: 7574865579908092628, guid: ea334242af6e6f4438bb32c923e728d8, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: tourradioRE
+      value: 
+      objectReference: {fileID: 6944537432518664446, guid: e5a46b7009f6e31438b0b4b8240813c1, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: parcdattraction
+      value: 
+      objectReference: {fileID: 4597852284209979575, guid: f9cb6748a8227e742a97db1b3b4752a1, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: centrecommercial
+      value: 
+      objectReference: {fileID: 7502647097823395156, guid: df7c869517c0dc9438d3c737f79510d6, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: parcdattractionRE
+      value: 
+      objectReference: {fileID: 6933739691358424996, guid: 27c962ed0b89e3a44b6a6c27c2409169, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: centrecommercialRE
+      value: 
+      objectReference: {fileID: 1777437950874239481, guid: c207fcfe926c93548898a96236ce56cf, type: 3}
     - target: {fileID: 4606511750392770785, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1508,8 +1583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 271.25928, y: 69.54361}
-  m_SizeDelta: {x: 400, y: 70}
+  m_AnchoredPosition: {x: 105.8, y: 21.899994}
+  m_SizeDelta: {x: 142.3516, y: 21.5719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639390300
 MonoBehaviour:
