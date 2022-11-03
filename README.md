@@ -10,7 +10,7 @@ Récupérez le projet présent dans le même répertoire. Puis ouvrez le projet 
 ‎ 
 ## Comment jouer au jeu
 
-Chaque joueur commence avec 2 cartes : Une boulangerie, et un champs de blé; Et tire une fois par tours un dé en appuyant sur "One dice", puis "Execute Card". Selon le chiffre obtenu, certains effets s'activeront, vous faisant gagner ou perdre de l'argent.
+Chaque joueur commence avec 2 cartes : Une boulangerie, et un champs de blé; Et tire une fois par tours un dé en appuyant sur "One dice", puis "Execute Card" (Indice, le joueur dont c'est le tour à son nom écris en Bleu). Selon le chiffre obtenu, certains effets s'activeront, vous faisant gagner ou perdre de l'argent.
 
 Vous pourrez alors acheter une carte de votre choix en cliquant sur elle dans la pile, ou sur le monument de votre choix, votre but final étant d'acheter les 4 monuments. Vous pouvez alors terminer votre tour en appuyant sur "End Turn".
 
