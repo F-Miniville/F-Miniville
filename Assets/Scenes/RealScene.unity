@@ -2584,7 +2584,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1686288004}
         m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: ReturnMenuFromCredit
+        m_MethodName: MenuReturn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
