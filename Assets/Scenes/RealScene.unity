@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 7803740685327623539, guid: 0f523295e0b7d3a4b9ef55bb97177fe2, type: 3}
-  IAPrefab: {fileID: 4663307717174169298, guid: 933b3f6ee39d83d42b7ab9eec1d0006c, type: 3}
+  IAPrefab: {fileID: 4663307717174169298, guid: d7ee5e5291664c5439467417623f2600, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
   _intPlayerTurn: 0
@@ -1496,9 +1496,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 448500289}
-  - {fileID: 1899568286}
   - {fileID: 1949531636}
   - {fileID: 1516463577}
+  - {fileID: 1899568286}
   m_Father: {fileID: 1236640344}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1807,12 +1807,12 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1318934092}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000076294, y: -279.73178}
-  m_SizeDelta: {x: 579.5994, y: 214.2605}
+  m_AnchoredPosition: {x: 16.20718, y: -334}
+  m_SizeDelta: {x: 827.2944, y: 116.4057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516463578
 MonoBehaviour:
@@ -2156,6 +2156,10 @@ PrefabInstance:
       propertyPath: gare
       value: 
       objectReference: {fileID: 5288012524901840003, guid: ed5ab9086179c6e49a9b0e6d48a2aeff, type: 3}
+    - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
+      propertyPath: temp
+      value: 
+      objectReference: {fileID: 5284784349193208011, guid: 4be627a44c7562345a5669d8559b5c33, type: 3}
     - target: {fileID: 4606511750392770784, guid: ceadd6b2c1f5ff347899f52d2e6d09fb, type: 3}
       propertyPath: Square
       value: 
@@ -2580,7 +2584,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1686288004}
         m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: MenuReturn
+        m_MethodName: ReturnMenuFromCredit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2661,7 +2665,7 @@ RectTransform:
   - {fileID: 1821660573}
   - {fileID: 1558129637}
   m_Father: {fileID: 1318934092}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -3016,7 +3020,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1318934092}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.6688888}
   m_AnchorMax: {x: 0.5, y: 0.6688888}
