@@ -494,7 +494,7 @@ public class Game : MonoBehaviour
         {
             _champsdeblePileList.Add(_ChampsDeBle);
         }
-        if(_champsdeblePileList.Count >= 0)
+        if(_champsdeblePileList.Count <= 0)
         {
             Destroy(_ChampsDeBlePile);
         }
