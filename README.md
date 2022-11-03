@@ -5,7 +5,7 @@ Minivilles est un jeu de société ou vous devez acheter, et gagner de l'argent 
 ‎ 
 ## Comment lancer le jeu
 
-Récupérez le projet présent dans le même répertoire. Puis ouvrez le projet depuis votre Unity Hub
+Récupérez le projet présent dans le même répertoire. Puis ouvrez le projet depuis votre Unity Hub. Rendez-vous ensuite dans le dossier "scene" puis ouvrez la scene "menu", puis lancer le jeu !
 
 ‎ 
 ## Comment jouer au jeu
