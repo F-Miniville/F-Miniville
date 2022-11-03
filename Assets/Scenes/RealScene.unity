@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 7803740685327623539, guid: 0f523295e0b7d3a4b9ef55bb97177fe2, type: 3}
-  IAPrefab: {fileID: 4663307717174169298, guid: d7ee5e5291664c5439467417623f2600, type: 3}
+  IAPrefab: {fileID: 4663307717174169298, guid: 98f3f1944714114468e5c4eb9fca3f53, type: 3}
   playerTurn: {fileID: 0}
   _PlayerListReel: []
   _intPlayerTurn: 0
